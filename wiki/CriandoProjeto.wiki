@@ -1,12 +1,14 @@
 #summary criando o projeto
 #labels Phase-Design
 
-= Introduction =
+= Introducao =
 
-Criacao do esqueleto da aplicacao
+Criando o esqueleto da aplicacao com o plugin do andromda para o maven. 
+Usando o androMDA 3.2 e maven 2.0.5.
 
+TODO Pre-requisitos: configuracao do ambiente
 
-= Details =
+= Detalhe =
 
 {{{
 pedro@aldebaran:~/workspace$ pwd
