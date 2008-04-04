@@ -8,6 +8,7 @@ Criacao do esqueleto da aplicacao
 
 = Details =
 
+{{{
 pedro@aldebaran:~/workspace$ pwd
 /home/pedro/workspace
 pedro@aldebaran:~/workspace$ mvn org.andromda.maven.plugins:andromdapp-maven-plugin:3.2:generate
@@ -102,3 +103,4 @@ no
 [INFO] Final Memory: 14M/45M
 [INFO] ------------------------------------------------------------------------
 pedro@aldebaran:~/workspace$ 
+}}}
