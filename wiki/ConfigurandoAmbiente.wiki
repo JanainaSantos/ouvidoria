@@ -1,0 +1,26 @@
+#summary Configuracao do Ambiente de Desenvolvimento
+
+= Introduction =
+
+Configuracao do Ambiente de Desenvolvimento
+
+
+= Variaveis de Ambiente =
+
+Incluir no arquivo _/home/pedro/.bashrc_ ou em _/etc/environment_ ou em _/etc/bash.bashrc_ ou ...
+
+{{{
+export JAVA_HOME=/opt/jdk1.5.0_15
+export CATALINA_HOME=/opt/apache-tomcat-6.0.16
+export JBOSS_HOME=/opt/jboss-4.0.5.GA
+export M2_HOME=/opt/maven-2.0.5
+export M2_REPO=/opt/m2/repository
+export MAVEN_HOME=/opt/maven-1.0.2
+export JAVA_OPTS='-Xms256m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=512m'
+
+PATH=$JAVA_HOME/bin:$M2_HOME/bin:$MAVEN_HOME/bin:$PATH
+export PATH
+}}}
+
+
+TODO: terminar ...
