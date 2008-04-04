@@ -1,0 +1,104 @@
+#summary criando o projeto
+#labels Phase-Design
+
+= Introduction =
+
+Criacao do esqueleto da aplicacao
+
+
+= Details =
+
+pedro@aldebaran:~/workspace$ pwd
+/home/pedro/workspace
+pedro@aldebaran:~/workspace$ mvn org.andromda.maven.plugins:andromdapp-maven-plugin:3.2:generate
+[INFO] Scanning for projects...
+[INFO] ----------------------------------------------------------------------------
+[INFO] Building Maven Default Project
+[INFO]    task-segment: [org.andromda.maven.plugins:andromdapp-maven-plugin:3.2:generate] (aggregator-style)
+[INFO] ----------------------------------------------------------------------------
+[INFO] [andromdapp:generate]
+log4j:WARN No appenders could be found for logger (org.apache.commons.digester.Digester).
+log4j:WARN Please initialize the log4j system properly.
+INFO  [AndroMDA] discovered andromdapp type --> 'richclient'
+INFO  [AndroMDA] discovered andromdapp type --> 'j2ee'
+
+Please choose the type of application to generate [richclient, j2ee]
+j2ee
+
+Please enter the location in which your new application will be created (i.e. f:/java/development): 
+/home/pedro/workspace
+
+Please enter your first and last name (i.e. Chad Brandon): 
+Pedro Costa
+
+Which kind of modeling tool will you use? [uml1.4, uml2, emf-uml2]: 
+uml2
+
+Please enter the name of your J2EE project (i.e. Animal Quiz): 
+Sistema de Ouvidoria
+
+Please enter an id for your J2EE project (i.e. animalquiz): 
+ouvidoria
+
+Please enter a version for your project (i.e. 1.0-SNAPSHOT): 
+1.0-SNAPSHOT
+
+Please enter the root package name for your J2EE project (i.e. org.andromda.samples.animalquiz): 
+com.googlecode.ouvidoria
+
+Would you like an EAR or standalone WAR? [ear, war]: 
+ear
+
+Please enter the type of transactional/persistence cartridge to use [hibernate, ejb, ejb3, spring, none]: 
+spring
+
+Please enter the database backend for the persistence layer [hypersonic, mysql, oracle, db2, informix, mssql, pointbase, postgres, sybase, sabdb, progress, derby]: 
+postgres
+
+Will your project need workflow engine capabilities? (it uses jBPM and Hibernate3)? [yes, no]: 
+no
+
+Please enter the hibernate version number (enter '2' for 2.x or '3' for 3.x) [2, 3]: 
+3
+
+Will your project have a web user interface? [yes, no]: 
+yes
+
+Would you like your web user interface to use JSF or Struts? [jsf, struts]: 
+struts
+
+Would you like to be able to expose your services as web services? [yes, no]: 
+no
+
+'/home/pedro/workspace/ouvidoria' already exists, would you like to try a new name? [yes, no]: 
+no
+-------------------------------------------------------------------------------------
+    G e n e r a t i n g   A n d r o M D A   P o w e r e d   A p p l i c a t i o n
+-------------------------------------------------------------------------------------
+    Output: 'file:/home/pedro/workspace/ouvidoria/app/src/main/application/META-INF/jboss-app.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/app/src/main/config/ouvidoria-ds.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/app/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/core/target/classes/META-INF/ejb-jar.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/core/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/readme.txt'
+    Output: 'file:/home/pedro/workspace/ouvidoria/common/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/mda/src/main/config/mappings/WebMergeMappings.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/mda/src/main/config/andromda.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/mda/src/main/uml/ouvidoria.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/mda/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/web/src/main/properties/messages.properties'
+    Output: 'file:/home/pedro/workspace/ouvidoria/web/pom.xml'
+    Output: 'file:/home/pedro/workspace/ouvidoria/web/target/ouvidoria-web-1.0-SNAPSHOT/WEB-INF/web.xml'
+-------------------------------------------------------------------------------------
+    New application generated to --> 'file:/home/pedro/workspace/ouvidoria/'
+    Instructions for your new application --> 'file:/home/pedro/workspace/ouvidoria/readme.txt'
+-------------------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1 minute 57 seconds
+[INFO] Finished at: Thu Apr 03 23:27:31 BRT 2008
+[INFO] Final Memory: 14M/45M
+[INFO] ------------------------------------------------------------------------
+pedro@aldebaran:~/workspace$ 
