@@ -3,7 +3,7 @@
 <!-- This xmi file is optimized for MagicDraw UML. Some references are not saved. -->
 <!-- Change MagicDraw UML environment options property General->.Save Rich XMI -->
 
-<XMI xmi.version='1.2' timestamp='Thu Apr 17 10:02:06 BRT 2008' xmlns:UML='omg.org/UML/1.4'>
+<XMI xmi.version='1.2' timestamp='Thu Apr 17 10:44:16 BRT 2008' xmlns:UML='omg.org/UML/1.4'>
 	<XMI.header>
 		<XMI.documentation>
 			<XMI.exporter>MagicDraw UML</XMI.exporter>
@@ -35,11 +35,6 @@
 									<UML:Namespace.ownedElement>
 										<UML:UseCase xmi.id='_9_5_1_648021b_1208436299485_334403_27' name='autenticaCSU'>
 											<UML:ModelElement.stereotype>
-												<UML:Stereotype href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_791195_9'>
-													<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
-														<referentPath xmi.value='org.andromda.profile::presentation::FrontEndApplication'/>
-													</XMI.extension>
-												</UML:Stereotype>
 												<UML:Stereotype href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_839982_7'>
 													<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
 														<referentPath xmi.value='org.andromda.profile::presentation::FrontEndUseCase'/>
@@ -85,6 +80,12 @@
 																</UML:ActionState>
 																<UML:Pseudostate xmi.id='_9_5_1_648021b_1208436427526_827239_87' kind='junction'/>
 																<UML:FinalState xmi.id='_9_5_1_648021b_1208436434280_933071_89' name='autenticaCSU'/>
+																<UML:FinalState xmi.id='_9_5_1_648021b_1208439683258_839412_977' name='exibeMenuCSU'/>
+																<UML:ActionState xmi.id='_9_5_1_648021b_1208439717355_192295_990' name='Atualiza a sessao do usuario'>
+																	<UML:ActionState.dynamicArguments>
+																		<UML:ArgListsExpression xmi.id='_9_5_1_648021b_1208439804576_224306_1023'/>
+																	</UML:ActionState.dynamicArguments>
+																</UML:ActionState>
 															</UML:CompositeState.subvertex>
 														</UML:CompositeState>
 													</UML:StateMachine.top>
@@ -102,15 +103,16 @@
 																</UML:Guard>
 															</UML:Transition.guard>
 														</UML:Transition>
-														<UML:Transition xmi.id='_9_5_1_648021b_1208437018056_418313_592' source='_9_5_1_648021b_1208436427526_827239_87' target='_9_5_1_648021b_1208436434280_933071_89'>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208439758335_501730_1001' source='_9_5_1_648021b_1208436427526_827239_87' target='_9_5_1_648021b_1208439717355_192295_990'>
 															<UML:Transition.guard>
-																<UML:Guard xmi.id='_9_5_1_648021b_1208437062939_606800_605' name='true'>
+																<UML:Guard xmi.id='_9_5_1_648021b_1208439804578_568897_1024' name='true'>
 																	<UML:Guard.expression>
-																		<UML:BooleanExpression xmi.id='_9_5_1_648021b_1208437062939_844893_606' body='true'/>
+																		<UML:BooleanExpression xmi.id='_9_5_1_648021b_1208439804578_282995_1025' body='true'/>
 																	</UML:Guard.expression>
 																</UML:Guard>
 															</UML:Transition.guard>
 														</UML:Transition>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208439762600_278034_1012' source='_9_5_1_648021b_1208439717355_192295_990' target='_9_5_1_648021b_1208439683258_839412_977'/>
 													</UML:StateMachine.transitions>
 												</UML:ActivityGraph>
 												<UML:SignalEvent xmi.id='_9_5_1_648021b_1208437149293_821912_610' name='Confirma'>
@@ -214,6 +216,130 @@
 												</UML:Attribute>
 											</UML:Classifier.feature>
 										</UML:Class>
+									</UML:Namespace.ownedElement>
+								</UML:Package>
+								<UML:Package xmi.id='_9_5_1_648021b_1208438184371_305196_721' name='exibeMenu'>
+									<UML:Namespace.ownedElement>
+										<UML:UseCase xmi.id='_9_5_1_648021b_1208438195179_856726_722' name='exibeMenuCSU'>
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_791195_9'>
+													<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+														<referentPath xmi.value='org.andromda.profile::presentation::FrontEndApplication'/>
+													</XMI.extension>
+												</UML:Stereotype>
+												<UML:Stereotype href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_839982_7'>
+													<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+														<referentPath xmi.value='org.andromda.profile::presentation::FrontEndUseCase'/>
+													</XMI.extension>
+												</UML:Stereotype>
+											</UML:ModelElement.stereotype>
+											<UML:Namespace.ownedElement>
+												<UML:ActivityGraph xmi.id='_9_5_1_648021b_1208438245853_206220_723' name='exibeMenuATV'>
+													<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+														<mainDiagram xmi.idref='_9_5_1_648021b_1208438245853_635888_724'/>
+													</XMI.extension>
+													<UML:StateMachine.context>
+														<UML:ModelElement xmi.idref='_9_5_1_648021b_1208438377902_314472_775'/>
+													</UML:StateMachine.context>
+													<UML:StateMachine.top>
+														<UML:CompositeState xmi.id='_9_5_1_648021b_1208438651951_942431_887'>
+															<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																<isRegion xmi.value='false'/>
+															</XMI.extension>
+															<UML:CompositeState.subvertex>
+																<UML:Pseudostate xmi.id='_9_5_1_648021b_1208438249356_9826_725' kind='initial'/>
+																<UML:ActionState xmi.id='_9_5_1_648021b_1208438250669_193308_727' name='Menu do Sistema'>
+																	<UML:ActionState.dynamicArguments>
+																		<UML:ArgListsExpression xmi.id='_9_5_1_648021b_1208438651951_592220_888'/>
+																	</UML:ActionState.dynamicArguments>
+																	<UML:ModelElement.stereotype>
+																		<UML:Stereotype href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_676970_30'>
+																			<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																				<referentPath xmi.value='org.andromda.profile::presentation::FrontEndView'/>
+																			</XMI.extension>
+																		</UML:Stereotype>
+																	</UML:ModelElement.stereotype>
+																</UML:ActionState>
+																<UML:FinalState xmi.id='_9_5_1_648021b_1208438268527_570289_738' name='autenticaCSU'/>
+																<UML:FinalState xmi.id='_9_5_1_648021b_1208438271104_166596_740' name='exibeMenuCSU'/>
+																<UML:ActionState xmi.id='_9_5_1_648021b_1208438417697_968472_778' name='Encerra sessao do usuario' deferrableEvent='_9_5_1_648021b_1208438494096_447210_811'>
+																	<UML:ActionState.dynamicArguments>
+																		<UML:ArgListsExpression xmi.id='_9_5_1_648021b_1208438651951_734675_889'/>
+																	</UML:ActionState.dynamicArguments>
+																</UML:ActionState>
+															</UML:CompositeState.subvertex>
+														</UML:CompositeState>
+													</UML:StateMachine.top>
+													<UML:StateMachine.transitions>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208438284449_536219_742' source='_9_5_1_648021b_1208438249356_9826_725' target='_9_5_1_648021b_1208438250669_193308_727'/>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208438288729_224818_753' trigger='_9_5_1_648021b_1208438936393_785391_975' source='_9_5_1_648021b_1208438250669_193308_727' target='_9_5_1_648021b_1208438268527_570289_738'>
+															<UML:ModelElement.taggedValue>
+																<UML:TaggedValue xmi.id='_9_5_1_648021b_1208438557939_582504_813' name='@andromda.presentation.web.action.type'>
+																	<UML:TaggedValue.dataValue></UML:TaggedValue.dataValue>
+																	<UML:TaggedValue.type>
+																		<UML:TagDefinition href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_701444_4'>
+																			<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																				<referentPath xmi.value='org.andromda.profile::presentation::@andromda.presentation.web.action.type'/>
+																			</XMI.extension>
+																		</UML:TagDefinition>
+																	</UML:TaggedValue.type>
+																	<UML:TaggedValue.referenceValue>
+																		<UML:ModelElement href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_344864_49'>
+																			<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																				<referentPath xmi.value='org.andromda.profile::presentation::WebActionType::hyperlink'/>
+																			</XMI.extension>
+																		</UML:ModelElement>
+																	</UML:TaggedValue.referenceValue>
+																</UML:TaggedValue>
+															</UML:ModelElement.taggedValue>
+														</UML:Transition>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208438466089_627970_789' trigger='_9_5_1_648021b_1208438936394_135182_976' source='_9_5_1_648021b_1208438250669_193308_727' target='_9_5_1_648021b_1208438417697_968472_778'>
+															<UML:ModelElement.taggedValue>
+																<UML:TaggedValue xmi.id='_9_5_1_648021b_1208438613264_936502_814' name='@andromda.presentation.web.action.type'>
+																	<UML:TaggedValue.dataValue></UML:TaggedValue.dataValue>
+																	<UML:TaggedValue.type>
+																		<UML:TagDefinition href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_701444_4'>
+																			<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																				<referentPath xmi.value='org.andromda.profile::presentation::@andromda.presentation.web.action.type'/>
+																			</XMI.extension>
+																		</UML:TagDefinition>
+																	</UML:TaggedValue.type>
+																	<UML:TaggedValue.referenceValue>
+																		<UML:ModelElement href='andromda-profile-presentation-3.1.xml.zip|_9_0_1fe00f9_1119337248937_344864_49'>
+																			<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																				<referentPath xmi.value='org.andromda.profile::presentation::WebActionType::hyperlink'/>
+																			</XMI.extension>
+																		</UML:ModelElement>
+																	</UML:TaggedValue.referenceValue>
+																</UML:TaggedValue>
+															</UML:ModelElement.taggedValue>
+														</UML:Transition>
+														<UML:Transition xmi.id='_9_5_1_648021b_1208438472260_228618_800' source='_9_5_1_648021b_1208438417697_968472_778' target='_9_5_1_648021b_1208438271104_166596_740'/>
+													</UML:StateMachine.transitions>
+												</UML:ActivityGraph>
+												<UML:CallEvent xmi.id='_9_5_1_648021b_1208438494096_447210_811' name='sem nome1' operation='_9_5_1_648021b_1208438414287_815550_777'/>
+												<UML:SignalEvent xmi.id='_9_5_1_648021b_1208438936393_785391_975' name='Entrar no Sistema'/>
+												<UML:SignalEvent xmi.id='_9_5_1_648021b_1208438936394_135182_976' name='Sair'/>
+											</UML:Namespace.ownedElement>
+										</UML:UseCase>
+										<UML:Class xmi.id='_9_5_1_648021b_1208438377902_314472_775' name='ExibeMenuCTL'>
+											<UML:Classifier.feature>
+												<UML:Operation xmi.id='_9_5_1_648021b_1208438414287_815550_777' name='encerraSessaoUsuario' visibility='public'>
+													<UML:BehavioralFeature.parameter>
+														<UML:Parameter xmi.id='_9_5_1_648021b_1208438414287_902411_776' kind='return'>
+															<UML:Parameter.type>
+																<UML:Classifier href='andromda-profile-datatype-3.1.xml.zip|_9_0_1fe00f9_1119336925531_324247_52'>
+																	<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+																		<referentPath xmi.value='datatype::void'/>
+																	</XMI.extension>
+																</UML:Classifier>
+															</UML:Parameter.type>
+														</UML:Parameter>
+													</UML:BehavioralFeature.parameter>
+												</UML:Operation>
+											</UML:Classifier.feature>
+										</UML:Class>
+										<UML:Dependency xmi.id='_9_5_1_648021b_1208438644146_997784_876' client='_9_5_1_648021b_1208438377902_314472_775' supplier='_9_5_1_648021b_1208437209410_480929_613'/>
 									</UML:Namespace.ownedElement>
 								</UML:Package>
 							</UML:Namespace.ownedElement>
@@ -346,6 +472,9 @@
 										<UML:Dependency xmi.id='_9_5_1_648021b_1208436795560_343670_239' client='_9_5_1_648021b_1208436562011_767071_191' supplier='_9_5_1_648021b_1208436681906_98157_217'/>
 									</UML:Namespace.ownedElement>
 								</UML:Package>
+								<UML:Package xmi.id='_9_5_1_648021b_1208438739950_959389_927' name='demandante'>
+									<UML:Namespace.ownedElement/>
+								</UML:Package>
 							</UML:Namespace.ownedElement>
 						</UML:Package>
 						<UML:Package xmi.id='_9_5_1_648021b_1208436237080_684200_3' name='servico'>
@@ -444,7 +573,7 @@
 					<diagramScrollPositionX xmi.value='0'/>
 					<diagramScrollPositionY xmi.value='0'/>
 					<maximized xmi.value='true'/>
-					<active xmi.value='false'/>
+					<active xmi.value='true'/>
 					<mdOwnedViews>
 						<mdElement elementClass='PseudoStateView' xmi.id='_9_5_1_648021b_1208436326658_742364_31'>
 							<elementID xmi.idref='_9_5_1_648021b_1208436326657_17163_30'/>
@@ -683,32 +812,40 @@
 							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208437012069_734338_585'/>
 							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208437012069_943347_588'/>
 						</mdElement>
-						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208437018057_673838_593'>
-							<elementID xmi.idref='_9_5_1_648021b_1208437018056_418313_592'/>
-							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208436434282_483660_90'/>
+						<mdElement elementClass='PseudoStateView' xmi.id='_9_5_1_648021b_1208439683259_907456_978'>
+							<elementID xmi.idref='_9_5_1_648021b_1208439683258_839412_977'/>
+							<geometry>391, 441, 19, 19</geometry>
+						</mdElement>
+						<mdElement elementClass='ActivityView' xmi.id='_9_5_1_648021b_1208439717356_312372_991'>
+							<elementID xmi.idref='_9_5_1_648021b_1208439717355_192295_990'/>
+							<geometry>310, 370, 192, 22</geometry>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208439758336_973769_1002'>
+							<elementID xmi.idref='_9_5_1_648021b_1208439758335_501730_1001'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208439717356_312372_991'/>
 							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208436427527_928502_88'/>
-							<geometry>200, 310; 200, 370; 400, 370; 400, 307; </geometry>
-							<linkNameID xmi.idref='_9_5_1_648021b_1208437018057_457007_594'/>
+							<geometry>400, 370; 400, 307; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208439758336_155902_1003'/>
 							<nameVisible xmi.value='true'/>
 							<mdOwnedViews>
-								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437018057_457007_594'>
-									<geometry>286, 357, 31, 13</geometry>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439758336_155902_1003'>
+									<geometry>385, 325, 31, 13</geometry>
 									<text>[true]</text>
 								</mdElement>
-								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437018057_47185_596'>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439758336_859515_1005'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>288, 357, 26, 13</geometry>
+									<geometry>387, 325, 26, 13</geometry>
 								</mdElement>
-								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208437018057_542191_598'>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208439758336_880097_1007'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>288, 383, 26, 13</geometry>
+									<geometry>387, 351, 26, 13</geometry>
 								</mdElement>
-								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437018057_970136_601'>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439758336_96517_1010'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>481, 215, 26, 13</geometry>
+									<geometry>0, 69, 26, 13</geometry>
 									<text>&lt;html&gt;
 &lt;body&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -716,9 +853,46 @@
 &lt;/html&gt;</text>
 								</mdElement>
 							</mdOwnedViews>
-							<linkConstraintID xmi.idref='_9_5_1_648021b_1208437018057_47185_596'/>
-							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208437018057_542191_598'/>
-							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208437018057_970136_601'/>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208439758336_859515_1005'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208439758336_880097_1007'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208439758336_96517_1010'/>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208439762601_995299_1013'>
+							<elementID xmi.idref='_9_5_1_648021b_1208439762600_278034_1012'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208439683259_907456_978'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208439717356_312372_991'/>
+							<geometry>400, 441; 400, 392; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208439762601_210416_1014'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439762601_210416_1014'>
+									<visible xmi.value='false'/>
+									<geometry>387, 405, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439762601_876250_1016'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>387, 405, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208439762601_740331_1018'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>387, 424, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208439762601_720381_1021'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>1, 120, 26, 13</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208439762601_876250_1016'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208439762601_740331_1018'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208439762601_720381_1021'/>
 						</mdElement>
 					</mdOwnedViews>
 				</mdElement>
@@ -733,12 +907,7 @@
 				<mdElement elementClass='DiagramView' xmi.id='_9_5_1_648021b_1208436801433_713558_258'>
 					<elementID xmi.idref='_9_5_1_648021b_1208436558381_64683_190'/>
 					<zoomFactor xmi.value='1.0'/>
-					<diagramOpened xmi.value='true'/>
-					<diagramWindowBounds>0, 0, 946, 593</diagramWindowBounds>
-					<diagramScrollPositionX xmi.value='0'/>
-					<diagramScrollPositionY xmi.value='0'/>
-					<maximized xmi.value='true'/>
-					<active xmi.value='false'/>
+					<diagramOpened xmi.value='false'/>
 					<mdOwnedViews>
 						<mdElement elementClass='ClassView' xmi.id='_9_5_1_648021b_1208436562012_224551_192'>
 							<elementID xmi.idref='_9_5_1_648021b_1208436562011_767071_191'/>
@@ -798,12 +967,7 @@
 				<mdElement elementClass='DiagramView' xmi.id='_9_5_1_648021b_1208436976364_517380_538'>
 					<elementID xmi.idref='_9_5_1_648021b_1208436922284_285000_373'/>
 					<zoomFactor xmi.value='1.0'/>
-					<diagramOpened xmi.value='true'/>
-					<diagramWindowBounds>0, 0, 946, 593</diagramWindowBounds>
-					<diagramScrollPositionX xmi.value='0'/>
-					<diagramScrollPositionY xmi.value='0'/>
-					<maximized xmi.value='true'/>
-					<active xmi.value='false'/>
+					<diagramOpened xmi.value='false'/>
 					<mdOwnedViews>
 						<mdElement elementClass='ClassView' xmi.id='_9_5_1_648021b_1208436926614_222595_389'>
 							<elementID xmi.idref='_9_5_1_648021b_1208436458560_766112_91'/>
@@ -918,12 +1082,7 @@
 				<mdElement elementClass='DiagramView' xmi.id='_9_5_1_648021b_1208437326382_294196_720'>
 					<elementID xmi.idref='_9_5_1_648021b_1208437279756_789581_615'/>
 					<zoomFactor xmi.value='1.0'/>
-					<diagramOpened xmi.value='true'/>
-					<diagramWindowBounds>0, 0, 946, 593</diagramWindowBounds>
-					<diagramScrollPositionX xmi.value='0'/>
-					<diagramScrollPositionY xmi.value='0'/>
-					<maximized xmi.value='true'/>
-					<active xmi.value='true'/>
+					<diagramOpened xmi.value='false'/>
 					<mdOwnedViews>
 						<mdElement elementClass='ClassView' xmi.id='_9_5_1_648021b_1208437282714_549876_631'>
 							<elementID xmi.idref='_9_5_1_648021b_1208437209410_480929_613'/>
@@ -931,34 +1090,34 @@
 						</mdElement>
 						<mdElement elementClass='ClassView' xmi.id='_9_5_1_648021b_1208437306502_592526_677'>
 							<elementID xmi.idref='_9_5_1_648021b_1208436458560_766112_91'/>
-							<geometry>200, 130, 342, 53</geometry>
+							<geometry>20, 140, 342, 53</geometry>
 						</mdElement>
 						<mdElement elementClass='DependencyView' xmi.id='_9_5_1_648021b_1208437314503_647627_709'>
 							<elementID xmi.idref='_9_5_1_648021b_1208437314502_673867_708'/>
 							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208437282714_549876_631'/>
 							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208437306502_592526_677'/>
-							<geometry>369, 280; 371, 183; </geometry>
+							<geometry>328, 280; 226, 193; </geometry>
 							<linkNameID xmi.idref='_9_5_1_648021b_1208437314503_658377_710'/>
 							<nameVisible xmi.value='true'/>
 							<mdOwnedViews>
 								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437314503_658377_710'>
 									<visible xmi.value='false'/>
-									<geometry>358, 226, 26, 13</geometry>
+									<geometry>265, 232, 26, 13</geometry>
 								</mdElement>
 								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437314503_118597_712'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>365, 221, 26, 13</geometry>
+									<geometry>264, 222, 26, 13</geometry>
 								</mdElement>
 								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208437314503_201830_714'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>349, 235, 26, 13</geometry>
+									<geometry>272, 246, 26, 13</geometry>
 								</mdElement>
 								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208437314503_293691_717'>
 									<editable xmi.value='false'/>
 									<visible xmi.value='false'/>
-									<geometry>229, 90, 26, 13</geometry>
+									<geometry>85, 248, 26, 13</geometry>
 									<text>&lt;html&gt;
 &lt;body&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -970,7 +1129,258 @@
 							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208437314503_201830_714'/>
 							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208437314503_293691_717'/>
 						</mdElement>
+						<mdElement elementClass='ClassView' xmi.id='_9_5_1_648021b_1208438634092_940102_830'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438377902_314472_775'/>
+							<geometry>430, 140, 186, 53</geometry>
+						</mdElement>
+						<mdElement elementClass='DependencyView' xmi.id='_9_5_1_648021b_1208438644147_86646_877'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438644146_997784_876'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208437282714_549876_631'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208438634092_940102_830'/>
+							<geometry>404, 280; 497, 193; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208438644147_209497_878'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438644147_209497_878'>
+									<visible xmi.value='false'/>
+									<geometry>435, 227, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438644147_253356_880'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>431, 216, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208438644147_85573_882'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>442, 246, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438644147_273547_885'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>53, 34, 26, 13</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208438644147_253356_880'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208438644147_85573_882'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208438644147_273547_885'/>
+						</mdElement>
 					</mdOwnedViews>
+				</mdElement>
+			</mdElement>
+			<mdElement elementClass='StateDiagramData' xmi.id='_9_5_1_648021b_1208438245853_635888_724' name='exibeMenuATV'>
+				<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+					<ignoredInModule xmi.value='true'/>
+				</XMI.extension>
+				<parentID xmi.idref='_9_5_1_648021b_1208438245853_206220_723'/>
+				<type>Activity Diagram</type>
+				<umlType>Activity Diagram</umlType>
+				<mdElement elementClass='DiagramView' xmi.id='_9_5_1_648021b_1208438651963_973071_890'>
+					<elementID xmi.idref='_9_5_1_648021b_1208438245853_635888_724'/>
+					<zoomFactor xmi.value='1.0'/>
+					<diagramOpened xmi.value='false'/>
+					<mdOwnedViews>
+						<mdElement elementClass='PseudoStateView' xmi.id='_9_5_1_648021b_1208438249357_68515_726'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438249356_9826_725'/>
+							<geometry>150, 60, 19, 19</geometry>
+						</mdElement>
+						<mdElement elementClass='ActivityView' xmi.id='_9_5_1_648021b_1208438250670_351270_728'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438250669_193308_727'/>
+							<geometry>100, 160, 130, 38</geometry>
+						</mdElement>
+						<mdElement elementClass='PseudoStateView' xmi.id='_9_5_1_648021b_1208438268527_158532_739'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438268527_570289_738'/>
+							<geometry>561, 171, 19, 19</geometry>
+						</mdElement>
+						<mdElement elementClass='PseudoStateView' xmi.id='_9_5_1_648021b_1208438271104_298775_741'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438271104_166596_740'/>
+							<geometry>151, 401, 19, 19</geometry>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208438284449_36026_743'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438284449_536219_742'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208438250670_351270_728'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208438249357_68515_726'/>
+							<geometry>159, 160; 159, 79; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208438284449_211039_744'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438284449_211039_744'>
+									<visible xmi.value='false'/>
+									<geometry>146, 107, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438284449_101335_746'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>146, 107, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208438284449_867502_748'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>146, 128, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438284450_206864_751'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>1, 21, 26, 13</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208438284449_101335_746'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208438284449_867502_748'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208438284450_206864_751'/>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208438288730_584526_754'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438288729_224818_753'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208438268527_158532_739'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208438250670_351270_728'/>
+							<geometry>561, 180; 230, 180; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208438288730_147109_755'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438288730_147109_755'>
+									<geometry>345, 168, 101, 13</geometry>
+									<text>Entrar no Sistema</text>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438288730_493383_757'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>382, 154, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208438288730_92711_759'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>382, 193, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438288730_377835_762'>
+									<editable xmi.value='false'/>
+									<geometry>240, 180, 312, 15</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;{@andromda.presentation.web.action.type=hyperlink}&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208438288730_493383_757'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208438288730_92711_759'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208438288730_377835_762'/>
+						</mdElement>
+						<mdElement elementClass='ActivityView' xmi.id='_9_5_1_648021b_1208438417698_928551_779'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438417697_968472_778'/>
+							<properties>
+								<mdElement elementClass='BooleanProperty'>
+									<propertyID>SUPPRESS_STATE_ACTIONS</propertyID>
+									<propertyDescriptionID>SUPPRESS_STATE_ACTIONS_DESCRIPTION</propertyDescriptionID>
+									<value xmi.value='false'/>
+								</mdElement>
+							</properties>
+							<geometry>60, 280, 201, 44</geometry>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208438466089_16899_790'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438466089_627970_789'/>
+							<properties>
+								<mdElement elementClass='ChoiceProperty'>
+									<propertyID>LINK_LINE_STYLE</propertyID>
+									<propertyDescriptionID>LINK_LINE_STYLE_DESCRIPTION</propertyDescriptionID>
+									<value>OBLIQUE</value>
+									<choice xmi.value='RECTILINEAR^OBLIQUE^BEZIER'/>
+									<index xmi.value='1'/>
+								</mdElement>
+							</properties>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208438417698_928551_779'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208438250670_351270_728'/>
+							<geometry>161, 280; 164, 198; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208438466089_539671_791'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438466089_539671_791'>
+									<geometry>149, 226, 26, 13</geometry>
+									<text>Sair</text>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438466089_702394_793'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>149, 213, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208438466089_235293_795'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>149, 252, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438466089_105427_798'>
+									<editable xmi.value='false'/>
+									<geometry>20, 250, 312, 15</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;{@andromda.presentation.web.action.type=hyperlink}&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208438466089_702394_793'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208438466089_235293_795'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208438466089_105427_798'/>
+						</mdElement>
+						<mdElement elementClass='TransitionLinkView' xmi.id='_9_5_1_648021b_1208438472261_287320_801'>
+							<elementID xmi.idref='_9_5_1_648021b_1208438472260_228618_800'/>
+							<linkFirstEndID xmi.idref='_9_5_1_648021b_1208438271104_298775_741'/>
+							<linkSecondEndID xmi.idref='_9_5_1_648021b_1208438417698_928551_779'/>
+							<geometry>160, 401; 160, 324; </geometry>
+							<linkNameID xmi.idref='_9_5_1_648021b_1208438472261_472353_802'/>
+							<nameVisible xmi.value='true'/>
+							<mdOwnedViews>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438472261_472353_802'>
+									<visible xmi.value='false'/>
+									<geometry>147, 351, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438472261_247933_804'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>147, 351, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxWithIconView' xmi.id='_9_5_1_648021b_1208438472261_815353_806'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>147, 370, 26, 13</geometry>
+								</mdElement>
+								<mdElement elementClass='TextBoxView' xmi.id='_9_5_1_648021b_1208438472261_732059_809'>
+									<editable xmi.value='false'/>
+									<visible xmi.value='false'/>
+									<geometry>20, 212, 26, 13</geometry>
+									<text>&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+								</mdElement>
+							</mdOwnedViews>
+							<linkConstraintID xmi.idref='_9_5_1_648021b_1208438472261_247933_804'/>
+							<linkStereotypeID xmi.idref='_9_5_1_648021b_1208438472261_815353_806'/>
+							<linkTaggedValuesID xmi.idref='_9_5_1_648021b_1208438472261_732059_809'/>
+						</mdElement>
+					</mdOwnedViews>
+				</mdElement>
+			</mdElement>
+			<mdElement elementClass='DiagramData' xmi.id='_9_5_1_648021b_1208438757520_559054_955' name='VOPC - demandante'>
+				<XMI.extension xmi.extender='MagicDraw UML 9.5' xmi.extenderID='MagicDraw UML 9.5'>
+					<ignoredInModule xmi.value='true'/>
+				</XMI.extension>
+				<parentID xmi.idref='_9_5_1_648021b_1208438739950_959389_927'/>
+				<type>Class Diagram</type>
+				<umlType>Class Diagram</umlType>
+				<mdElement elementClass='DiagramView' xmi.id='_9_5_1_648021b_1208438761095_27097_965'>
+					<elementID xmi.idref='_9_5_1_648021b_1208438757520_559054_955'/>
+					<zoomFactor xmi.value='1.0'/>
+					<diagramOpened xmi.value='false'/>
 				</mdElement>
 			</mdElement>
 		</mdOwnedDiagrams>
@@ -1132,13 +1542,13 @@
 					<mdElement elementClass='StringProperty'>
 						<propertyID>INFO_PROPERTY</propertyID>
 						<propertyDescriptionID>INFO_PROPERTY_DESCRIPTION</propertyDescriptionID>
-						<value>1a 4c 4c 73 4 3 7c 55 16 30 47 54 1d 67 88 3f 5b a5 49 ce 39 61 7f c0 ff 57 c2 d4 1a 86 bf 1 58 49 75 d 97 5f ff d1 45 a1 8c 85 23 1f 52 f8 84 5 c4 c1 11 be b0 80 a0 71 55 d5 b4 ec 1f eb 4 70 69 c3 d1 </value>
+						<value>1a 4c 4c 73 4 3 7c 55 16 30 47 54 1d 67 88 3f 5b a5 49 ce 39 61 7f c0 ff 53 c4 d4 1b 86 bf 1 58 49 75 d 97 5f ff d1 45 a1 8c 85 23 1f 52 f8 84 5 c4 c1 11 be b0 80 a0 71 55 d5 b4 ec 1f eb 4 70 69 c3 d1 </value>
 						<multiline xmi.value='false'/>
 					</mdElement>
 					<mdElement elementClass='ChoiceProperty'>
 						<propertyID>RECENT_DIAGRAMS</propertyID>
 						<propertyDescriptionID>RECENT_DIAGRAMS_DESCRIPTION</propertyDescriptionID>
-						<choice xmi.value='_9_0_1fe00f9_1119336925531_570142_0'/>
+						<choice xmi.value='_9_5_1_648021b_1208438245853_635888_724^_9_5_1_648021b_1208436558381_64683_190^_9_5_1_648021b_1208437279756_789581_615^_9_5_1_648021b_1208438757520_559054_955^_9_5_1_648021b_1208436922284_285000_373^_9_0_1fe00f9_1119336925531_570142_0'/>
 						<index xmi.value='-1'/>
 					</mdElement>
 				</mdElement>
