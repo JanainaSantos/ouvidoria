@@ -1,10 +1,12 @@
 // license-header java merge-point
 package com.googlecode.ouvidoria.apresentacao.autentica;
 
-import org.apache.struts.action.ActionMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionMapping;
+
+import com.googlecode.ouvidoria.negocio.autentica.Usuario;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.autentica.AutenticaCTL
@@ -16,11 +18,20 @@ public class AutenticaCTLImpl extends AutenticaCTL
      */
     public final boolean autenticaUsuario(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.autentica.AutenticaUsuarioForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
-        // this property receives a default value, just to have the application running on dummy data
-        form.setSenha("senha-test");
-        // this property receives a default value, just to have the application running on dummy data
-        form.setLogin("login-test");
-        return false;
+        boolean retorno = false;
+        
+        String login = form.getLogin();
+        String senha = form.getSenha();
+        
+        System.out.println("Autenticando usuario: "+login);
+        
+        Usuario usr = getUsuarioService().autenticarUsuario(login, senha);
+        if(usr != null){
+        	getGerenteSessaoUsuario(request).setUsuario(usr);
+        	retorno = true;
+        }
+        
+        return retorno;
     }
 
 }
