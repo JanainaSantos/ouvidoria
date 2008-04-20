@@ -13,7 +13,14 @@ import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
 public class UsuarioDaoImpl extends com.googlecode.ouvidoria.negocio.usuario.UsuarioDaoBase {
 
 	public UsuarioVO toUsuarioVO(Usuario entity) {
-		return (UsuarioVO) load(TRANSFORM_USUARIOVO, entity.getId());
+		UsuarioVO vo = new UsuarioVO();
+		vo.setEmail(entity.getEmail());
+		vo.setId(entity.getId());
+		vo.setLogin(entity.getLogin());
+		vo.setNome(entity.getNome());
+		vo.setRamal(entity.getRamal());
+		vo.setSenha(entity.getSenha());
+		return vo;
 	}
 
 	public Usuario usuarioVOToEntity(UsuarioVO usuarioVO) {

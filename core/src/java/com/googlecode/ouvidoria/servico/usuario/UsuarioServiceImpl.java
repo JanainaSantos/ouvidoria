@@ -5,21 +5,27 @@
  */
 package com.googlecode.ouvidoria.servico.usuario;
 
+import com.googlecode.ouvidoria.negocio.usuario.Usuario;
+import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
+
 /**
  * @see com.googlecode.ouvidoria.servico.usuario.UsuarioService
  */
-public class UsuarioServiceImpl
-    extends com.googlecode.ouvidoria.servico.usuario.UsuarioServiceBase
-{
+public class UsuarioServiceImpl extends com.googlecode.ouvidoria.servico.usuario.UsuarioServiceBase {
 
-    /**
-     * @see com.googlecode.ouvidoria.servico.usuario.UsuarioService#autenticarUsuario(java.lang.String, java.lang.String)
-     */
-    protected com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO handleAutenticarUsuario(java.lang.String login, java.lang.String senha)
-        throws java.lang.Exception
-    {
-        //@todo implement protected com.googlecode.ouvidoria.negocio.usuario.Usuario handleAutenticarUsuario(java.lang.String login, java.lang.String senha)
-        return null;
-    }
+	/**
+	 * @see com.googlecode.ouvidoria.servico.usuario.UsuarioService#autenticarUsuario(java.lang.String,
+	 *      java.lang.String)
+	 */
+	protected com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO handleAutenticarUsuario(java.lang.String login, java.lang.String senha) throws java.lang.Exception {
+		UsuarioVO vo = null;
+		Usuario usuario = getUsuarioDao().recuperaPorLogin(login);
+
+		if (usuario != null && usuario.getSenha().equals(senha)) {
+			vo = getUsuarioDao().toUsuarioVO(usuario);
+		}
+
+		return vo;
+	}
 
 }
