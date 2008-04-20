@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts.action.ActionMapping;
 
-import com.googlecode.ouvidoria.negocio.autentica.Usuario;
+import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.autentica.AutenticaCTL
@@ -25,7 +25,7 @@ public class AutenticaCTLImpl extends AutenticaCTL
         
         System.out.println("Autenticando usuario: "+login);
         
-        Usuario usr = getUsuarioService().autenticarUsuario(login, senha);
+        UsuarioVO usr = getUsuarioService().autenticarUsuario(login, senha);
         if(usr != null){
         	getGerenteSessaoUsuario(request).setUsuario(usr);
         	retorno = true;
