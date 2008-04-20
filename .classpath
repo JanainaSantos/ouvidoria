@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="web/target/src"/>
 	<classpathentry kind="src" path="core/target/src"/>
 	<classpathentry kind="src" path="common/target/src"/>
