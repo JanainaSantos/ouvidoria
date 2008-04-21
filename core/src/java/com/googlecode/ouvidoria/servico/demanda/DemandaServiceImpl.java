@@ -8,6 +8,7 @@ package com.googlecode.ouvidoria.servico.demanda;
 import java.util.Collection;
 
 import com.googlecode.ouvidoria.negocio.demanda.Demanda;
+import com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria;
 
 /**
  * @see com.googlecode.ouvidoria.servico.demanda.DemandaService
@@ -38,6 +39,11 @@ public class DemandaServiceImpl
 	@Override
 	protected Collection handleRecuperaTiposDemanda() throws Exception {		
 		return getTipoDemandaDao().loadAll();
+	}
+
+	@Override
+	protected Collection handlePesquisaDemandas(DemandaCriteria criteria) throws Exception {
+		return getDemandaDao().pesquisarDocumentos(criteria);
 	}
 
 }
