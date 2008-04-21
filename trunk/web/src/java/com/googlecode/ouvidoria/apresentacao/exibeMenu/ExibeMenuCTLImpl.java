@@ -1,10 +1,10 @@
 // license-header java merge-point
 package com.googlecode.ouvidoria.apresentacao.exibeMenu;
 
-import org.apache.struts.action.ActionMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionMapping;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.exibeMenu.ExibeMenuCTL

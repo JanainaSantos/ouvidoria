@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionMapping;
 
 import com.googlecode.ouvidoria.negocio.demanda.Assunto;
+import com.googlecode.ouvidoria.negocio.demanda.Demanda;
 import com.googlecode.ouvidoria.negocio.demanda.TipoDemanda;
+import com.googlecode.ouvidoria.negocio.demandante.Cidade;
+import com.googlecode.ouvidoria.negocio.demandante.Demandante;
 import com.googlecode.ouvidoria.negocio.demandante.Estado;
 import com.googlecode.ouvidoria.negocio.demandante.TipoDemandante;
 
@@ -25,6 +28,16 @@ public class IncluiDemandaPublicaCTLImpl extends IncluiDemandaPublicaCTL {
 	 *      javax.servlet.http.HttpServletResponse)
 	 */
 	public final void preCadastraDemanda(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.publica.PreCadastraDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//TODO como setar uma FormaContato padrao??
+		Demanda demanda = Demanda.Factory.newInstance();
+		demanda.setAssunto(Assunto.Factory.newInstance());
+		demanda.getAssunto().setId(form.getAssunto());
+		demanda.setTipoDemanda(TipoDemanda.Factory.newInstance());
+		demanda.getTipoDemanda().setId(form.getTipoDemanda());
+		demanda.setMensagem(form.getMensagem());
+				
+		getGerenteSessaoDemanda(request).setDemanda(demanda);
+		
 		// this property receives a default value, just to have the application
 		// running on dummy data
 		form.setMensagem("mensagem-test");
@@ -47,6 +60,20 @@ public class IncluiDemandaPublicaCTLImpl extends IncluiDemandaPublicaCTL {
 	 *      javax.servlet.http.HttpServletResponse)
 	 */
 	public final void preCadastraDemandante(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.publica.PreCadastraDemandanteForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Demandante demandante = Demandante.Factory.newInstance();
+		demandante.setCep(form.getCep());
+		demandante.setCidade(Cidade.Factory.newInstance());
+		demandante.getCidade().setId(form.getCidade());
+		demandante.setDocumento(form.getDocumento());//TODO formatar ... pesquisar antes de salvar (usar o q ja existe)
+		demandante.setEmail(form.getEmail());
+		demandante.setEndereco(form.getEndereco());
+		demandante.setNome(form.getNome());
+		demandante.setTelefone(form.getTelefone());
+		demandante.setTipoDemandante(TipoDemandante.Factory.newInstance());
+		demandante.getTipoDemandante().setId(form.getTipoDemandante());
+		
+		getGerenteSessaoDemanda(request).setDemandante(demandante);
+		
 		// this property receives a default value, just to have the application
 		// running on dummy data
 		form.setNome("nome-test");
@@ -88,6 +115,19 @@ public class IncluiDemandaPublicaCTLImpl extends IncluiDemandaPublicaCTL {
 	public final void cadastraDemanda(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.publica.CadastraDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// nothing to be done for this operation, there are no properties that
 		// can be set
+		Demanda demanda = getGerenteSessaoDemanda(request).getDemanda();
+		Demandante demandante = getGerenteSessaoDemanda(request).getDemandante();
+		//TODO criar  o demandante anonimo (padrao)
+		
+		System.out.println("CADASTRA_DEMANDA:");
+		System.out.println("Demanda: "+demanda);
+		System.out.println("Demandante: "+getGerenteSessaoDemanda(request).getDemandante());
+		System.out.println("...");
+		if(demanda != null && demandante != null){
+			demanda.setDemandante(demandante);
+			demanda = getDemandaService().cadastraDemanda(demanda);
+		}
+		
 	}
 
 	/**
