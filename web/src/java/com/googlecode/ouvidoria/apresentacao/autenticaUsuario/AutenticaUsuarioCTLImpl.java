@@ -1,12 +1,12 @@
 // license-header java merge-point
 package com.googlecode.ouvidoria.apresentacao.autenticaUsuario;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.action.ActionMapping;
 
 import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.autenticaUsuario.AutenticaUsuarioCTL

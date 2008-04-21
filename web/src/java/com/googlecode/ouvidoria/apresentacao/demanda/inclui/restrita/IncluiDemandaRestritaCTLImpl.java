@@ -4,6 +4,9 @@ package com.googlecode.ouvidoria.apresentacao.demanda.inclui.restrita;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.action.ActionMapping;
 
 import com.googlecode.ouvidoria.negocio.demanda.Assunto;
@@ -11,9 +14,6 @@ import com.googlecode.ouvidoria.negocio.demanda.FormaContato;
 import com.googlecode.ouvidoria.negocio.demanda.TipoDemanda;
 import com.googlecode.ouvidoria.negocio.demandante.Estado;
 import com.googlecode.ouvidoria.negocio.demandante.TipoDemandante;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.demanda.inclui.restrita.IncluiDemandaRestritaCTL

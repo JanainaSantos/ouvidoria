@@ -21,8 +21,8 @@ public class DemandaServiceImpl
 	
 	@Override
 	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getDemandaDao().create(demanda);	
+//TODO salvar o historico tbm (CRIADO)
 	}
 
 	@Override
