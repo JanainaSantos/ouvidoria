@@ -4,50 +4,20 @@ package com.googlecode.ouvidoria.apresentacao.demanda.pesquisa;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.action.ActionMapping;
 
 import com.googlecode.ouvidoria.negocio.demanda.Assunto;
+import com.googlecode.ouvidoria.negocio.demanda.FormaContato;
 import com.googlecode.ouvidoria.negocio.demanda.TipoDemanda;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @see com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.PesquisaDemandaCTL
  */
 public class PesquisaDemandaCTLImpl extends PesquisaDemandaCTL
-{
-    /**
-     * @see com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.PesquisaDemandaCTL#recuperaTiposDemanda(org.apache.struts.action.ActionMapping, com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.RecuperaTiposDemandaForm, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-     */
-    public final void recuperaTiposDemanda(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.RecuperaTiposDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
-    	HashMap mapa = new HashMap();
-    	Iterator it = getDemandaService().recuperaTiposDemanda().iterator();
-    	while(it.hasNext()){
-    		TipoDemanda tipo = (TipoDemanda) it.next();
-    		mapa.put(tipo.getId(), tipo.getNome());
-    	}
-        //form.setFormaContato(new Long((long)-2113222835));
-        form.setTipoDemandaValueList(mapa.keySet().toArray());
-        form.setTipoDemandaLabelList(mapa.values().toArray()); 
-    }
-
-    /**
-     * @see com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.PesquisaDemandaCTL#recuperaAssuntos(org.apache.struts.action.ActionMapping, com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.RecuperaAssuntosForm, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-     */
-    public final void recuperaAssuntos(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.RecuperaAssuntosForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
-    	HashMap mapa = new HashMap();
-    	Iterator it = getDemandaService().recuperaAssuntos().iterator();
-    	while(it.hasNext()){
-    		Assunto assunto = (Assunto) it.next();
-    		mapa.put(assunto.getId(), assunto.getNome());
-    	}
-        //form.setFormaContato(new Long((long)-2113222835));
-        form.setAssuntoValueList(mapa.keySet().toArray());
-        form.setAssuntoLabelList(mapa.values().toArray());
-    }
+{  
 
     /**
      * This dummy variable is used to populate the "demandas" table.
@@ -116,6 +86,46 @@ public class PesquisaDemandaCTLImpl extends PesquisaDemandaCTL
 	public void recuperaDemandas(ActionMapping mapping, RecuperaDemandasForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
+		System.out.println("recupera demandas ...");
 	}
+
+	@Override
+	public void populaTelaPesquisa(ActionMapping mapping, PopulaTelaPesquisaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		recuperaAssuntos(form);
+		recuperaFormasContato(form);
+		recuperaTiposDemanda(form);
+	}
+	
+	 private void recuperaFormasContato(PopulaTelaPesquisaForm form) throws Exception {
+			HashMap mapa = new HashMap();
+			Iterator it = getDemandaService().recuperaFormasContato().iterator();
+			while (it.hasNext()) {
+				FormaContato forma = (FormaContato) it.next();
+				mapa.put(forma.getId(), forma.getNome());
+			}
+			form.setFormaContatoValueList(mapa.keySet().toArray());
+			form.setFormaContatoLabelList(mapa.values().toArray());
+		}
+	    
+	    private void recuperaTiposDemanda(PopulaTelaPesquisaForm form) throws Exception {
+			HashMap mapa = new HashMap();
+			Iterator it = getDemandaService().recuperaTiposDemanda().iterator();
+			while (it.hasNext()) {
+				TipoDemanda tipo = (TipoDemanda) it.next();
+				mapa.put(tipo.getId(), tipo.getNome());
+			}
+			form.setTipoDemandaValueList(mapa.keySet().toArray());
+			form.setTipoDemandaLabelList(mapa.values().toArray());
+		}
+
+		private void recuperaAssuntos(PopulaTelaPesquisaForm form) throws Exception {
+			HashMap mapa = new HashMap();
+			Iterator it = getDemandaService().recuperaAssuntos().iterator();
+			while (it.hasNext()) {
+				Assunto assunto = (Assunto) it.next();
+				mapa.put(assunto.getId(), assunto.getNome());
+			}
+			form.setAssuntoValueList(mapa.keySet().toArray());
+			form.setAssuntoLabelList(mapa.values().toArray());
+		}
 }
