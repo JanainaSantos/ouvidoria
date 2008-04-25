@@ -11,10 +11,7 @@ Incluir no arquivo _/home/pedro/.bashrc_ ou em _/etc/environment_ ou em _/etc/ba
 
 {{{
 export JAVA_HOME=/opt/jdk1.5.0_15
-export CATALINA_HOME=/opt/apache-tomcat-6.0.16
 export JBOSS_HOME=/opt/jboss-4.0.5.GA
-export M2_HOME=/opt/maven-2.0.5
-export M2_REPO=/opt/m2/repository
 export MAVEN_HOME=/opt/maven-1.0.2
 export JAVA_OPTS='-Xms256m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=512m'
 
@@ -22,5 +19,180 @@ PATH=$JAVA_HOME/bin:$M2_HOME/bin:$MAVEN_HOME/bin:$PATH
 export PATH
 }}}
 
+= JBOSS =
 
-TODO: terminar ...
+Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
+
+{{{
+<!-- Security domain for Sistema de Ouvidoria 
+Os grupo dos usuarios devem estar cadastrados com a coluna nome de acordo com a lista abaixo.
+1 - administrador
+2 - convidado
+As permissoes de acesso no web.xml estao cadastradas com essa nomenclatura e caso esteja 
+    diferente na base dados ocorrera erro 403 na tentativa de acesso ao rotagro.
+-->
+<application-policy name = "ouvidoria-login">
+   <authentication>
+      <login-module code = "org.jboss.security.auth.spi.DatabaseServerLoginModule" flag = "required">
+         <module-option name = "dsJndiName">java:/jdbc/ouvidoria</module-option>
+     <module-option name="hashAlgorithm">MD5</module-option> 
+     <module-option name="hashEncoding">base64</module-option>
+         <module-option name = "principalsQuery">SELECT senha FROM usuario WHERE login=?</module-option>
+         <module-option name = "rolesQuery">select p.nome, 'Roles' FROM perfil p, usuario u WHERE u.login=? AND u.perfil=p.id</module-option>
+      </login-module>
+   </authentication>
+</application-policy>
+}}}
+
+Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteudo:
+
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JBoss Server DataSource -->
+<datasources>
+    <local-tx-datasource>
+        <jndi-name>jdbc/ouvidoria</jndi-name>
+        <connection-url>jdbc:postgresql://localhost/ouvidoria</connection-url>
+        <driver-class>org.postgresql.Driver</driver-class>
+        <user-name>postgres</user-name>
+        <password>postgres</password>       
+    </local-tx-datasource>
+</datasources>
+}}}
+
+
+= AndroMDA =
+
+== Criando o projeto ==
+
+{{{
+$ maven andromdapp:generate
+}}}
+
+{{{
+ __  __
+|  \/  |__ _Apache__ ___
+| |\/| / _` \ V / -_) ' \  ~ intelligent projects ~
+|_|  |_\__,_|\_/\___|_||_|  v. 1.0.2
+
+Please enter your first and last name (i.e. Chad Brandon):
+Pedro Costa
+Please enter the name of your J2EE project (i.e. Animal Quiz):
+Sistema de Ouvidoria
+Please enter the id for your J2EE project (i.e. animalquiz):
+ouvidoria
+Please enter a version for your project (i.e. 1.0-SNAPSHOT):
+1.0-SNAPSHOT
+Please enter the base package name for your J2EE project (i.e. org.andromda.samples):
+com.googlecode.ouvidoria
+Would you like an EAR or standalone WAR (enter 'ear' or 'war')?
+ear
+Please enter the type of transactional/persistence cartridge to use (enter 'hibernate', 'ejb', or 'spring'):
+spring
+Would you like to use the jBpm workflow engine, it uses Hibernate3 (enter 'yes' or 'no')?
+no
+Please enter the hibernate version number  (enter '2' for 2.1.x or '3' for 3.0.x):
+3
+Would you like a web application? (enter 'yes' or 'no'):
+yes
+Would you like your web tier to use JSF or Struts? (enter 'jsf' or 'struts'):
+struts
+Would you like to be able to expose your services as web services? (enter 'yes' or 'no'):
+no
+build:start:
+
+andromdapp:init:
+
+andromdapp:generate:
+    [echo] +---------------------------------------------------------------------+
+    [echo] |   G E N E R A T I N G   A n d r o M D A   J 2 E E   P R O J E C T   |
+    [echo] +---------------------------------------------------------------------+
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria
+    [copy] Copying 1 file to /home/pedro/workspace/ouvidoria
+andromdapp:init:
+
+andromdapp:generate-app-subproject:
+andromdapp:generate-module:
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/app
+    [copy] Copying 2 files to /home/pedro/workspace/ouvidoria/app
+
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/app/src/META-INF
+
+andromdapp:init:
+
+andromdapp:generate-spring-subproject:
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/core
+andromdapp:init:
+
+andromdapp:generate-core-subproject:
+andromdapp:generate-module:
+
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/core/src/java
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/core/target/src
+
+
+andromdapp:init:
+
+andromdapp:generate-common-subproject:
+andromdapp:generate-module:
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/common
+
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/common/src/java
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/common/target/src
+
+andromdapp:init:
+
+andromdapp:generate-mda-subproject:
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/mda/src/uml
+    [copy] Copying 1 file to /home/pedro/workspace/ouvidoria/mda/src/uml
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/mda/conf
+    [copy] Copying 1 file to /home/pedro/workspace/ouvidoria/mda
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/mda/conf/mappings
+
+andromdapp:init:
+
+andromdapp:generate-web-subproject:
+andromdapp:generate-module:
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/web
+
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/web/src/java
+    [mkdir] Created dir: /home/pedro/workspace/ouvidoria/web/target/src
+
+    [echo] |  
+    [echo] |  New J2EE project generated to: '/home/pedro/workspace/ouvidoria'
+    [echo] |  
+    [echo] |  For more information on how to proceed from here read '/home/pedro/workspace/ouvidoria/readme.txt'
+    [echo] |  
+BUILD SUCCESSFUL
+Total time: 1 minutes 14 seconds
+Finished at: Fri Apr 25 19:08:14 BRT 2008
+
+}}}
+
+== Customizar o projeto ==
+
+* Alterar o arquivo _/home/pedro/workspace/ouvidoria/mda/project.properties_ para que seja gerada uma sequence para cada tabela e seja usada pelo hibernate: 
+
+{{{
+hibernate.generatorClass=sequence
+}}}
+
+* Alterar o arquivo _/home/pedro/workspace/ouvidoria/mda/conf/andromda.xml:
+
+{{{
+<namespace name="spring">
+	<properties>
+		...
+		<property name="enableSpringTransactionsWhenEjbsEnabled">false</property>
+		...
+	</properties>
+</namespace>
+...		
+<namespace name="bpm4struts">
+    <properties>
+    	...
+        <property name="securityRealm">ouvidoria-login</property>
+    	...       
+    </properties>
+</namespace>
+}}}
