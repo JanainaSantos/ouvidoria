@@ -5,6 +5,8 @@
  */
 package com.googlecode.ouvidoria.servico.demandante;
 
+import com.googlecode.ouvidoria.negocio.demandante.Demandante;
+
 /**
  * @see com.googlecode.ouvidoria.servico.demandante.DemandanteService
  */
@@ -18,8 +20,7 @@ public class DemandanteServiceImpl
     protected com.googlecode.ouvidoria.negocio.demandante.Demandante handleCadastrarDemandante(com.googlecode.ouvidoria.negocio.demandante.Demandante demandante)
         throws java.lang.Exception
     {
-        //@todo implement protected com.googlecode.ouvidoria.negocio.demandante.Demandante handleCadastrarDemandante(com.googlecode.ouvidoria.negocio.demandante.Demandante demandante)
-        return null;
+    	return getDemandanteDao().create(demandante);      
     }
 
     /**
@@ -36,9 +37,8 @@ public class DemandanteServiceImpl
      */
     protected java.util.Collection handleRecuperarCidadesDoEstado(java.lang.String uf)
         throws java.lang.Exception
-    {
-        //@todo implement protected java.util.Collection handleRecuperarCidadesDoEstado(java.lang.String uf)
-        return null;
+    {        
+        return getCidadeDao().recuperaCidadesPorEstado(uf);
     }
 
     /**
@@ -49,5 +49,10 @@ public class DemandanteServiceImpl
     {        
         return getTipoDemandanteDao().loadAll();
     }
+
+	@Override
+	protected Demandante handleRecuperarDemandantePorDocumento(String documento) throws Exception {		
+		return getDemandanteDao().recuperaPorDocumento(documento);
+	}
 
 }
