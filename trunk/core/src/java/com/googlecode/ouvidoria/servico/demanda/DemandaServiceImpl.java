@@ -5,10 +5,14 @@
  */
 package com.googlecode.ouvidoria.servico.demanda;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 import com.googlecode.ouvidoria.negocio.demanda.Demanda;
 import com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria;
+import com.googlecode.ouvidoria.negocio.demanda.HistoricoDemanda;
+import com.googlecode.ouvidoria.negocio.demanda.StatusDemandaEnum;
+import com.googlecode.ouvidoria.negocio.demandante.Demandante;
 
 /**
  * @see com.googlecode.ouvidoria.servico.demanda.DemandaService
@@ -16,14 +20,22 @@ import com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria;
 public class DemandaServiceImpl
     extends com.googlecode.ouvidoria.servico.demanda.DemandaServiceBase
 {
-
-	//TODO matar a sequencia unica ... criar uma sequencia para cada tabela
-	
 	
 	@Override
 	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {
+		Demandante demandante = getDemandanteService().recuperarDemandantePorDocumento(demanda.getDemandante().getDocumento());
+		if(demandante == null){
+			demandante = getDemandanteService().cadastrarDemandante(demanda.getDemandante());
+		}
+		demanda.setDemandante(demandante);
+		
+		HistoricoDemanda item = HistoricoDemanda.Factory.newInstance();
+		item.setData(new Timestamp(System.currentTimeMillis()));
+		item.setStatus(StatusDemandaEnum.CRIADO);	
+		
+		demanda.getHistorico().add(getHistoricoDemandaDao().create(item));
+		
 		return getDemandaDao().create(demanda);	
-//TODO salvar o historico tbm (CRIADO)
 	}
 
 	@Override
