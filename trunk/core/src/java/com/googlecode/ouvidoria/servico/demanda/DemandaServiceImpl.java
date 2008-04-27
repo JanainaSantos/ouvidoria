@@ -23,6 +23,7 @@ public class DemandaServiceImpl
 	
 	@Override
 	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {
+		//recupera ou cadastra (caso ja exista) o demandante
 		Demandante demandante = getDemandanteService().recuperarDemandantePorDocumento(demanda.getDemandante().getDocumento());
 		if(demandante == null){
 			demandante = getDemandanteService().cadastrarDemandante(demanda.getDemandante());
@@ -59,9 +60,8 @@ public class DemandaServiceImpl
 	}
 
 	@Override
-	protected Demanda handleConsultaDemanda(Long id, String senha) throws Exception {
-		// TODO Auto-generated method stub
-		return null;//getDemandaDao().;
+	protected Demanda handleConsultaDemanda(Long id, String senha) throws Exception {		
+		return getDemandaDao().consultaDemanda(id, senha);
 	}
 
 }
