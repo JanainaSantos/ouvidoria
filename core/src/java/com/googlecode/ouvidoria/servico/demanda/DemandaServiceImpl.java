@@ -55,7 +55,13 @@ public class DemandaServiceImpl
 
 	@Override
 	protected Collection handlePesquisaDemandas(DemandaCriteria criteria) throws Exception {
-		return getDemandaDao().pesquisarDocumentos(criteria);
+		return getDemandaDao().pesquisarDemandas(criteria);
+	}
+
+	@Override
+	protected Demanda handleConsultaDemanda(Long id, String senha) throws Exception {
+		// TODO Auto-generated method stub
+		return null;//getDemandaDao().;
 	}
 
 }

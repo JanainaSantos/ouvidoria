@@ -16,7 +16,7 @@ import org.hibernate.Query;
 public class DemandaDaoImpl extends com.googlecode.ouvidoria.negocio.demanda.DemandaDaoBase {
 
 	@Override
-	public java.util.Collection pesquisarDocumentos(final int transform, final com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria criteria) {
+	public java.util.Collection pesquisarDemandas(final int transform, final com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria criteria) {
 		System.out.println("pesquisando demandas ...");
 		mostrarCriteria(criteria);
 		try {
