@@ -28,4 +28,10 @@ public class UsuarioServiceImpl extends com.googlecode.ouvidoria.servico.usuario
 		return vo;
 	}
 
+	@Override
+	protected UsuarioVO handleBuscarPorLogin(String login) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

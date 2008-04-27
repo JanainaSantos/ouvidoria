@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts.action.ActionMapping;
 
+import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
+
 /**
  * @see com.googlecode.ouvidoria.apresentacao.exibeMenu.ExibeMenuCTL
  */
@@ -19,5 +21,14 @@ public class ExibeMenuCTLImpl extends ExibeMenuCTL
     	System.out.println("removendo usuario da sessao");
     	getGerenteSessaoUsuario(request).setUsuario(null);
     }
+
+	@Override
+	public void verificaSessaoUsuario(ActionMapping mapping, VerificaSessaoUsuarioForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String usr =request.getRemoteUser(); 
+		if(usr != null){
+			UsuarioVO usuario = getUsuarioService().buscarPorLogin(usr);
+			getGerenteSessaoUsuario(request).setUsuario(usuario);
+		}
+	}
 
 }

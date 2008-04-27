@@ -18,11 +18,13 @@ public class IncluiDemandaCTLImpl extends IncluiDemandaCTL
      */
     public final boolean verificaUsuario(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.VerificaUsuarioForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+    	System.out.println("Remote user ... "+request.getRemoteUser());
     	boolean retorno = false;
         UsuarioVO usr = getGerenteSessaoUsuario(request).getUsuario();
         if(usr != null){
         	retorno = true;
         	//TODO deixa assim por enquanto ... mas fazer com acegi depois
+        	//TODO modelar perfis como enum
         }
         
         return retorno;
