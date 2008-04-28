@@ -20,11 +20,11 @@ insert into tipo_demanda(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'
 insert into tipo_demanda(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Reclamacao','...');
 insert into tipo_demanda(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Sugestao','...');
 
-insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Cidadao','...');
-insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Empresa','...');
-insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Empregado','...');
-insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Terceirizado','...');
-insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDA_SEQ'),'Estagiario','...');
+insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDANTE_SEQ'),'Cidadao','...');
+insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDANTE_SEQ'),'Empresa','...');
+insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDANTE_SEQ'),'Empregado','...');
+insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDANTE_SEQ'),'Terceirizado','...');
+insert into tipo_demandante(id,nome,descricao) values(nextval('TIPO_DEMANDANTE_SEQ'),'Estagiario','...');
 
 insert into assunto(id,nome,descricao) values(nextval('ASSUNTO_SEQ'),'Agricultura Familiar','...');
 insert into assunto(id,nome,descricao) values(nextval('ASSUNTO_SEQ'),'Estoques Publicos','...');

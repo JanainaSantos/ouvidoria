@@ -5,14 +5,18 @@
  */
 package com.googlecode.ouvidoria.servico.demanda;
 
+import java.security.Principal;
 import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.Random;
 
 import com.googlecode.ouvidoria.negocio.demanda.Demanda;
 import com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria;
 import com.googlecode.ouvidoria.negocio.demanda.HistoricoDemanda;
 import com.googlecode.ouvidoria.negocio.demanda.StatusDemandaEnum;
 import com.googlecode.ouvidoria.negocio.demandante.Demandante;
+import com.googlecode.ouvidoria.negocio.usuario.Usuario;
+import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
 
 /**
  * @see com.googlecode.ouvidoria.servico.demanda.DemandaService
@@ -23,6 +27,23 @@ public class DemandaServiceImpl
 	
 	@Override
 	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {
+		//seta o usuario que está criando
+		Principal principal = getPrincipal();
+		System.out.println("PRINCIPAL: "+principal);
+		if(principal == null)
+			throw new DemandaServiceException("Nao ha usuario logado");
+		System.out.println("principal.getName(): "+principal.getName());
+		UsuarioVO usr = getUsuarioService().buscarPorLogin(principal.getName());		
+		demanda.setUsuarioCriacao(Usuario.Factory.newInstance());
+		demanda.getUsuarioCriacao().setId(usr.getId());
+				
+		//gera uma senha de acompanhamento para a demanda
+		//TODO externalizar o tamanho da senha
+		demanda.setSenhaAcompanhamento(gerarSenhaAcompanhamentoDemanda(10));
+		
+		//seta data de criacao
+		demanda.setDataCriacao(new Timestamp(System.currentTimeMillis()));			
+		
 		//recupera ou cadastra (caso ja exista) o demandante
 		Demandante demandante = getDemandanteService().recuperarDemandantePorDocumento(demanda.getDemandante().getDocumento());
 		if(demandante == null){
@@ -30,12 +51,15 @@ public class DemandaServiceImpl
 		}
 		demanda.setDemandante(demandante);
 		
+		//Seta status para EM_ANALISE
 		HistoricoDemanda item = HistoricoDemanda.Factory.newInstance();
 		item.setData(new Timestamp(System.currentTimeMillis()));
-		item.setStatus(StatusDemandaEnum.CRIADO);	
+		item.setStatus(StatusDemandaEnum.EM_ANALISE);	
 		
+		//salva item do historico
 		demanda.getHistorico().add(getHistoricoDemandaDao().create(item));
 		
+		//persiste a demanda
 		return getDemandaDao().create(demanda);	
 	}
 
@@ -62,6 +86,30 @@ public class DemandaServiceImpl
 	@Override
 	protected Demanda handleConsultaDemanda(Long id, String senha) throws Exception {		
 		return getDemandaDao().consultaDemanda(id, senha);
+	}
+	
+	@Override
+	protected String handleGerarSenhaAcompanhamentoDemanda(int tamanho) throws Exception {
+		char[] alfabeto = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+		StringBuffer senha = new StringBuffer();
+		for(int i=0; i < tamanho; i++){
+			senha.append(getRandomico(alfabeto));
+		}
+		return senha.toString();
+	}
+
+	//retorna um caracter randomico dentro do alfabeto passado como parametro
+	private char getRandomico(char[] arr) {
+		int indice = getRandomico(0, arr.length - 1);
+		return arr[indice];
+	}
+
+	// este método utiliza da classe Random para retornar um inteiro randomico,dado um intervalo
+	private int getRandomico(int start, int end) {
+		Random generator = new Random();
+		long range = (long) end - (long) start + 1;
+		long fraction = (long) (range * generator.nextDouble());
+		return ((int) (fraction + start));
 	}
 
 }
