@@ -23,7 +23,7 @@ export PATH
 
 == Banco de Dados ==
 
-Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteúdo:
+Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteudo:
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,17 +39,17 @@ Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.
 </datasources>
 }}}
 
-== Autenticação ==
+== Autenticacao ==
 
 A autenticacao sera feita utilizando um login module do jboss que acessa o banco de dados configurado no datasource (ouvidoria-ds.xml), assumindo que apenas o hash md5 (em base64) esteja gravado no banco de dados. Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
 
 {{{
 <!-- Security domain for Sistema de Ouvidoria 
-Os grupo dos usuários devem estar cadastrados com a coluna nome de acordo com a lista abaixo.
+Os grupo dos usuarios devem estar cadastrados com a coluna nome de acordo com a lista abaixo.
 1 - administrador
 2 - convidado
-As permissões de acesso no web.xml estão cadastradas com essa nomenclatura e caso esteja 
-    diferente na base dados ocorrerá erro 403 na tentativa de acesso ao sistema.
+As permissoes de acesso no web.xml estao cadastradas com essa nomenclatura e caso esteja 
+    diferente na base dados ocorrera erro 403 na tentativa de acesso ao sistema.
 -->
 <application-policy name = "ouvidoria-login">
    <authentication>
@@ -73,7 +73,7 @@ As permissões de acesso no web.xml estão cadastradas com essa nomenclatura e cas
 
 Criar o arquivo _/home/pedro/build.properties_ com o seguinte conteudo:
 {{{
-# Definição dos repositorios externos
+# Definicao dos repositorios externos
 maven.repo.remote=http://www.ibiblio.org/maven,http://www.codeczar.com/maven,http://repo1.maven.org/maven-java.net,http://repo1.maven.org/maven/,http://team.andromda.org/maven
 maven.repo.local=/opt/maven/repository
 maven.home.local=/opt/maven-1.0.2
@@ -233,77 +233,77 @@ maven install
 === Outros GOALS ===
 
 Outros goals retirados do arquivo _readme.txt_ gerado pelo andromda
-{{{
-In order to succesfully build your project you will need to know
-how to invoke the build process for the existing modules, here's a
-list of examples:
 
-%> maven install
 
-    simply builds all modules
-
-%> maven deploy
-
-    collects all artifacts and builds a deployable .ear which is then
-    deployed, you will need to have built the other modules before
-
-%> maven clean install deploy
-
-    deletes all generated files, rebuilds and deploys; files in /src
-    directories are *not* deleted
-
-%> maven core
-
-    only build the core module
-
-%> maven web
-
-    only build the web module
-
-%> maven nuke
-
-    cleans out all /target directories and removes all Java classes with names
-    ending with 'Impl' from the source directories (from the common, core and
-    web modules); this goal asks for confirmation, but be careful calling it
-    anyway as you will lose your manually edited files
-
-%> maven create-schema
-
-    invokes the generated DDL code and subsequently tells the database
-    to create the schema for the entities
-
-%> maven drop-schema
-
-    invokes the generated DDL code and subsequently tells the database
-    to drop the schema for the entities
-
-%> maven start-andromda-server
-
-    starts the AndroMDA server, with this server running you will be able
-    to significantly speedup the generation process although it will require
-    you to use another console while it is running
-
-%> maven stop-andromda-server
-
-    stops the AndroMDA server
-
-%> maven mda
-
-    runs AndroMDA on your model and thereby generating files in
-    the subdirectories of the existing modules
-
-%> maven mda -Dfilter=java,hibernate
-
-    runs AndroMDA, but this time only using the Java and Hibernate
-    cartridges (in that order)
-
-%> maven mda -Dfilter=~java,hibernate
-
-    runs AndroMDA, but this time using all cartridges *except*
-    the Java and Hibernate cartridges
-
-%> maven mda -Dfilter=java core web deploy
-
-    runs AndroMDA using only the Java cartridge, rebuilds the core
-    module and then the web module and deploys afterwards
-}}}
+	In order to succesfully build your project you will need to know
+	how to invoke the build process for the existing modules, here's a
+	list of examples:
+	
+	%> maven install
+	
+	    simply builds all modules
+	
+	%> maven deploy
+	
+	    collects all artifacts and builds a deployable .ear which is then
+	    deployed, you will need to have built the other modules before
+	
+	%> maven clean install deploy
+	
+	    deletes all generated files, rebuilds and deploys; files in /src
+	    directories are *not* deleted
+	
+	%> maven core
+	
+	    only build the core module
+	
+	%> maven web
+	
+	    only build the web module
+	
+	%> maven nuke
+	
+	    cleans out all /target directories and removes all Java classes with names
+	    ending with 'Impl' from the source directories (from the common, core and
+	    web modules); this goal asks for confirmation, but be careful calling it
+	    anyway as you will lose your manually edited files
+	
+	%> maven create-schema
+	
+	    invokes the generated DDL code and subsequently tells the database
+	    to create the schema for the entities
+	
+	%> maven drop-schema
+	
+	    invokes the generated DDL code and subsequently tells the database
+	    to drop the schema for the entities
+	
+	%> maven start-andromda-server
+	
+	    starts the AndroMDA server, with this server running you will be able
+	    to significantly speedup the generation process although it will require
+	    you to use another console while it is running
+	
+	%> maven stop-andromda-server
+	
+	    stops the AndroMDA server
+	
+	%> maven mda
+	
+	    runs AndroMDA on your model and thereby generating files in
+	    the subdirectories of the existing modules
+	
+	%> maven mda -Dfilter=java,hibernate
+	
+	    runs AndroMDA, but this time only using the Java and Hibernate
+	    cartridges (in that order)
+	
+	%> maven mda -Dfilter=~java,hibernate
+	
+	    runs AndroMDA, but this time using all cartridges *except*
+	    the Java and Hibernate cartridges
+	
+	%> maven mda -Dfilter=java core web deploy
+	
+	    runs AndroMDA using only the Java cartridge, rebuilds the core
+	    module and then the web module and deploys afterwards
