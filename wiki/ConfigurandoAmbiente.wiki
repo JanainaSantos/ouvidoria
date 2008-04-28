@@ -1,11 +1,11 @@
 #summary Configuracao do Ambiente de Desenvolvimento
 
-= Introdução =
+= Introducao =
 
-Configuração do Ambiente de Desenvolvimento
+Configuracao do Ambiente de Desenvolvimento
 
 
-= Variáveis de Ambiente =
+= Variaveis de Ambiente =
 
 Incluir no arquivo _/home/pedro/.bashrc_ ou em _/etc/environment_ ou em _/etc/bash.bashrc_ ou ...
 
@@ -23,7 +23,7 @@ export PATH
 
 == Banco de Dados ==
 
-Para configurar o data source da aplicação, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteúdo:
+Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteúdo:
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -41,7 +41,7 @@ Para configurar o data source da aplicação, basta criar o arquivo _/opt/jboss-4.
 
 == Autenticação ==
 
-A autenticação será feita utilizando um login module do jboss que acessa o banco de dados configurado no datasource (ouvidoria-ds.xml), assumindo que apenas o hash md5 (em base64) esteja gravado no banco de dados. Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
+A autenticacao sera feita utilizando um login module do jboss que acessa o banco de dados configurado no datasource (ouvidoria-ds.xml), assumindo que apenas o hash md5 (em base64) esteja gravado no banco de dados. Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
 
 {{{
 <!-- Security domain for Sistema de Ouvidoria 
@@ -67,13 +67,13 @@ As permissões de acesso no web.xml estão cadastradas com essa nomenclatura e cas
 
 = AndroMDA =
 
-== Instalação ==
+== Instalacao ==
 
-=== Configurar repositórios do maven ===
+=== Configurar repositorios do maven ===
 
-Criar o arquivo _/home/pedro/build.properties_ com o seguinte conteúdo:
+Criar o arquivo _/home/pedro/build.properties_ com o seguinte conteudo:
 {{{
-# Definição dos repositórios externos
+# Definição dos repositorios externos
 maven.repo.remote=http://www.ibiblio.org/maven,http://www.codeczar.com/maven,http://repo1.maven.org/maven-java.net,http://repo1.maven.org/maven/,http://team.andromda.org/maven
 maven.repo.local=/opt/maven/repository
 maven.home.local=/opt/maven-1.0.2
@@ -202,7 +202,7 @@ Finished at: Fri Apr 25 19:08:14 BRT 2008
 hibernate.generatorClass=sequence
 }}}
 
-* Alterar o arquivo _/home/pedro/workspace/ouvidoria/mda/conf/andromda.xml:
+* Alterar o arquivo _/home/pedro/workspace/ouvidoria/mda/conf/andromda.xml_:
 
 {{{
 <namespace name="spring">
@@ -216,6 +216,7 @@ hibernate.generatorClass=sequence
 <namespace name="bpm4struts">
     <properties>
     	...
+    	<!-- Este eh o nome do login-module configurado no arquivo _login-config.xml_ do jboss -->
         <property name="securityRealm">ouvidoria-login</property>
     	...       
     </properties>
