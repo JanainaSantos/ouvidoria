@@ -230,6 +230,13 @@ Executar:
 maven install
 }}}
 
+== Deploy da aplicacao ==
+
+Copiar o EAR gerado para o diretorio de deploy do jboss:
+{{{
+cp ~/workspace/ouvidoria/app/target/ouvidoria-app-1.0-SNAPSHOT.ear $JBOSS_HOME/server/default/deploy
+}}}
+
 === Outros GOALS ===
 
 Outros goals retirados do arquivo _readme.txt_ gerado pelo andromda
