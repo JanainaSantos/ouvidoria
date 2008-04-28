@@ -32,16 +32,9 @@ public class IncluiDemandaPublicaCTLImpl extends IncluiDemandaPublicaCTL {
 	public final void preCadastraDemanda(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.publica.PreCadastraDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {		
 		Demanda demanda = Demanda.Factory.newInstance();
 		
-		//TODO gerar senha de acompanhamento
-		demanda.setSenhaAcompanhamento("123");
-		
-		//TODO como setar uma FormaContato padrao??
+		//TODO como setar uma FormaContato padrao?? ler de um arquivo? 
 		demanda.setFormaDeContato(FormaContato.Factory.newInstance());
-		demanda.getFormaDeContato().setId(1L);
-		
-		//TODO como setar um usuario padrao??
-		demanda.setUsuarioCriacao(Usuario.Factory.newInstance());
-		demanda.getUsuarioCriacao().setId(2L);		
+		demanda.getFormaDeContato().setId(1L);	
 		
 		demanda.setAssunto(Assunto.Factory.newInstance());
 		demanda.getAssunto().setId(form.getAssunto());

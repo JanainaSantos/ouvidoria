@@ -29,15 +29,8 @@ public class IncluiDemandaRestritaCTLImpl extends IncluiDemandaRestritaCTL
     {
     	Demanda demanda = Demanda.Factory.newInstance();
 		
-		//TODO gerar senha de acompanhamento
-		demanda.setSenhaAcompanhamento("123");
-		
 		demanda.setFormaDeContato(FormaContato.Factory.newInstance());
-		demanda.getFormaDeContato().setId(form.getFormaContato());
-		
-		//TODO como setar um usuario padrao??
-		demanda.setUsuarioCriacao(Usuario.Factory.newInstance());
-		demanda.getUsuarioCriacao().setId(2L);		
+		demanda.getFormaDeContato().setId(form.getFormaContato());	
 		
 		demanda.setAssunto(Assunto.Factory.newInstance());
 		demanda.getAssunto().setId(form.getAssunto());

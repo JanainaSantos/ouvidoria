@@ -18,20 +18,26 @@ public class UsuarioServiceImpl extends com.googlecode.ouvidoria.servico.usuario
 	 *      java.lang.String)
 	 */
 	protected com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO handleAutenticarUsuario(java.lang.String login, java.lang.String senha) throws java.lang.Exception {
+		UsuarioVO vo = buscarPorLogin(login);
+
+		if (vo != null && vo.getSenha().equals(senha)) {
+			return vo;
+		}
+
+		return null;
+	}
+
+	@Override
+	protected UsuarioVO handleBuscarPorLogin(String login) throws Exception {
 		UsuarioVO vo = null;
 		Usuario usuario = getUsuarioDao().recuperaPorLogin(login);
 
-		if (usuario != null && usuario.getSenha().equals(senha)) {
+		if (usuario != null) {
 			vo = getUsuarioDao().toUsuarioVO(usuario);
 		}
 
 		return vo;
 	}
 
-	@Override
-	protected UsuarioVO handleBuscarPorLogin(String login) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
