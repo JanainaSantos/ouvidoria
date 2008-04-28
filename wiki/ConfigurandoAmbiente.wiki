@@ -1,11 +1,11 @@
 #summary Configuracao do Ambiente de Desenvolvimento
 
-= Introduction =
+= Introdução =
 
-Configuracao do Ambiente de Desenvolvimento
+Configuração do Ambiente de Desenvolvimento
 
 
-= Variaveis de Ambiente =
+= Variáveis de Ambiente =
 
 Incluir no arquivo _/home/pedro/.bashrc_ ou em _/etc/environment_ ou em _/etc/bash.bashrc_ ou ...
 
@@ -21,30 +21,9 @@ export PATH
 
 = JBOSS =
 
-Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
+== Banco de Dados ==
 
-{{{
-<!-- Security domain for Sistema de Ouvidoria 
-Os grupo dos usuarios devem estar cadastrados com a coluna nome de acordo com a lista abaixo.
-1 - administrador
-2 - convidado
-As permissoes de acesso no web.xml estao cadastradas com essa nomenclatura e caso esteja 
-    diferente na base dados ocorrera erro 403 na tentativa de acesso ao rotagro.
--->
-<application-policy name = "ouvidoria-login">
-   <authentication>
-      <login-module code = "org.jboss.security.auth.spi.DatabaseServerLoginModule" flag = "required">
-         <module-option name = "dsJndiName">java:/jdbc/ouvidoria</module-option>
-     <module-option name="hashAlgorithm">MD5</module-option> 
-     <module-option name="hashEncoding">base64</module-option>
-         <module-option name = "principalsQuery">SELECT senha FROM usuario WHERE login=?</module-option>
-         <module-option name = "rolesQuery">select p.nome, 'Roles' FROM perfil p, usuario u WHERE u.login=? AND u.perfil=p.id</module-option>
-      </login-module>
-   </authentication>
-</application-policy>
-}}}
-
-Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteudo:
+Para configurar o data source da aplicação, basta criar o arquivo _/opt/jboss-4.0.5.GA/server/default/deploy/ouvidoria-ds.xml_ com o seguinte conteúdo:
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,8 +39,54 @@ Para configurar o data source da aplicacao, basta criar o arquivo _/opt/jboss-4.
 </datasources>
 }}}
 
+== Autenticação ==
+
+A autenticação será feita utilizando um login module do jboss que acessa o banco de dados configurado no datasource (ouvidoria-ds.xml), assumindo que apenas o hash md5 (em base64) esteja gravado no banco de dados. Incluir o seguinte trecho no arquivo _/opt/jboss-4.0.5.GA/server/default/conf/login-config.xml_ 
+
+{{{
+<!-- Security domain for Sistema de Ouvidoria 
+Os grupo dos usuários devem estar cadastrados com a coluna nome de acordo com a lista abaixo.
+1 - administrador
+2 - convidado
+As permissões de acesso no web.xml estão cadastradas com essa nomenclatura e caso esteja 
+    diferente na base dados ocorrerá erro 403 na tentativa de acesso ao sistema.
+-->
+<application-policy name = "ouvidoria-login">
+   <authentication>
+      <login-module code = "org.jboss.security.auth.spi.DatabaseServerLoginModule" flag = "required">
+         <module-option name = "dsJndiName">java:/jdbc/ouvidoria</module-option>
+         <module-option name="hashAlgorithm">MD5</module-option> 
+         <module-option name="hashEncoding">base64</module-option>
+         <module-option name = "principalsQuery">SELECT senha FROM usuario WHERE login=?</module-option>
+         <module-option name = "rolesQuery">SELECT p.nome, 'Roles' FROM perfil p, usuario u WHERE u.login=? AND u.perfil_fk=p.id</module-option>
+      </login-module>
+   </authentication>
+</application-policy>
+}}}
+
 
 = AndroMDA =
+
+== Instalação ==
+
+=== Configurar repositórios do maven ===
+
+Criar o arquivo _/home/pedro/build.properties_ com o seguinte conteúdo:
+{{{
+# Definição dos repositórios externos
+maven.repo.remote=http://www.ibiblio.org/maven,http://www.codeczar.com/maven,http://repo1.maven.org/maven-java.net,http://repo1.maven.org/maven/,http://team.andromda.org/maven
+maven.repo.local=/opt/maven/repository
+maven.home.local=/opt/maven-1.0.2
+maven.compile.encoding=ISO-8859-1
+}}}
+
+=== Download do androMDA ===
+
+Executar o seguinte comando:
+{{{
+maven plugin:download -DgroupId=andromda -DartifactId=maven-andromdapp-plugin -Dversion=3.1
+}}}
+
 
 == Criando o projeto ==
 
