@@ -221,3 +221,88 @@ hibernate.generatorClass=sequence
     </properties>
 </namespace>
 }}}
+
+== Gerar artefatos ==
+
+Executar:
+{{{
+maven install
+}}}
+
+=== Outros GOALS ===
+
+Outros goals retirados do arquivo _readme.txt_ gerado pelo andromda
+{{{
+In order to succesfully build your project you will need to know
+how to invoke the build process for the existing modules, here's a
+list of examples:
+
+%> maven install
+
+    simply builds all modules
+
+%> maven deploy
+
+    collects all artifacts and builds a deployable .ear which is then
+    deployed, you will need to have built the other modules before
+
+%> maven clean install deploy
+
+    deletes all generated files, rebuilds and deploys; files in /src
+    directories are *not* deleted
+
+%> maven core
+
+    only build the core module
+
+%> maven web
+
+    only build the web module
+
+%> maven nuke
+
+    cleans out all /target directories and removes all Java classes with names
+    ending with 'Impl' from the source directories (from the common, core and
+    web modules); this goal asks for confirmation, but be careful calling it
+    anyway as you will lose your manually edited files
+
+%> maven create-schema
+
+    invokes the generated DDL code and subsequently tells the database
+    to create the schema for the entities
+
+%> maven drop-schema
+
+    invokes the generated DDL code and subsequently tells the database
+    to drop the schema for the entities
+
+%> maven start-andromda-server
+
+    starts the AndroMDA server, with this server running you will be able
+    to significantly speedup the generation process although it will require
+    you to use another console while it is running
+
+%> maven stop-andromda-server
+
+    stops the AndroMDA server
+
+%> maven mda
+
+    runs AndroMDA on your model and thereby generating files in
+    the subdirectories of the existing modules
+
+%> maven mda -Dfilter=java,hibernate
+
+    runs AndroMDA, but this time only using the Java and Hibernate
+    cartridges (in that order)
+
+%> maven mda -Dfilter=~java,hibernate
+
+    runs AndroMDA, but this time using all cartridges *except*
+    the Java and Hibernate cartridges
+
+%> maven mda -Dfilter=java core web deploy
+
+    runs AndroMDA using only the Java cartridge, rebuilds the core
+    module and then the web module and deploys afterwards
+}}}
