@@ -11,6 +11,7 @@ import com.googlecode.ouvidoria.negocio.demandante.Cidade;
 import com.googlecode.ouvidoria.negocio.demandante.Demandante;
 import com.googlecode.ouvidoria.negocio.demandante.Estado;
 import com.googlecode.ouvidoria.negocio.demandante.TipoDemandante;
+import com.googlecode.ouvidoria.negocio.usuario.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +38,7 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
     {
     	Demandante demandante = Demandante.Factory.newInstance();
 		
+    	//recupera dados do formulario
 		demandante.setCep(form.getCep());
 		demandante.setDocumento(form.getDocumento());//TODO formatar ... pesquisar antes de salvar (usar o q ja existe)
 		demandante.setEmail(form.getEmail());
@@ -60,20 +62,25 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
      */
     public final boolean cadastraDemanda(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.demanda.inclui.cadastra.CadastraDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+    	//recupera dados pre-cadastrados
     	Demanda demanda = getGerenteSessaoDemanda(request).getDemanda();
 		Demandante demandante = getGerenteSessaoDemanda(request).getDemandante();
-		//TODO criar  o demandante anonimo (padrao)
 		
-		System.out.println("CADASTRA_DEMANDA:");
-		System.out.println("Demanda: "+demanda);
-		System.out.println("Demandante: "+getGerenteSessaoDemanda(request).getDemandante());
-		System.out.println("...");
+		//seta o usuario que esta criando a demanda
+		demanda.setUsuarioCriacao(Usuario.Factory.newInstance());
+		demanda.getUsuarioCriacao().setId(getGerenteSessaoUsuario(request).getUsuario().getId());
+		
+		//verifica se os objetos do pre-cadastro nao sao nulos
 		if(demanda != null && demandante != null){
 			demanda.setDemandante(demandante);
 			demanda = getDemandaService().cadastraDemanda(demanda);
 		}
 		
-		//TODO
+		//limpa objetos do pre-cadastramento da sessao
+		getGerenteSessaoDemanda(request).setDemanda(null);
+		getGerenteSessaoDemanda(request).setDemandante(null);
+		
+		//vai sempre retornar true, pois se der algum problema sera lançada excecao
 		return true;
     }
     
@@ -113,6 +120,14 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
 		}
 		form.setCidadeValueList(mapa.keySet().toArray());
 		form.setCidadeLabelList(mapa.values().toArray());
+	}
+
+	@Override
+	public boolean verificaPreCadastroDemanda(ActionMapping mapping, VerificaPreCadastroDemandaForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//TODO
+		System.out.println("verificaPreCadastroDemanda: "+request.getAttribute("demanda"));
+		System.out.println("verificaPreCadastroDemanda: "+request.getSession().getAttribute("demanda"));
+		return true;
 	}
 
 }

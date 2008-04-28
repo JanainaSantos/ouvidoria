@@ -5,7 +5,6 @@
  */
 package com.googlecode.ouvidoria.servico.demanda;
 
-import java.security.Principal;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Random;
@@ -15,8 +14,6 @@ import com.googlecode.ouvidoria.negocio.demanda.DemandaCriteria;
 import com.googlecode.ouvidoria.negocio.demanda.HistoricoDemanda;
 import com.googlecode.ouvidoria.negocio.demanda.StatusDemandaEnum;
 import com.googlecode.ouvidoria.negocio.demandante.Demandante;
-import com.googlecode.ouvidoria.negocio.usuario.Usuario;
-import com.googlecode.ouvidoria.negocio.usuario.vo.UsuarioVO;
 
 /**
  * @see com.googlecode.ouvidoria.servico.demanda.DemandaService
@@ -26,17 +23,7 @@ public class DemandaServiceImpl
 {
 	
 	@Override
-	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {
-		//seta o usuario que está criando
-		Principal principal = getPrincipal();
-		System.out.println("PRINCIPAL: "+principal);
-		if(principal == null)
-			throw new DemandaServiceException("Nao ha usuario logado");
-		System.out.println("principal.getName(): "+principal.getName());
-		UsuarioVO usr = getUsuarioService().buscarPorLogin(principal.getName());		
-		demanda.setUsuarioCriacao(Usuario.Factory.newInstance());
-		demanda.getUsuarioCriacao().setId(usr.getId());
-				
+	protected Demanda handleCadastraDemanda(Demanda demanda) throws Exception {		
 		//gera uma senha de acompanhamento para a demanda
 		//TODO externalizar o tamanho da senha
 		demanda.setSenhaAcompanhamento(gerarSenhaAcompanhamentoDemanda(10));
@@ -48,6 +35,8 @@ public class DemandaServiceImpl
 		Demandante demandante = getDemandanteService().recuperarDemandantePorDocumento(demanda.getDemandante().getDocumento());
 		if(demandante == null){
 			demandante = getDemandanteService().cadastrarDemandante(demanda.getDemandante());
+		}else {
+			//TODO atualizar demandante com os novos dados (exceto chaves/unique)
 		}
 		demanda.setDemandante(demandante);
 		
