@@ -20,9 +20,12 @@ public class ConsultaDemandaCTLImpl extends ConsultaDemandaCTL
     {    	
     	Long id = Long.parseLong(form.getCodigo());
     	String senha = form.getSenha();
+    	System.out.println("código: "+id+"\tsenha="+senha);
     	
     	Demanda demanda = getDemandaService().consultaDemanda(id, senha);
-        //TODO ...
+    	System.out.println("demanda="+demanda);
+    	
+    	request.setAttribute("demanda", demanda);
     }
 
 }
