@@ -138,6 +138,7 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
 		Demanda demanda = (Demanda) request.getAttribute("demanda");
 		form.setId(demanda.getId());
 		form.setSenha(demanda.getSenhaAcompanhamento());
+		form.setMensagem(demanda.getMensagem());
 	}
 
 }
