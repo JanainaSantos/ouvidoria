@@ -3,6 +3,7 @@ package com.googlecode.ouvidoria.apresentacao.exibeMenu;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionMapping;
 
@@ -20,6 +21,11 @@ public class ExibeMenuCTLImpl extends ExibeMenuCTL
     {
     	System.out.println("removendo usuario da sessao");
     	getGerenteSessaoUsuario(request).setUsuario(null);
+    	
+    	//invalida a sessao do usuario
+    	HttpSession session = request.getSession(false);
+		if (session != null)
+			session.invalidate();
     }
 
 	@Override
