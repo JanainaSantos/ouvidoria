@@ -2,8 +2,6 @@
 package com.googlecode.ouvidoria.apresentacao.demanda.pesquisa;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +17,8 @@ import com.googlecode.ouvidoria.negocio.demanda.TipoDemanda;
  * @see com.googlecode.ouvidoria.apresentacao.demanda.pesquisa.PesquisaDemandaCTL
  */
 public class PesquisaDemandaCTLImpl extends PesquisaDemandaCTL {
+	//TODO modelar esse atributo no magicDraw?
+	public static final String SELECIONAR = "SELECIONE";
 
 	/**
 	 * This dummy variable is used to populate the "demandas" table. You may
@@ -74,11 +74,11 @@ public class PesquisaDemandaCTLImpl extends PesquisaDemandaCTL {
 		System.out.println("recupera demandas ...........................................");
 
 		DemandaCriteria criteria = new DemandaCriteria();
-		criteria.setAssunto(form.getAssunto());
+		criteria.setAssunto((form.getAssunto() == -1)?null:form.getAssunto());
 		criteria.setDataFim(form.getDataFimAsDate());
 		criteria.setDataInicio(form.getDataInicioAsDate());
-		criteria.setFormaContato(form.getFormaContato());
-		criteria.setTipoDemanda(form.getTipoDemanda());
+		criteria.setFormaContato((form.getFormaContato() == -1)?null:form.getFormaContato());
+		criteria.setTipoDemanda((form.getTipoDemanda() == -1)?null:form.getTipoDemanda());
 
 		Collection demandas = getDemandaService().pesquisaDemandas(criteria);
 		if (demandas != null)
@@ -93,35 +93,56 @@ public class PesquisaDemandaCTLImpl extends PesquisaDemandaCTL {
 	}
 
 	private void recuperaFormasContato(PopulaTelaPesquisaForm form) throws Exception {
-		HashMap mapa = new HashMap();
-		Iterator it = getDemandaService().recuperaFormasContato().iterator();
-		while (it.hasNext()) {
-			FormaContato forma = (FormaContato) it.next();
-			mapa.put(forma.getId(), forma.getNome());
+		Object[] colecao = getDemandaService().recuperaFormasContato().toArray();
+		Long[] valores = new Long[colecao.length+1];
+		String[] labels = new String[colecao.length+1];
+		
+		valores[0] = new Long(-1);
+		labels[0] = SELECIONAR;
+		
+		for(int i=0; i < colecao.length; i++){
+			FormaContato forma = (FormaContato) colecao[i];
+			valores[i+1] = forma.getId();
+			labels[i+1] = forma.getNome();
 		}
-		form.setFormaContatoValueList(mapa.keySet().toArray());
-		form.setFormaContatoLabelList(mapa.values().toArray());
+
+		form.setFormaContatoValueList(valores);
+		form.setFormaContatoLabelList(labels);
 	}
 
 	private void recuperaTiposDemanda(PopulaTelaPesquisaForm form) throws Exception {
-		HashMap mapa = new HashMap();
-		Iterator it = getDemandaService().recuperaTiposDemanda().iterator();
-		while (it.hasNext()) {
-			TipoDemanda tipo = (TipoDemanda) it.next();
-			mapa.put(tipo.getId(), tipo.getNome());
+		Object[] colecao = getDemandaService().recuperaTiposDemanda().toArray();
+		Long[] valores = new Long[colecao.length+1];
+		String[] labels = new String[colecao.length+1];
+		
+		valores[0] = new Long(-1);
+		labels[0] = SELECIONAR;
+		
+		for(int i=0; i < colecao.length; i++){
+			TipoDemanda tipo = (TipoDemanda) colecao[i];
+			valores[i+1] = tipo.getId();
+			labels[i+1] = tipo.getNome();
 		}
-		form.setTipoDemandaValueList(mapa.keySet().toArray());
-		form.setTipoDemandaLabelList(mapa.values().toArray());
+
+		form.setTipoDemandaValueList(valores);
+		form.setTipoDemandaLabelList(labels);
 	}
 
 	private void recuperaAssuntos(PopulaTelaPesquisaForm form) throws Exception {
-		HashMap mapa = new HashMap();
-		Iterator it = getDemandaService().recuperaAssuntos().iterator();
-		while (it.hasNext()) {
-			Assunto assunto = (Assunto) it.next();
-			mapa.put(assunto.getId(), assunto.getNome());
+		Object[] colecao = getDemandaService().recuperaAssuntos().toArray();
+		Long[] valores = new Long[colecao.length+1];
+		String[] labels = new String[colecao.length+1];
+		
+		valores[0] = new Long(-1);
+		labels[0] = SELECIONAR;
+		
+		for(int i=0; i < colecao.length; i++){
+			Assunto assunto = (Assunto) colecao[i];
+			valores[i+1] = assunto.getId();
+			labels[i+1] = assunto.getNome();
 		}
-		form.setAssuntoValueList(mapa.keySet().toArray());
-		form.setAssuntoLabelList(mapa.values().toArray());
+
+		form.setAssuntoValueList(valores);
+		form.setAssuntoLabelList(labels);
 	}
 }
