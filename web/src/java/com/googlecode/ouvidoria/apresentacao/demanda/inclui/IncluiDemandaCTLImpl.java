@@ -22,12 +22,10 @@ public class IncluiDemandaCTLImpl extends IncluiDemandaCTL
     	boolean retorno = false;
         UsuarioVO usr = getGerenteSessaoUsuario(request).getUsuario();
         if(usr != null){
-        	retorno = usr.getLogin().equalsIgnoreCase("convidado")?false:true;
-        	//retorno = true;
-        	//TODO deixa assim por enquanto ... mas fazer com acegi depois
-        	//TODO modelar perfis como enum
+        	//TODO getLeitorDePropriedades().lerPropriedade();
+        	retorno = usr.getNomePerfil().equals("administrador")?true:false;        	
         }
-        //true - cadastra demanda restrita
+        //true - cadastra demanda restrita (administrador)
         //false - nao
         return retorno;
     }

@@ -20,6 +20,8 @@ public class UsuarioDaoImpl extends com.googlecode.ouvidoria.negocio.usuario.Usu
 		vo.setNome(entity.getNome());
 		vo.setRamal(entity.getRamal());
 		vo.setSenha(entity.getSenha());
+		vo.setIdPerfil(entity.getPerfil().getId());
+		vo.setNomePerfil(entity.getPerfil().getNome());
 		return vo;
 	}
 
