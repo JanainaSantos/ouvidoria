@@ -5,8 +5,6 @@
  */
 package com.googlecode.ouvidoria.servico.demandante;
 
-import java.util.Random;
-
 import com.googlecode.ouvidoria.negocio.demandante.Demandante;
 
 /**
@@ -45,6 +43,12 @@ public class DemandanteServiceImpl extends com.googlecode.ouvidoria.servico.dema
 	@Override
 	protected Demandante handleRecuperarDemandantePorDocumento(String documento) throws Exception {
 		return getDemandanteDao().recuperaPorDocumento(documento);
+	}
+
+	@Override
+	protected Demandante handleAtualizarDemandante(Demandante demandante) throws Exception {
+		getDemandanteDao().update(demandante);
+		return getDemandanteDao().load(demandante.getId());
 	}	
 
 }

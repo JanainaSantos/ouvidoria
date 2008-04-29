@@ -16,8 +16,8 @@ public class ExibeContatoCTLImpl extends ExibeContatoCTL
      */
     public final java.lang.String getEndereco(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.exibeContato.GetEnderecoForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
-        // nothing to be done for this operation, there are no properties that can be set
-        return null;
+        // nothing to be done for this operation, there are no properties that can be set    	
+        return "casa";
     }
 
     /**
@@ -26,7 +26,7 @@ public class ExibeContatoCTLImpl extends ExibeContatoCTL
     public final java.lang.String getTelefone(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.exibeContato.GetTelefoneForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         // nothing to be done for this operation, there are no properties that can be set
-        return null;
+        return "2261000";
     }
 
     /**
@@ -35,7 +35,7 @@ public class ExibeContatoCTLImpl extends ExibeContatoCTL
     public final java.lang.String getEmail(ActionMapping mapping, com.googlecode.ouvidoria.apresentacao.exibeContato.GetEmailForm form, HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         // nothing to be done for this operation, there are no properties that can be set
-        return null;
+        return "teste";
     }
 
 }

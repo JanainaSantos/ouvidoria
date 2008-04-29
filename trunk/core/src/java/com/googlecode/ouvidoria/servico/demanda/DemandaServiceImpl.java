@@ -36,7 +36,14 @@ public class DemandaServiceImpl
 		if(demandante == null){
 			demandante = getDemandanteService().cadastrarDemandante(demanda.getDemandante());
 		}else {
-			//TODO atualizar demandante com os novos dados (exceto chaves/unique)
+			//se o demandante já existir atualiza seus dados
+			demandante.setCep(demanda.getDemandante().getCep());
+			demandante.setCidade(demanda.getDemandante().getCidade());
+			demandante.setEmail(demanda.getDemandante().getEmail());
+			demandante.setEndereco(demanda.getDemandante().getEndereco());
+			demandante.setNome(demanda.getDemandante().getNome());
+			demandante.setTelefone(demanda.getDemandante().getTelefone());
+			demandante = getDemandanteService().atualizarDemandante(demandante);
 		}
 		demanda.setDemandante(demandante);
 		
