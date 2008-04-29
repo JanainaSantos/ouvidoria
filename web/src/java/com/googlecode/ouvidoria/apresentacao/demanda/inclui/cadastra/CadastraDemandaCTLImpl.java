@@ -80,7 +80,10 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
 		getGerenteSessaoDemanda(request).setDemanda(null);
 		getGerenteSessaoDemanda(request).setDemandante(null);
 		
-		//vai sempre retornar true, pois se der algum problema sera lançada excecao
+		//coloca a demanda no request para ser mostrada na tela de confirmacao
+		request.setAttribute("demanda", demanda);
+		
+		//vai sempre retornar true, pois se der algum problema sera lancada excecao
 		return true;
     }
     
@@ -128,6 +131,13 @@ public class CadastraDemandaCTLImpl extends CadastraDemandaCTL
 		System.out.println("verificaPreCadastroDemanda: "+request.getAttribute("demanda"));
 		System.out.println("verificaPreCadastroDemanda: "+request.getSession().getAttribute("demanda"));
 		return true;
+	}
+
+	@Override
+	public void confirmaCadastramento(ActionMapping mapping, ConfirmaCadastramentoForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Demanda demanda = (Demanda) request.getAttribute("demanda");
+		form.setId(demanda.getId());
+		form.setSenha(demanda.getSenhaAcompanhamento());
 	}
 
 }
