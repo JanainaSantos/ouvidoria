@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:andromdapersistence="http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0 andromda-persistence-3.5-SNAPSHOT.profile.uml#_UlaW6yOuEd6Yv5u3OIooDQ">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Profile="http:///schemas/Profile/_LnIIMCewEeSTVslmbGto7Q/0" xmlns:andromdapersistence="http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/Profile/_LnIIMCewEeSTVslmbGto7Q/0 ouvidoria-profile.profile.uml#_LnKkcSewEeSTVslmbGto7Q http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0 andromda-persistence-3.5-SNAPSHOT.profile.uml#_UlaW6yOuEd6Yv5u3OIooDQ">
   <uml:Model xmi:id="_7zZYwCXvEdyeC6-v07fheA" name="RSM75NewModel">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NrW40CXwEdyeC6-v07fheA" source="http://www.eclipse.org/emf/2002/Ecore"/>
     <packageImport xmi:type="uml:PackageImport" xmi:id="_8AD7wCXvEdyeC6-v07fheA">
@@ -25,7 +25,18 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_yBfSICesEeSTVslmbGto7Q" name="com.googlecode.ouvidoria">
       <packagedElement xmi:type="uml:Package" xmi:id="_0N-X0CesEeSTVslmbGto7Q" name="negocio">
-        <packagedElement xmi:type="uml:Package" xmi:id="_2QJq8CesEeSTVslmbGto7Q" name="demanda"/>
+        <packagedElement xmi:type="uml:Package" xmi:id="_2QJq8CesEeSTVslmbGto7Q" name="demanda">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Bkl20CexEeSTVslmbGto7Q" name="Demanda">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_PAGZsCexEeSTVslmbGto7Q" name="texto" visibility="public">
+              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PS-5cCexEeSTVslmbGto7Q" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PS_ggCexEeSTVslmbGto7Q" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_PS_ggSexEeSTVslmbGto7Q">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+        </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_6EgtYCesEeSTVslmbGto7Q" name="localidade">
           <packagedElement xmi:type="uml:Class" xmi:id="_9VLz8CesEeSTVslmbGto7Q" name="UnidadeFederacao">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_CvbPECetEeSTVslmbGto7Q" name="nome" visibility="public">
@@ -94,7 +105,16 @@
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/StandardL3.profile.uml#_0"/>
     </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_PiIlMCewEeSTVslmbGto7Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PiRIECewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="ouvidoria-profile.profile.uml#_LnKkcSewEeSTVslmbGto7Q"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="ouvidoria-profile.profile.uml#_AYFSUCevEeSTVslmbGto7Q"/>
+    </profileApplication>
   </uml:Model>
   <andromdapersistence:Entity xmi:id="_BwIVQCetEeSTVslmbGto7Q" base_Class="_9VLz8CesEeSTVslmbGto7Q"/>
   <andromdapersistence:Manageable xmi:id="_BwYM4CetEeSTVslmbGto7Q" base_Class="_9VLz8CesEeSTVslmbGto7Q"/>
+  <Profile:Auditable xmi:id="_RP_OICewEeSTVslmbGto7Q" base_Class="_9VLz8CesEeSTVslmbGto7Q"/>
+  <andromdapersistence:Entity xmi:id="_NqZLACexEeSTVslmbGto7Q" base_Class="_Bkl20CexEeSTVslmbGto7Q"/>
+  <Profile:Auditable xmi:id="_OYKP8CexEeSTVslmbGto7Q" base_Class="_Bkl20CexEeSTVslmbGto7Q"/>
 </xmi:XMI>

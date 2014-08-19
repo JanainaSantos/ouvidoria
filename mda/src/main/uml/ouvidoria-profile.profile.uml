@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_AYFSUCevEeSTVslmbGto7Q" name="Profile" metaclassReference="_6Nm3oCevEeSTVslmbGto7Q" metamodelReference="_AYFSUSevEeSTVslmbGto7Q">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcCewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_LnKkcSewEeSTVslmbGto7Q" name="Profile" nsURI="http:///schemas/Profile/_LnIIMCewEeSTVslmbGto7Q/0" nsPrefix="Profile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnMZoCewEeSTVslmbGto7Q" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZoSewEeSTVslmbGto7Q" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZoiewEeSTVslmbGto7Q" key="Comment" value="iniciando teste com o profile"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZoyewEeSTVslmbGto7Q" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZpCewEeSTVslmbGto7Q" key="Date" value="2014-08-19"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZpSewEeSTVslmbGto7Q" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_LnKkciewEeSTVslmbGto7Q" name="Auditable">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcyewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_i9V2ICevEeSTVslmbGto7Q"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_LnKkdCewEeSTVslmbGto7Q" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_LnKkdiewEeSTVslmbGto7Q" name="teste" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_6Nm3oCevEeSTVslmbGto7Q" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_AYFSUSevEeSTVslmbGto7Q">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_AYFSUievEeSTVslmbGto7Q">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_i9V2ICevEeSTVslmbGto7Q" name="Auditable">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_7YmEECevEeSTVslmbGto7Q" name="base_Class" association="_7YmEESevEeSTVslmbGto7Q">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BZnLUCewEeSTVslmbGto7Q" name="teste" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B4sUACewEeSTVslmbGto7Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B4sUASewEeSTVslmbGto7Q" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_B4s7ECewEeSTVslmbGto7Q">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_7YmEESevEeSTVslmbGto7Q" name="E_Auditable_Class1" memberEnd="_7YmEEievEeSTVslmbGto7Q _7YmEECevEeSTVslmbGto7Q">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_7YmEEievEeSTVslmbGto7Q" name="extension_Auditable" type="_i9V2ICevEeSTVslmbGto7Q" aggregation="composite" association="_7YmEESevEeSTVslmbGto7Q"/>
+  </packagedElement>
+</uml:Profile>
