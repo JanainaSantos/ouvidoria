@@ -164,6 +164,11 @@
                 <property name="customTypesPackage">${application.package}</property>
                 <property name="compositionDefinesEagerLoading">true</property>
                 <property name="cache">${core.generated.dir}</property>
+                
+                <!--Definicao do Merge Point para substituicao dos templates do hibernate; 
+        		    o local onde o andromda deve procurar templates velocity para "tratar"
+				-->
+				<property name="mergeLocation">${conf.dir}/cartridge/custom</property>
             </properties>
         </namespace>
         <!-- See http://docs.andromda.org/andromda-cartridges/andromda-webservice-cartridge/namespace.html -->
