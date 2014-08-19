@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <notation:Diagram xmi:id="_4YOxwCesEeSTVslmbGto7Q" type="PapyrusUMLClassDiagram" name="demanda" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_4YOxwSesEeSTVslmbGto7Q"/>
+    <element xmi:type="uml:Package" href="ouvidoria.uml#_2QJq8CesEeSTVslmbGto7Q"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_8x7V4CesEeSTVslmbGto7Q" type="PapyrusUMLClassDiagram" name="localidade" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_9VyQ4CesEeSTVslmbGto7Q" type="2008">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BwStUCetEeSTVslmbGto7Q" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BwdFYCetEeSTVslmbGto7Q" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BwdFYSetEeSTVslmbGto7Q" key="StereotypeList" value="andromda-persistence::Entity,andromda-persistence::Manageable"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BwdFYietEeSTVslmbGto7Q" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BwdFYyetEeSTVslmbGto7Q" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BwdFZCetEeSTVslmbGto7Q" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9V4-kCesEeSTVslmbGto7Q" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9V_FMCesEeSTVslmbGto7Q" type="7017">
+        <children xmi:type="notation:Shape" xmi:id="_CvwmQCetEeSTVslmbGto7Q" type="3012">
+          <element xmi:type="uml:Property" href="ouvidoria.uml#_CvbPECetEeSTVslmbGto7Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CvwmQSetEeSTVslmbGto7Q"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9V_FMSesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9V_FMiesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9V_FMyesEeSTVslmbGto7Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9V_FNCesEeSTVslmbGto7Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9V_FNSesEeSTVslmbGto7Q" type="7018">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9V_sQCesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9V_sQSesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9V_sQiesEeSTVslmbGto7Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9V_sQyesEeSTVslmbGto7Q"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9V_sRCesEeSTVslmbGto7Q" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9V_sRSesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9V_sRiesEeSTVslmbGto7Q"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9V_sRyesEeSTVslmbGto7Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9V_sSCesEeSTVslmbGto7Q"/>
+      </children>
+      <element xmi:type="uml:Class" href="ouvidoria.uml#_9VLz8CesEeSTVslmbGto7Q"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9VyQ4SesEeSTVslmbGto7Q" x="102" y="48"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_8x7V4SesEeSTVslmbGto7Q"/>
+    <element xmi:type="uml:Package" href="ouvidoria.uml#_6EgtYCesEeSTVslmbGto7Q"/>
+  </notation:Diagram>
+</xmi:XMI>
