@@ -7,6 +7,18 @@
     <availablePage>
       <emfPageIdentifier href="ouvidoria.notation#_8x7V4CesEeSTVslmbGto7Q"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_MotVcCe6EeSTVslmbGto7Q"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_zG89ACe6EeSTVslmbGto7Q"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_04fMECe6EeSTVslmbGto7Q"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_AZMPICe7EeSTVslmbGto7Q"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -16,6 +28,18 @@
         </children>
         <children>
           <emfPageIdentifier href="ouvidoria.notation#_8x7V4CesEeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_MotVcCe6EeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_zG89ACe6EeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_04fMECe6EeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_AZMPICe7EeSTVslmbGto7Q"/>
         </children>
       </children>
     </windows>
