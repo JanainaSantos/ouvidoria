@@ -115,9 +115,11 @@
 #if ($stringUtils.isNotBlank($hibernateJdbcUseStreamsForBinary))
                 <prop key="hibernate.use_streams_for_binary">$hibernateJdbcUseStreamsForBinary</prop>
 #end
-#if ($stringUtils.isNotBlank($hibernateHbm2DDLAuto))
-                <prop key="hibernate.hbm2ddl.auto">$hibernateHbm2DDLAuto</prop>
-#end
+## Customizacao: forcar o uso de CREATE no teste
+##if ($stringUtils.isNotBlank($hibernateHbm2DDLAuto))
+                ##<prop key="hibernate.hbm2ddl.auto">$hibernateHbm2DDLAuto</prop>
+##end
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 #if ($stringUtils.isNotBlank($hibernateQuerySubstitutions))
                 <prop key="hibernate.query.substitutions">$hibernateQuerySubstitutions</prop>
 #end

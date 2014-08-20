@@ -18,10 +18,10 @@
 
     <!-- Local DataSource that works in any environment -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.h2.Driver"/>
-        <property name="username" value="sa"/>
-        <property name="password" value="sa"/>
-        <property name="url" value="jdbc:h2:~/ouvidoria;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="username" value="pedro"/>
+        <property name="password" value="123"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/bd_ouvidoria_test"/>
     </bean>
 
     <!-- ====================== End of DATASOURCE DEFINITION ====================== -->
@@ -35,13 +35,13 @@
     </bean>
 
     <!-- applicationContext merge-point -->
-    <bean id="hibernateAnnotatedClasses" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="hibernateMappingLocations" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-                <!-- applicationContext hibernateAnnotatedClasses merge-point -->
-                <value>com.googlecode.ouvidoria.negocio.demanda.DemandaImpl</value>
-                <value>com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoImpl</value>
-                <value>com.googlecode.ouvidoria.negocio.localidade.MunicipioImpl</value>
+                <!-- applicationContext hibernateMappingLocations merge-point -->
+                <value>classpath:com/googlecode/ouvidoria/negocio/demanda/Demanda.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/negocio/localidade/UnidadeFederacao.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/negocio/localidade/Municipio.hbm.xml</value>
             </list>
          </property>
     </bean>
@@ -49,9 +49,9 @@
     <bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="properties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
                 <prop key="hibernate.default_batch_fetch_size">16</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                				<prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
                 <prop key="hibernate.cache.query_cache_factory">org.hibernate.cache.StandardQueryCacheFactory</prop>
                 <!-- add specific (non-supported in the Spring cartridge) hibernate properties here -->
@@ -62,7 +62,7 @@
     <!-- Hibernate SessionFactory -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="annotatedClasses" ref="hibernateAnnotatedClasses"/>
+        <property name="mappingLocations" ref="hibernateMappingLocations"/>
         <property name="hibernateProperties" ref="hibernateProperties"/>
         <!-- applicationContext sessionFactory merge-point -->
     </bean>
