@@ -94,7 +94,11 @@
 				<property name="xmlEncoding">ISO-8859-1</property>
 				<property name="enumerationLiteralNameMask">upperunderscore</property>
 				<property name="hibernateVersion">${hibernate.version}</property>
-				<property name="hibernateEntityAnnotations">true</property>
+				<!-- 
+				TODO: URGENTE
+				arrumar o sessionFactoryBean para ler anotacao
+				 OBS:. tem no namespace do hibernate tbm-->
+				<property name="hibernateEntityAnnotations">false</property>
 				<property name="persistenceContainerName">jboss</property>
 				<property name="appServer">jboss</property>
 				<!-- Override default @todo to set to Eclipse default -->
@@ -107,6 +111,8 @@
 				<!-- JDK5 error on @Override on methods implemented from Interfaces -->
 				<property name="javaVersion">${javaVersion}</property>
 				<property name="xmlAttributes">false</property>
+				
+				<property name="tableNamePrefix">TB_</property> 
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-spring-cartridge/namespace.html -->
@@ -118,9 +124,16 @@
 				<property name="driver">${jdbc.driver}</property>
 				<property name="connectionUrl">${jdbc.url}</property>
 				<property name="hibernateDialect">${hibernate.dialect}</property>
-				<property name="hibernateHbm2DDLAuto">update</property>
+				<!-- <property name="hibernateHbm2DDLAuto">update</property> -->
+				<property name="hibernateHbm2DDLAuto">create</property>
 				<property name="hibernateQueryUseNamedParameters">true</property>
 				<property name="hibernateEnableCache">false</property>
+				<!-- 
+                <property name="sessionFactory">org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean</property>
+                <property name="sessionFactory">org.springframework.orm.hibernate3.LocalSessionFactoryBean</property>
+                <property name="localTransactionManager">org.springframework.orm.hibernate3.HibernateTransactionManager</property>
+                <property name="transactionManager">org.springframework.orm.hibernate3.HibernateTransactionManager</property> 
+                -->
 				<property name="sessionFactory">org.springframework.orm.hibernate4.LocalSessionFactoryBean</property>
 				<property name="transactionManager">org.springframework.orm.hibernate4.HibernateTransactionManager</property>
 				<property name="localTransactionManager">org.springframework.orm.hibernate4.HibernateTransactionManager</property>
@@ -158,8 +171,8 @@
 				<property name="testConnectionUrl">${testdb.url}</property>
 				<property name="testDialect">${testdb.dialect}</property>
 				<property name="testDriver">${testdb.driver}</property>
-				<property name="testPassword">${testdb.username}</property>
-				<property name="testUsername">${testdb.password}</property>
+				<property name="testPassword">${testdb.password}</property>
+				<property name="testUsername">${testdb.username}</property>
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-hibernate-cartridge/namespace.html -->
@@ -184,6 +197,9 @@
 					o local onde o andromda deve procurar templates velocity para "tratar"
 				-->
 				<property name="mergeLocation">${conf.dir}/cartridge/custom</property>
+				
+				<property name="hibernateEntityAnnotations">false</property>
+                <property name="hibernateShowSql">true</property>
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-webservice-cartridge/namespace.html -->
@@ -247,6 +263,10 @@
 				<property name="interfaces">${common.generated.dir}</property>
 				<property name="services">${core.generated.dir}</property>
 				<property name="service-impls">${core.manual.java.dir}</property>
+				
+				<property name="serializable">true</property>
+                <property name="generateIsBooleanGetters">true</property>
+                <property name="generateChainedSetters">true</property>
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-jsf2-cartridge/namespace.html -->
@@ -256,7 +276,7 @@
 				<property name="useAutocompleteLookup">true</property>
 				<property name="managedBeansPackage">${application.package}</property>
 				<property name="facesConfigFiles"></property>
-				<property name="defaultDateFormat">MM/dd/yyyy</property>
+				<property name="defaultDateFormat">dd/MM/yyyy</property>
 
 				<property name="languageMappingsUri">AxisJavaMappings</property>
 				<!-- generates smaller resource bundles with duplicate element names specified by a single message.
@@ -284,6 +304,9 @@
 				<property name="dummyData">true</property>
 				<property name="enableFaceletsDevelopmentSupport">true</property>
 				<property name="enableMyFacesDevelopmentSupport">true</property>
+				
+				<!--Definicao do Merge Point para substituicao dos templates do jsf2;  -->
+				<property name="mergeLocation">${conf.dir}/cartridge/custom</property>
 			</properties>
 		</namespace>
 	</namespaces>

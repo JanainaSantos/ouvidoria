@@ -25,8 +25,8 @@
 		<javaVersion>1.8</javaVersion -->
 		<compiler.version>1.8</compiler.version>
         <andromda.version>3.5-SNAPSHOT</andromda.version>
-        <downloadSources>false</downloadSources>
-        <downloadJavadocs>false</downloadJavadocs>
+        <downloadSources>true</downloadSources>
+        <downloadJavadocs>true</downloadJavadocs>
         <createChecksum>true</createChecksum>
         <uniqueVersion>false</uniqueVersion>
         <stagingDirectory>${project.build.outputDirectory}/target/site</stagingDirectory>
@@ -40,17 +40,30 @@
         <tomcat.home>${env.CATALINA_HOME}</tomcat.home>
         <dataSource.name>jdbc/${application.id}</dataSource.name>
         <dataSource>java:comp/env/${dataSource.name}</dataSource>
-        <!-- test data source -->
+        <!-- test data source (postgresql)-->
+        <!-- <testdb.groupId>org.postgresql</testdb.groupId>
+        <testdb.artifactId>postgresql</testdb.artifactId>
+        <testdb.version>${postgresql.driver.version}</testdb.version> -->
+        <testdb.driver>org.postgresql.Driver</testdb.driver>
+        <testdb.dialect>org.hibernate.dialect.PostgreSQLDialect</testdb.dialect>
+        <!-- TODO: customizacao para usar o mappings do banco de teste -->
+        <testdb.sql.mappings>PostgreSQL</testdb.sql.mappings>
+        <!-- See http://www.h2database.com/html/features.html#database_url (mixed mode) -->
+        <testdb.url>jdbc:postgresql://localhost:5432/bd_ouvidoria_test</testdb.url>
+        <testdb.username>pedro</testdb.username>
+        <testdb.password>123</testdb.password>
+       <!--  test data source H2>
         <testdb.groupId>com.h2database</testdb.groupId>
         <testdb.artifactId>h2</testdb.artifactId>
         <testdb.version>1.3.174</testdb.version>
         <testdb.driver>org.h2.Driver</testdb.driver>
         <testdb.dialect>org.hibernate.dialect.H2Dialect</testdb.dialect>
+        TODO: customizacao para usar o mappings do banco de teste
         <testdb.sql.mappings>H2Sql</testdb.sql.mappings>
-        <!-- See http://www.h2database.com/html/features.html#database_url (mixed mode) -->
+        See http://www.h2database.com/html/features.html#database_url (mixed mode)
         <testdb.url>jdbc:h2:~/${application.id};AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</testdb.url>
         <testdb.username>sa</testdb.username>
-        <testdb.password>sa</testdb.password>
+        <testdb.password>sa</testdb.password> -->
         
         <!-- versoes de bibliotecas -->
         <!-- Set andromda.xml hibernateVersion=4, sessionFactory and localTransactionManager to hibernate4.
@@ -68,7 +81,6 @@
         <dependencyConvergence>true</dependencyConvergence>
         <!-- Any of these configuration values can be overridden by the descendant, the default is JDK 1.6 -->
         <java.runtime.version>${compiler.version}</java.runtime.version>
-        <!-- [1.8,) -->
         <java.required.version>[${compiler.version},)</java.required.version>
         <java.source.version>${compiler.version}</java.source.version>
         <java.runtime.version>${compiler.version}</java.runtime.version>
@@ -86,9 +98,9 @@
         <url></url>
     </issueManagement>
     <scm>
-        <connection></connection>
-        <developerConnection></developerConnection>
-        <url></url>
+        <connection>scm:svn:http://ouvidoria.googlecode.com/svn/trunk</connection>
+        <developerConnection>scm:svn:https://ouvidoria.googlecode.com/svn/trunk/</developerConnection>
+        <url>https://code.google.com/p/ouvidoria/source/browse/</url>
     </scm>
     <organization>
         <name></name>
@@ -476,12 +488,19 @@
                 <version>6.8.7</version>
                 <scope>test</scope>
             </dependency>
-            <dependency>
+            <!-- <dependency>
                 <groupId>${testdb.groupId}</groupId>
                 <artifactId>${testdb.artifactId}</artifactId>
                 <version>${testdb.version}</version>
                 <scope>test</scope>
-            </dependency>
+            </dependency> -->
+            <!-- API JavaEE 7 -->
+	        <dependency>
+	            <groupId>javax</groupId>
+	            <artifactId>javaee-web-api</artifactId>
+	            <version>7.0</version>
+	            <scope>provided</scope>
+	        </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -594,7 +613,7 @@
                 For Hypersonic use: hsqldb.jar
                 -->
                 <jdbc.driver.jar>
-                    /path/to/postgres/lib/postgresql.jar
+                    ${settings.localRepository}/org/postgresql/postgresql/${postgresql.driver.version}/postgresql-${postgresql.driver.version}.jar
                 </jdbc.driver.jar>
                 <!--
                     Change driver for appropriate database
@@ -612,9 +631,7 @@
                     For Progress use: com.progress.sql.jdbc.JdbcProgressDriver
                     For Derby use: org.apache.derby.jdbc.EmbeddedDriver
                 -->
-                <jdbc.driver>
-                    org.postgresql.Driver
-                </jdbc.driver>
+                <jdbc.driver>org.postgresql.Driver</jdbc.driver>
                 <!--
                     Change connection url for appropriate database
                     For H2 use: jdbc:h2:~/ouvidoria
@@ -630,14 +647,10 @@
                     For SapDB use: jdbc:sapdb://127.0.0.1/ouvidoria
                     For Progress use: jdbc:JdbcProgress:T:localhost:3305:ouvidoria
                 -->
-                <jdbc.url>
-                    jdbc:postgresql://localhost/ouvidoria
-                </jdbc.url>
+                <jdbc.url>jdbc:postgresql://localhost:5432/bd_ouvidoria</jdbc.url>
                 <!-- Enter id/password for the database connection -->
-                <jdbc.username>
-                    postgres
-                </jdbc.username>
-                <jdbc.password>ouvidoria</jdbc.password>
+                <jdbc.username>pedro</jdbc.username>
+                <jdbc.password>123</jdbc.password>
                 <!--
                     Change exception sorter class name for appropriate database
                     For H2 use: org.jboss.resource.adapter.jdbc.vendor.DummyExceptionSorter
