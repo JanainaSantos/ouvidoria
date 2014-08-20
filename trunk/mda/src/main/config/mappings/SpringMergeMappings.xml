@@ -14,4 +14,12 @@
             ]]>
         </to>
     </mapping>
+    <mapping>
+        <from><![CDATA[<!-- cartridge-property merge-point -->]]></from>
+        <to>
+            <![CDATA[
+                <!-- add specific (non-supported in the Spring cartridge) hibernate properties here -->
+            ]]>
+        </to>
+    </mapping>
 </mappings>

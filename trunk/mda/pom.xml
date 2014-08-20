@@ -137,6 +137,7 @@
         <javaVersion>${java.version}</javaVersion>
         <filter></filter>
         <validation>true</validation>
+        <configurationUri>${project.basedir}/src/main/config/andromda.xml</configurationUri>
         <!-- ant script location for temp copy of resources -->
         <andromda.project>${project.basedir}/..</andromda.project>
         <conf.dir>${project.basedir}/src/main/config</conf.dir>
@@ -163,6 +164,7 @@
         <!-- default strategy to use when using inheritance -->
         <hibernate.inheritance.strategy>subclass</hibernate.inheritance.strategy>
         <!-- hibernate generator class to use for identifiers -->
-        <hibernate.generatorClass>native</hibernate.generatorClass>
+        <!-- <hibernate.generatorClass>native</hibernate.generatorClass> -->
+        <hibernate.generatorClass>sequence</hibernate.generatorClass>
     </properties>
 </project>

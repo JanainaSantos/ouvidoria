@@ -17,6 +17,70 @@
     <description>The Sistema de Ouvidoria Project.</description>
     <inceptionYear></inceptionYear>
     <url>http://andromda.sourceforge.net/</url>
+    <properties>
+        <!-- define o encoding -->
+		<ouvidoria.encoding>UTF-8</ouvidoria.encoding>
+		<project.build.sourceEncoding>${ouvidoria.encoding}</project.build.sourceEncoding>
+		<!-- versao do compilador >
+		<javaVersion>1.8</javaVersion -->
+		<compiler.version>1.8</compiler.version>
+        <andromda.version>3.5-SNAPSHOT</andromda.version>
+        <downloadSources>false</downloadSources>
+        <downloadJavadocs>false</downloadJavadocs>
+        <createChecksum>true</createChecksum>
+        <uniqueVersion>false</uniqueVersion>
+        <stagingDirectory>${project.build.outputDirectory}/target/site</stagingDirectory>
+        <application.id>ouvidoria</application.id>
+        <application.package>com.googlecode.ouvidoria</application.package>
+        <application.name>Sistema de Ouvidoria</application.name>
+        <application.version>1.0-SNAPSHOT</application.version>        
+        <!-- data source -->
+        <sql.mappings>PostgreSQL</sql.mappings>
+        <hibernate.dialect>org.hibernate.dialect.PostgreSQLDialect</hibernate.dialect>
+        <tomcat.home>${env.CATALINA_HOME}</tomcat.home>
+        <dataSource.name>jdbc/${application.id}</dataSource.name>
+        <dataSource>java:comp/env/${dataSource.name}</dataSource>
+        <!-- test data source -->
+        <testdb.groupId>com.h2database</testdb.groupId>
+        <testdb.artifactId>h2</testdb.artifactId>
+        <testdb.version>1.3.174</testdb.version>
+        <testdb.driver>org.h2.Driver</testdb.driver>
+        <testdb.dialect>org.hibernate.dialect.H2Dialect</testdb.dialect>
+        <testdb.sql.mappings>H2Sql</testdb.sql.mappings>
+        <!-- See http://www.h2database.com/html/features.html#database_url (mixed mode) -->
+        <testdb.url>jdbc:h2:~/${application.id};AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</testdb.url>
+        <testdb.username>sa</testdb.username>
+        <testdb.password>sa</testdb.password>
+        
+        <!-- versoes de bibliotecas -->
+        <!-- Set andromda.xml hibernateVersion=4, sessionFactory and localTransactionManager to hibernate4.
+        <hibernate.version>3.6.9.Final</hibernate.version>
+        <hibernate.version>4.3.0.Final</hibernate.version>
+        TODO: problema com a original
+        http://www.mkyong.com/hibernate/java-lang-classnotfoundexception-org-hibernate-service-jta-platform-spi-jtaplatform/
+        -->
+        <hibernate.version>4.2.11.Final</hibernate.version>
+        <!-- TODO v4 migration needed ... original=3.2.6.RELEASE ... atual=4.0.6.RELEASE-->
+        <spring.version>3.2.6.RELEASE</spring.version>
+        <postgresql.driver.version>9.3-1101-jdbc41</postgresql.driver.version>
+
+        <!-- To override parent default settings for compiler plugin and compliance checks-->
+        <dependencyConvergence>true</dependencyConvergence>
+        <!-- Any of these configuration values can be overridden by the descendant, the default is JDK 1.6 -->
+        <java.runtime.version>${compiler.version}</java.runtime.version>
+        <!-- [1.8,) -->
+        <java.required.version>[${compiler.version},)</java.required.version>
+        <java.source.version>${compiler.version}</java.source.version>
+        <java.runtime.version>${compiler.version}</java.runtime.version>
+        <compiler.showDeprecation>true</compiler.showDeprecation>
+        <compiler.showWarnings>true</compiler.showWarnings>
+        <compiler.verbose>true</compiler.verbose>
+        <compiler.debug>true</compiler.debug>        
+        <!-- <compiler.argument>-Xlint:cast,unchecked,fallthrough,finally,serial</compiler.argument> -->
+        <!-- SCM user ID and Password here, or in user specific settings.xml file>
+        <username>admin</username>
+        <password>admin123</password-->
+    </properties>
     <issueManagement>
         <system></system>
         <url></url>
@@ -142,7 +206,7 @@
             <dependency>
                 <groupId>org.primefaces</groupId>
                 <artifactId>primefaces</artifactId>
-                <version>4.0</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -311,12 +375,17 @@
                 <artifactId>spring-expression</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-            <!-- Uncomment out below if using JDBC or aop or spring test>
+            <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+            <!-- Uncomment out below if using JDBC or aop or spring test>  -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${spring.version}</version>
-            </dependency>
+            </dependency>           
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aop</artifactId>
@@ -326,7 +395,8 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
-            </dependency -->
+            </dependency>
+             <!-- Uncomment out below if using JDBC or aop or spring test> -->
             <!-- http://www.springsource.org/node/3654 cglib no longer required as spring 3.2 dependency -->
             <dependency>
                 <groupId>cglib</groupId>
@@ -397,13 +467,19 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>9.2-1002-jdbc4</version>
+                <version>${postgresql.driver.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>6.8.7</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${testdb.groupId}</groupId>
+                <artifactId>${testdb.artifactId}</artifactId>
+                <version>${testdb.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -503,91 +579,7 @@
         <module>core</module>
         <module>web</module>
     </modules>
-    <properties>
-        <andromda.version>3.5-SNAPSHOT</andromda.version>
-        <downloadSources>true</downloadSources>
-        <createChecksum>true</createChecksum>
-        <uniqueVersion>false</uniqueVersion>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <stagingDirectory>${project.build.outputDirectory}/target/site</stagingDirectory>
-        <testdb.groupId>com.h2database</testdb.groupId>
-        <testdb.artifactId>h2</testdb.artifactId>
-        <testdb.version>1.3.174</testdb.version>
-        <testdb.driver>org.h2.Driver</testdb.driver>
-        <testdb.dialect>org.hibernate.dialect.H2Dialect</testdb.dialect>
-        <!-- See http://www.h2database.com/html/features.html#database_url (mixed mode) -->
-        <testdb.url>jdbc:h2:~/${application.id};AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</testdb.url>
-        <testdb.username>sa</testdb.username>
-        <testdb.password>sa</testdb.password>
-        <!--
-            Change this to generate to the correct MDA database mappings,
-            For MySql use: MySQL
-            For Hypersonic use: HypersonicSql
-            For H2 use: H2Sql
-            For Oracle9i use: Oracle9i
-            For DB2 use: DB2
-            For Informix use: InformixDB
-            For MSSQL use: MSSQL
-            For Pointbase use: PointBase
-            For Postgres use: PostgreSQL
-            For Sybase use: Sybase
-            For SapDB use: SapDB
-            For Derby use: Derby
-        -->
-        <sql.mappings>
-            PostgreSQL
-        </sql.mappings>
-        <!--
-        Change this for the appropriate database
-        For H2 use: org.hibernate.dialect.H2Dialect
-        For DB2 use: org.hibernate.dialect.DB2Dialect or org.hibernate.dialect.DB2390Dialect org.hibernate.dialect.DB2400Dialect
-        For Derby use: org.hibernate.dialect.DerbyDialect
-        For Hypersonic use: org.hibernate.dialect.HSQLDialect
-        For Informix use: org.hibernate.dialect.InformixDialect
-        For MySql4 use: org.hibernate.dialect.MySQLDialect
-        For MySql5+ use: org.hibernate.dialect.MySQL5Dialect
-        For MySql InnoDB use: org.hibernate.dialect.MySQL5InnoDBDialect
-        For MySql MyISAM use: org.hibernate.dialect.MySQLMyISAMDialect
-        For MSSQL use: org.hibernate.dialect.SQLServerDialect
-        For Oracle any version use: org.hibernate.dialect.OracleDialect
-        For Oracle8i use: org.hibernate.dialect.Oracle8iDialect
-        For Oracle9i use: org.hibernate.dialect.Oracle9iDialect
-        For Oracle10g or later use: org.hibernate.dialect.Oracle10gDialect
-        For Pointbase use: org.hibernate.dialect.PointbaseDialect
-        For Postgres use: org.hibernate.dialect.PostgreSQLDialect
-        For Progress use: org.hibernate.dialect.ProgressDialect
-        For SapDB use: org.hibernate.dialect.SAPDBDialect
-        For Sybase use: org.hibernate.dialect.SybaseDialect or org.hibernate.dialect.Sybase11Dialect
-        For Sybase Anywhere use: org.hibernate.dialect.SybaseAnywhereDialect
-        -->
-        <hibernate.dialect>
-            org.hibernate.dialect.PostgreSQLDialect
-        </hibernate.dialect>
-        <tomcat.home>${env.CATALINA_HOME}</tomcat.home>
-        <application.id>ouvidoria</application.id>
-        <application.package>com.googlecode.ouvidoria</application.package>
-        <application.name>Sistema de Ouvidoria</application.name>
-        <application.version>1.0-SNAPSHOT</application.version>
-        <dataSource.name>jdbc/${application.id}</dataSource.name>
-        <dataSource>java:comp/env/${dataSource.name}</dataSource>
-        <!-- Set andromda.xml hibernateVersion=4, sessionFactory and localTransactionManager to hibernate4.
-        <hibernate.version>3.6.9.Final</hibernate.version-->
-        <hibernate.version>4.3.0.Final</hibernate.version>
-        <spring.version>3.2.6.RELEASE</spring.version>
-        <!-- To override parent default settings for compiler plugin and compliance checks-->
-        <dependencyConvergence>true</dependencyConvergence>
-        <!-- Any of these configuration values can be overridden by the descendant, the default is JDK 1.6 >
-        <java.runtime.version>1.6</java.runtime.version>
-        <java.required.version>1.6</java.required.version>
-        <java.source.version>1.6</java.source.version>
-        <java.runtime.version>1.6</java.runtime.version>
-        <compiler.showDeprecation>true</compiler.showDeprecation>
-        <compiler.showWarnings>true</compiler.showWarnings>
-        <compiler.argument>-Xlint:cast,unchecked,fallthrough,finally,serial</compiler.argument -->
-        <!-- SCM user ID and Password here, or in user specific settings.xml file>
-        <username></username>
-        <password></password -->
-    </properties>
+    <!-- properties ....... moveu para cima -->
     <profiles>
         <!--Profile configuration for local builds, activeByDefault, customize for your project -->
         <profile>
@@ -834,8 +826,8 @@
                     <sourcepath>${project.basedir}/src/main/java;${project.basedir}/target/src/main/java</sourcepath>
                     <detectLinks/>
                     <links>
-                        <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                        <link>http://docs.oracle.com/javaee/6/api/</link>
+                        <link>http://docs.oracle.com/javase/8/docs/api/</link>
+                        <link>http://docs.oracle.com/javaee/7/api/</link>
                         <link>http://docs.jboss.org/hibernate/stable/orm/javadocs/</link>
                         <link>http://static.springsource.org/spring/docs/3.2.x/javadoc-api/</link>
                         <link>http://jakarta.apache.org/commons/collections/apidocs/</link>
@@ -991,6 +983,8 @@
                     <relaxed>true|false</relaxed>
                     <findbugsXmlOutput>true|false</findbugsXmlOutput>
                     <findbugsXmlOutputDirectory>location of legacy xml format report</findbugsXmlOutputDirectory-->
+                    <threshold>High</threshold>
+                    <effort>Max</effort>
                 </configuration>
             </plugin>
             <plugin>

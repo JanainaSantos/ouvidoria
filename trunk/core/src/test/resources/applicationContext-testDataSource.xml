@@ -4,27 +4,109 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:lang="http://www.springframework.org/schema/lang"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.0.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+		http://www.springframework.org/schema/lang 
+		http://www.springframework.org/schema/lang/spring-lang-3.0.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-    <!-- ========================= DATASOURCE DEFINITION ========================= -->
+	<context:annotation-config />
+	
+	<!-- ========================= DATASOURCE DEFINITION ========================= -->
 
     <!-- Local DataSource that works in any environment -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="$testDriver"/>
-        <property name="username" value="$testUsername"/>
-        <property name="password" value="$testPassword"/>
-        <property name="url" value="$testConnectionUrl"/>
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="sa"/>
+        <property name="url" value="jdbc:h2:~/ouvidoria;AUTO_SERVER=TRUE;AUTO_RECONNECT=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1"/>
     </bean>
 
     <!-- ====================== End of DATASOURCE DEFINITION ====================== -->
 
-    <!-- ===================== TRANSACTION MANAGER DEFINITION ========================= -->
 
-    <!-- (local) Transaction Manager -->
+    <!-- ========================= GENERAL DEFINITIONS ========================= -->
+
+    <!-- Message source for this context, loaded from localized "messages_xx" files -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename"><value>messages</value></property>
+    </bean>
+
+    <!-- applicationContext merge-point -->
+    <bean id="hibernateAnnotatedClasses" class="org.springframework.beans.factory.config.ListFactoryBean">
+        <property name="sourceList">
+            <list>
+                <!-- applicationContext hibernateAnnotatedClasses merge-point -->
+                <value>com.googlecode.ouvidoria.negocio.demanda.DemandaImpl</value>
+                <value>com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoImpl</value>
+                <value>com.googlecode.ouvidoria.negocio.localidade.MunicipioImpl</value>
+            </list>
+         </property>
+    </bean>
+
+    <bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+                <prop key="hibernate.default_batch_fetch_size">16</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
+                <prop key="hibernate.cache.query_cache_factory">org.hibernate.cache.StandardQueryCacheFactory</prop>
+                <!-- add specific (non-supported in the Spring cartridge) hibernate properties here -->
+            </props>
+        </property>
+    </bean>
+
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses" ref="hibernateAnnotatedClasses"/>
+        <property name="hibernateProperties" ref="hibernateProperties"/>
+        <!-- applicationContext sessionFactory merge-point -->
+    </bean>
+
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+ 
+    <!-- Translates Hibernate exceptions to Spring Data Access Exceptions -->
+    <bean class="org.springframework.orm.hibernate4.HibernateExceptionTranslator"/>
 
-    <!-- ===================== TRANSACTION MANAGER DEFINITION ========================= -->
+    <bean id="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <!-- Demanda entity property merge-point -->
+    </bean>
 
+    <!-- Demanda Entity Proxy with inner Demanda Entity implementation -->
+    <bean id="demandaDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.DemandaDao"/>
+    </bean>
+
+    <bean id="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl" class="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <!-- UnidadeFederacao entity property merge-point -->
+    </bean>
+
+    <!-- UnidadeFederacao Entity Proxy with inner UnidadeFederacao Entity implementation -->
+    <bean id="unidadeFederacaoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDao"/>
+    </bean>
+
+    <bean id="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl" class="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <!-- Municipio entity property merge-point -->
+    </bean>
+
+    <!-- Municipio Entity Proxy with inner Municipio Entity implementation -->
+    <bean id="municipioDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.localidade.MunicipioDao"/>
+    </bean>
+
+   
 </beans>
+
