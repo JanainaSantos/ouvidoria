@@ -19,6 +19,12 @@
     <availablePage>
       <emfPageIdentifier href="ouvidoria.notation#_AZMPICe7EeSTVslmbGto7Q"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_I4BTMCiYEeSmYfDYt_Kosg"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria.notation#_VqwT8CiaEeSmYfDYt_Kosg"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -40,6 +46,12 @@
         </children>
         <children>
           <emfPageIdentifier href="ouvidoria.notation#_AZMPICe7EeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_I4BTMCiYEeSmYfDYt_Kosg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_VqwT8CiaEeSmYfDYt_Kosg"/>
         </children>
       </children>
     </windows>
