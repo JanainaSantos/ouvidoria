@@ -15,10 +15,10 @@
         </to>
     </mapping>
     <mapping>
-        <from><![CDATA[<!-- cartridge-property merge-point -->]]></from>
+        <from><![CDATA[<!-- cartridge-macrolibrary merge-point-->]]></from>
         <to>
             <![CDATA[
-                <!-- add specific (non-supported in the Spring cartridge) hibernate properties here -->
+                <macrolibrary name="templates/ouvidoria/marcacoesMacro.vm"/>
             ]]>
         </to>
     </mapping>

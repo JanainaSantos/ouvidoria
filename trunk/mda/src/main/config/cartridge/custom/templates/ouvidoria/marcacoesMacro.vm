@@ -1,0 +1,14 @@
+## Exibe as marcacoes do elemento passado como parametro
+#macro(renderMarcacoes $element)
+/*
+	#foreach ($stereotype in $element.stereotypes)
+ * STEREOTYPE:  $stereotype.name
+	#end
+	#foreach ($tag in $element.taggedValues)
+ * TAGGED_VALUE:  $tag.name = $tag.value
+	#end 
+	#foreach ($constraint in $element.constraints)
+ * CONSTRAINT:  $constraint.name: #if ($constraint.isInvariant())Invariant #end#if ($constraint.isPostCondition())PostCondition #end#if ($constraint.isPreCondition())PreCondition #end $constraint.body
+	#end
+ */
+ #end
