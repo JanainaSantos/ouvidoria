@@ -4,12 +4,18 @@
     <availablePage>
       <emfPageIdentifier href="ouvidoria-profile.profile.notation#_AYI8sCevEeSTVslmbGto7Q"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="ouvidoria-profile.profile.notation#_XBZk4DKtEeS9f-U1NPhq8A"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
           <emfPageIdentifier href="ouvidoria-profile.profile.notation#_AYI8sCevEeSTVslmbGto7Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria-profile.profile.notation#_XBZk4DKtEeS9f-U1NPhq8A"/>
         </children>
       </children>
     </windows>

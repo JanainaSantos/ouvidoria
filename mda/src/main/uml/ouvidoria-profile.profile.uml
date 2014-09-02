@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_AYFSUCevEeSTVslmbGto7Q" name="OuvidoriaProfile" metaclassReference="_6Nm3oCevEeSTVslmbGto7Q" metamodelReference="_AYFSUSevEeSTVslmbGto7Q">
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_AYFSUCevEeSTVslmbGto7Q" name="OuvidoriaProfile" metaclassReference="_6Nm3oCevEeSTVslmbGto7Q _4X6LsDKvEeS9f-U1NPhq8A" metamodelReference="_AYFSUSevEeSTVslmbGto7Q">
   <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcCewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_bvmVMDK0EeS9f-U1NPhq8A" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_bvluIDK0EeS9f-U1NPhq8A/5" nsPrefix="OuvidoriaProfile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVWTK0EeS9f-U1NPhq8A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bvmVWjK0EeS9f-U1NPhq8A" key="Version" value="0.0.6"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bvmVWzK0EeS9f-U1NPhq8A" key="Comment" value="revisao"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bvmVXDK0EeS9f-U1NPhq8A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bvmVXTK0EeS9f-U1NPhq8A" key="Date" value="2014-09-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bvmVXjK0EeS9f-U1NPhq8A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_bvmVMTK0EeS9f-U1NPhq8A" name="CrudService">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVMjK0EeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TGUMoDIvEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVMzK0EeS9f-U1NPhq8A" name="ouvidoria_service_crud_update" ordered="false" lowerBound="1" eType="_bvmVUjK0EeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVNTK0EeS9f-U1NPhq8A" name="ouvidoria_service_crud_delete" ordered="false" lowerBound="1" eType="_bvmVUjK0EeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVNzK0EeS9f-U1NPhq8A" name="ouvidoria_service_crud_search" ordered="false" lowerBound="1" eType="_bvmVUjK0EeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVOTK0EeS9f-U1NPhq8A" name="ouvidoria_service_crud_create" ordered="false" lowerBound="1" eType="_bvmVUjK0EeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_bvmVOzK0EeS9f-U1NPhq8A" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_bvmVPTK0EeS9f-U1NPhq8A" name="CasoDeUso">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVPjK0EeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_dUtWADKtEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVPzK0EeS9f-U1NPhq8A" name="ouvidoria_csu_nome" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVQTK0EeS9f-U1NPhq8A" name="ouvidoria_csu_identificador" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVQzK0EeS9f-U1NPhq8A" name="ouvidoria_csu_objetivo" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bvmVRTK0EeS9f-U1NPhq8A" name="ouvidoria_csu_prioridade" ordered="false" lowerBound="1" eType="_bvmVSzK0EeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_bvmVRzK0EeS9f-U1NPhq8A" name="base_UseCase" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//UseCase"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_bvmVSTK0EeS9f-U1NPhq8A" name="enums" nsURI="http:///OuvidoriaProfile/enums.ecore" nsPrefix="OuvidoriaProfile.enums">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVSjK0EeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_ZyrhgDIwEeSm0-Xoj3UZsQ"/>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_bvmVSzK0EeS9f-U1NPhq8A" name="PrioridadeCasoDeUso">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVTDK0EeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_7XqW0DKuEeS9f-U1NPhq8A"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVTTK0EeS9f-U1NPhq8A" name="essencial"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVTjK0EeS9f-U1NPhq8A" name="alta" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVTzK0EeS9f-U1NPhq8A" name="media" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVUDK0EeS9f-U1NPhq8A" name="baixa" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVUTK0EeS9f-U1NPhq8A" name="desejavel" value="4"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_bvmVUjK0EeS9f-U1NPhq8A" name="TernaryBoolean">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bvmVUzK0EeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_v8RrUDIvEeSm0-Xoj3UZsQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVVDK0EeS9f-U1NPhq8A" name="default"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVVTK0EeS9f-U1NPhq8A" name="true" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_bvmVVjK0EeS9f-U1NPhq8A" name="false" value="2"/>
+        </eClassifiers>
+      </eSubpackages>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_CrCoYDKwEeS9f-U1NPhq8A" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_CrCBUDKwEeS9f-U1NPhq8A/4" nsPrefix="OuvidoriaProfile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCoiTKwEeS9f-U1NPhq8A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CrCoijKwEeS9f-U1NPhq8A" key="Version" value="0.0.5"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CrCoizKwEeS9f-U1NPhq8A" key="Comment" value="definindo metaclasse do stereotype CasoDeUso"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CrCojDKwEeS9f-U1NPhq8A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CrCojTKwEeS9f-U1NPhq8A" key="Date" value="2014-09-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CrCojjKwEeS9f-U1NPhq8A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_CrCoYTKwEeS9f-U1NPhq8A" name="CrudService">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCoYjKwEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TGUMoDIvEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCoYzKwEeS9f-U1NPhq8A" name="ouvidoria_service_crud_update" ordered="false" lowerBound="1" eType="_CrCogjKwEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCoZTKwEeS9f-U1NPhq8A" name="ouvidoria_service_crud_delete" ordered="false" lowerBound="1" eType="_CrCogjKwEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCoZzKwEeS9f-U1NPhq8A" name="ouvidoria_service_crud_search" ordered="false" lowerBound="1" eType="_CrCogjKwEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCoaTKwEeS9f-U1NPhq8A" name="ouvidoria_service_crud_create" ordered="false" lowerBound="1" eType="_CrCogjKwEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_CrCoazKwEeS9f-U1NPhq8A" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_CrCobTKwEeS9f-U1NPhq8A" name="CasoDeUso">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCobjKwEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_dUtWADKtEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCobzKwEeS9f-U1NPhq8A" name="ouvidoria_csu_nome" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCocTKwEeS9f-U1NPhq8A" name="ouvidoria_csu_identificador" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCoczKwEeS9f-U1NPhq8A" name="ouvidoria_csu_objetivo" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_CrCodTKwEeS9f-U1NPhq8A" name="ouvidoria_csu_prioridade" ordered="false" lowerBound="1" eType="_CrCoezKwEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_CrCodzKwEeS9f-U1NPhq8A" name="base_UseCase" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//UseCase"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_CrCoeTKwEeS9f-U1NPhq8A" name="enums" nsURI="http:///OuvidoriaProfile/enums.ecore" nsPrefix="OuvidoriaProfile.enums">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCoejKwEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_ZyrhgDIwEeSm0-Xoj3UZsQ"/>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_CrCoezKwEeS9f-U1NPhq8A" name="PrioridadeCasoDeUso">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCofDKwEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_7XqW0DKuEeS9f-U1NPhq8A"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCofTKwEeS9f-U1NPhq8A" name="essencial"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCofjKwEeS9f-U1NPhq8A" name="alta" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCofzKwEeS9f-U1NPhq8A" name="media" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCogDKwEeS9f-U1NPhq8A" name="baixa" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCogTKwEeS9f-U1NPhq8A" name="desejavel" value="4"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_CrCogjKwEeS9f-U1NPhq8A" name="TernaryBoolean">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CrCogzKwEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_v8RrUDIvEeSm0-Xoj3UZsQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCohDKwEeS9f-U1NPhq8A" name="default"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCohTKwEeS9f-U1NPhq8A" name="true" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_CrCohjKwEeS9f-U1NPhq8A" name="false" value="2"/>
+        </eClassifiers>
+      </eSubpackages>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_tMKE8DKvEeS9f-U1NPhq8A" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_tMIPwDKvEeS9f-U1NPhq8A/3" nsPrefix="OuvidoriaProfile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMLTETKvEeS9f-U1NPhq8A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tMLTEjKvEeS9f-U1NPhq8A" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tMLTEzKvEeS9f-U1NPhq8A" key="Comment" value="criando steretype para CasoDeUso"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tMLTFDKvEeS9f-U1NPhq8A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tMLTFTKvEeS9f-U1NPhq8A" key="Date" value="2014-09-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tMLTFjKvEeS9f-U1NPhq8A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tMKE8TKvEeS9f-U1NPhq8A" name="CrudService">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMKE8jKvEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TGUMoDIvEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKE8zKvEeS9f-U1NPhq8A" name="ouvidoria_service_crud_update" ordered="false" lowerBound="1" eType="_tMKFEDKvEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKE9TKvEeS9f-U1NPhq8A" name="ouvidoria_service_crud_delete" ordered="false" lowerBound="1" eType="_tMKFEDKvEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKE9zKvEeS9f-U1NPhq8A" name="ouvidoria_service_crud_search" ordered="false" lowerBound="1" eType="_tMKFEDKvEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKE-TKvEeS9f-U1NPhq8A" name="ouvidoria_service_crud_create" ordered="false" lowerBound="1" eType="_tMKFEDKvEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tMKE-zKvEeS9f-U1NPhq8A" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tMKE_TKvEeS9f-U1NPhq8A" name="CasoDeUso">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMKE_jKvEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_dUtWADKtEeS9f-U1NPhq8A"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKE_zKvEeS9f-U1NPhq8A" name="ouvidoria_csu_nome" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKFATKvEeS9f-U1NPhq8A" name="ouvidoria_csu_identificador" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKFAzKvEeS9f-U1NPhq8A" name="ouvidoria_csu_objetivo" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_tMKFBTKvEeS9f-U1NPhq8A" name="ouvidoria_csu_prioridade" ordered="false" lowerBound="1" eType="_tMKFCTKvEeS9f-U1NPhq8A"/>
+      </eClassifiers>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_tMKFBzKvEeS9f-U1NPhq8A" name="enums" nsURI="http:///OuvidoriaProfile/enums.ecore" nsPrefix="OuvidoriaProfile.enums">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMKFCDKvEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_ZyrhgDIwEeSm0-Xoj3UZsQ"/>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_tMKFCTKvEeS9f-U1NPhq8A" name="PrioridadeCasoDeUso">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMKFCjKvEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_7XqW0DKuEeS9f-U1NPhq8A"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFCzKvEeS9f-U1NPhq8A" name="essencial"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFDDKvEeS9f-U1NPhq8A" name="alta" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFDTKvEeS9f-U1NPhq8A" name="media" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFDjKvEeS9f-U1NPhq8A" name="baixa" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFDzKvEeS9f-U1NPhq8A" name="desejavel" value="4"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_tMKFEDKvEeS9f-U1NPhq8A" name="TernaryBoolean">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tMKFETKvEeS9f-U1NPhq8A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_v8RrUDIvEeSm0-Xoj3UZsQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFEjKvEeS9f-U1NPhq8A" name="default"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFEzKvEeS9f-U1NPhq8A" name="true" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_tMKFFDKvEeS9f-U1NPhq8A" name="false" value="2"/>
+        </eClassifiers>
+      </eSubpackages>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_znx3QDIwEeSm0-Xoj3UZsQ" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_znuz8DIwEeSm0-Xoj3UZsQ/2" nsPrefix="OuvidoriaProfile">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_znzFYTIwEeSm0-Xoj3UZsQ" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFYjIwEeSm0-Xoj3UZsQ" key="Version" value="0.0.3"/>
@@ -69,6 +222,9 @@
   <elementImport xmi:type="uml:ElementImport" xmi:id="_6Nm3oCevEeSTVslmbGto7Q" alias="Class">
     <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
   </elementImport>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_4X6LsDKvEeS9f-U1NPhq8A" alias="UseCase">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#UseCase"/>
+  </elementImport>
   <packageImport xmi:type="uml:PackageImport" xmi:id="_AYFSUSevEeSTVslmbGto7Q">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
   </packageImport>
@@ -114,5 +270,49 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2KVwEDIvEeSm0-Xoj3UZsQ" name="true"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2-nFoDIvEeSm0-Xoj3UZsQ" name="false"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_7XqW0DKuEeS9f-U1NPhq8A" name="PrioridadeCasoDeUso">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_awOqQDKxEeS9f-U1NPhq8A" annotatedElement="_7XqW0DKuEeS9f-U1NPhq8A">
+        <body>Indica a prioridade do caso de uso. Ordem crescente: desejavel, baixa, media, alta, essencial</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AbmKwDKvEeS9f-U1NPhq8A" name="essencial"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BlDtMDKvEeS9f-U1NPhq8A" name="alta"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CvwlwDKvEeS9f-U1NPhq8A" name="media"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_D8znsDKvEeS9f-U1NPhq8A" name="baixa"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FCT3MDKvEeS9f-U1NPhq8A" name="desejavel"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_dUtWADKtEeS9f-U1NPhq8A" name="CasoDeUso">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kAdcUDKtEeS9f-U1NPhq8A" name="ouvidoria_csu_nome">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_la7PMDKtEeS9f-U1NPhq8A" name="ouvidoria_csu_identificador" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lpRNMDKtEeS9f-U1NPhq8A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lpR0QDKtEeS9f-U1NPhq8A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_lpSbUDKtEeS9f-U1NPhq8A">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_lzQ2sDKtEeS9f-U1NPhq8A" name="ouvidoria_csu_objetivo" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l7floDKtEeS9f-U1NPhq8A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l7gMsDKtEeS9f-U1NPhq8A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_l7gzwDKtEeS9f-U1NPhq8A">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VdnogDKuEeS9f-U1NPhq8A" name="ouvidoria_csu_prioridade" visibility="public" type="_7XqW0DKuEeS9f-U1NPhq8A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VoteMDKuEeS9f-U1NPhq8A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VoteMTKuEeS9f-U1NPhq8A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_VouFQDKuEeS9f-U1NPhq8A">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_6fTWADKvEeS9f-U1NPhq8A" name="base_UseCase" association="_6fTWATKvEeS9f-U1NPhq8A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#UseCase"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_6fTWATKvEeS9f-U1NPhq8A" name="E_CasoDeUso_UseCase1" memberEnd="_6fTWAjKvEeS9f-U1NPhq8A _6fTWADKvEeS9f-U1NPhq8A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_6fTWAjKvEeS9f-U1NPhq8A" name="extension_CasoDeUso" type="_dUtWADKtEeS9f-U1NPhq8A" aggregation="composite" association="_6fTWATKvEeS9f-U1NPhq8A"/>
   </packagedElement>
 </uml:Profile>
