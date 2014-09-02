@@ -7,13 +7,22 @@
 -->
 <mappings name="SpringMerge">
     <mapping>
-        <from><![CDATA[<!-- applicationContext hibernateProperties merge-point -->]]></from>
-        <to>
-            <![CDATA[
-                <!-- add specific (non-supported in the Spring cartridge) hibernate properties here -->
-            ]]>
-        </to>
-    </mapping>
+		<from>
+			<![CDATA[<!-- cartridge-template merge-point -->]]>
+		</from>
+		<to>
+			<![CDATA[			
+		    <!-- <template path="templates/spring/AbstractEasyMockServiceTest.vsl" 
+		    	outputPattern="$generatedFile" 
+		    	outlet="service-tests-generated" 
+		    	overwrite="true">
+				<modelElements variable="service">
+					<modelElement stereotype="CrudService" />
+				</modelElements>
+			</template> -->
+			]]>
+		</to>
+	</mapping>
     <mapping>
         <from><![CDATA[<!-- cartridge-macrolibrary merge-point-->]]></from>
         <to>

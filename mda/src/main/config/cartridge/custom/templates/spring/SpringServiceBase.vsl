@@ -6,20 +6,12 @@
 //
 /**
  * TEMPLATE:    SpringServiceBase.vsl in andromda-spring cartridge
+ * METACALSS: $service
  * MODEL CLASS: $service.validationName
-#foreach ($stereotype in $service.stereotypes)
- * STEREOTYPE:  $stereotype.name
-#end
-#foreach ($constraint in $service.constraints)
- * CONSTRAINT:  $constraint.name: #if ($constraint.isInvariant())Invariant #end#if ($constraint.isPostCondition())PostCondition #end#if ($constraint.isPreCondition())PreCondition #end $constraint.body
-#end
-* #foreach ($tag in $service.taggedValues)
- * TAGGED_VALUE:  $tag.name
-#end
  */
- 
+
  ##Customizacao: mostrar marcacoes (estereotipos, tagged values e constraints)
-#renderMarcacoes($attribute)
+#renderMarcacoes($service)
 
 #if ($stringUtils.isNotBlank($service.implementationPackageName))
 package $service.implementationPackageName;
@@ -39,6 +31,33 @@ public abstract class $service.baseName
 #end
     implements $service.fullyQualifiedName
 {
+	
+## CUSTOMIZACAO: crud service
+#set($crudServiceEnabled = $service.hasExactStereotype("CrudService"))
+#set($crudCreate = true)
+#if(false == $service.findTaggedValue("ouvidoria_service_crud_create"))
+	#set($crudCreate = false)
+#end
+#set($crudUpdate = true)
+#if(false == $service.findTaggedValue("ouvidoria_service_crud_update"))
+	#set($crudUpdate = false)
+#end
+#set($crudDelete = true)
+#if(false == $service.findTaggedValue("ouvidoria_service_crud_delete"))
+	#set($crudDelete = false)
+#end
+#set($crudSearch = true)
+#if(false == $service.findTaggedValue("ouvidoria_service_crud_search"))
+	#set($crudSearch = false)
+#end
+//crudServiceEnabled=$crudServiceEnabled
+//crudCreate=$crudCreate
+//crudUpdate=$crudUpdate
+//crudDelete=$crudDelete
+//crudSearch=$crudSearch
+## CUSTOMIZACAO: crud service FIM
+## 
+	
 #foreach ($attribute in $service.attributes)
 
 ##Customizacao: mostrar marcacoes (estereotipos, tagged values e constraints)
@@ -70,6 +89,9 @@ $attribute.getDocumentation("     * ")
 #end
 #foreach($serviceRef in $service.serviceReferences)
 #set ($targetElement = $serviceRef.targetElement)
+
+##Customizacao: mostrar marcacoes (estereotipos, tagged values e constraints)
+#renderMarcacoes($targetElement)
     private $targetElement.fullyQualifiedName $serviceRef.name;
 
     /**
@@ -92,6 +114,19 @@ $attribute.getDocumentation("     * ")
 
 #end
 #foreach($entityRef in $service.entityReferences)
+
+
+## CUSTOMIZACAO: crud service 
+#if($crudCreate == "true")
+	public void criar$stringUtils.upperCamelCaseName($entityRef.name)(){
+		
+	}
+#end
+## CUSTOMIZACAO: crud service FIM
+## 
+
+##Customizacao: mostrar marcacoes (estereotipos, tagged values e constraints)
+#renderMarcacoes($entityRef.targetElement)
     private $entityRef.targetElement.fullyQualifiedDaoName $entityRef.daoName;
 
     /**

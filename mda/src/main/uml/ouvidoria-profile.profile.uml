@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_AYFSUCevEeSTVslmbGto7Q" name="OuvidoriaProfile" metaclassReference="_6Nm3oCevEeSTVslmbGto7Q" metamodelReference="_AYFSUSevEeSTVslmbGto7Q">
   <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcCewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_znx3QDIwEeSm0-Xoj3UZsQ" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_znuz8DIwEeSm0-Xoj3UZsQ/2" nsPrefix="OuvidoriaProfile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_znzFYTIwEeSm0-Xoj3UZsQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFYjIwEeSm0-Xoj3UZsQ" key="Version" value="0.0.3"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFYzIwEeSm0-Xoj3UZsQ" key="Comment" value="criando stereotype CrudService"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFZDIwEeSm0-Xoj3UZsQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFZTIwEeSm0-Xoj3UZsQ" key="Date" value="2014-09-01"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_znzFZjIwEeSm0-Xoj3UZsQ" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_znx3QTIwEeSm0-Xoj3UZsQ" name="CrudService">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_znx3QjIwEeSm0-Xoj3UZsQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TGUMoDIvEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_znx3QzIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_update" ordered="false" lowerBound="1" eType="_znx3TzIwEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_znx3RTIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_delete" ordered="false" lowerBound="1" eType="_znx3TzIwEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_znx3RzIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_search" ordered="false" lowerBound="1" eType="_znx3TzIwEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_znx3STIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_create" ordered="false" lowerBound="1" eType="_znx3TzIwEeSm0-Xoj3UZsQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_znx3SzIwEeSm0-Xoj3UZsQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_znx3TTIwEeSm0-Xoj3UZsQ" name="enums" nsURI="http:///OuvidoriaProfile/enums.ecore" nsPrefix="OuvidoriaProfile.enums">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_znx3TjIwEeSm0-Xoj3UZsQ" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_ZyrhgDIwEeSm0-Xoj3UZsQ"/>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_znx3TzIwEeSm0-Xoj3UZsQ" name="TernaryBoolean">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_znx3UDIwEeSm0-Xoj3UZsQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_v8RrUDIvEeSm0-Xoj3UZsQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_znx3UTIwEeSm0-Xoj3UZsQ" name="default"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_znx3UjIwEeSm0-Xoj3UZsQ" name="true" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_znx3UzIwEeSm0-Xoj3UZsQ" name="false" value="2"/>
+        </eClassifiers>
+      </eSubpackages>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_Mh-xkCiaEeSmYfDYt_Kosg" name="OuvidoriaProfile" nsURI="http:///schemas/OuvidoriaProfile/_Mh8VUCiaEeSmYfDYt_Kosg/1" nsPrefix="OuvidoriaProfile">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MiB04SiaEeSmYfDYt_Kosg" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MiB04iiaEeSmYfDYt_Kosg" key="Version" value="0.0.2"/>
@@ -10,7 +38,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MiB05iiaEeSmYfDYt_Kosg" key="Author" value=""/>
       </eAnnotations>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_Mh-xkSiaEeSmYfDYt_Kosg" name="Auditable">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mh-xkiiaEeSmYfDYt_Kosg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_i9V2ICevEeSTVslmbGto7Q"/>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mh-xkiiaEeSmYfDYt_Kosg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_Mh-xkyiaEeSmYfDYt_Kosg" name="base_Class" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </eStructuralFeatures>
@@ -28,7 +56,7 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LnMZpSewEeSTVslmbGto7Q" key="Author" value=""/>
       </eAnnotations>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_LnKkciewEeSTVslmbGto7Q" name="Auditable">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcyewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_i9V2ICevEeSTVslmbGto7Q"/>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LnKkcyewEeSTVslmbGto7Q" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_LnKkdCewEeSTVslmbGto7Q" name="base_Class" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </eStructuralFeatures>
@@ -47,20 +75,44 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_AYFSUievEeSTVslmbGto7Q">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Stereotype" xmi:id="_i9V2ICevEeSTVslmbGto7Q" name="Auditable">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_7YmEECevEeSTVslmbGto7Q" name="base_Class" association="_7YmEESevEeSTVslmbGto7Q">
-      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_BZnLUCewEeSTVslmbGto7Q" name="teste" visibility="public">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B4sUACewEeSTVslmbGto7Q" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B4sUASewEeSTVslmbGto7Q" value="1"/>
-      <defaultValue xmi:type="uml:LiteralString" xmi:id="_B4s7ECewEeSTVslmbGto7Q">
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_TGUMoDIvEeSm0-Xoj3UZsQ" name="CrudService">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_XHYOUDIvEeSm0-Xoj3UZsQ" annotatedElement="_TGUMoDIvEeSm0-Xoj3UZsQ">
+      <body>Cria um crud simples</body>
+    </ownedComment>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_DqhXkDIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_update" visibility="public" type="_v8RrUDIvEeSm0-Xoj3UZsQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dzr6oDIwEeSm0-Xoj3UZsQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DzshsDIwEeSm0-Xoj3UZsQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_DztIwDIwEeSm0-Xoj3UZsQ">
         <value xsi:nil="true"/>
       </defaultValue>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_G9Y2gDIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_delete" visibility="public" type="_v8RrUDIvEeSm0-Xoj3UZsQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HFxWcDIwEeSm0-Xoj3UZsQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HFzLoDIwEeSm0-Xoj3UZsQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_HFzysDIwEeSm0-Xoj3UZsQ">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KeN48DIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_search" visibility="public" type="_v8RrUDIvEeSm0-Xoj3UZsQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KrMlADIwEeSm0-Xoj3UZsQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KrNMEDIwEeSm0-Xoj3UZsQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_KrOaMDIwEeSm0-Xoj3UZsQ">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PxctIDIwEeSm0-Xoj3UZsQ" name="ouvidoria_service_crud_create" type="_v8RrUDIvEeSm0-Xoj3UZsQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TAMhEDIwEeSm0-Xoj3UZsQ" name="base_Class" association="_TANIIDIwEeSm0-Xoj3UZsQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Extension" xmi:id="_7YmEESevEeSTVslmbGto7Q" name="E_Auditable_Class1" memberEnd="_7YmEEievEeSTVslmbGto7Q _7YmEECevEeSTVslmbGto7Q">
-    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_7YmEEievEeSTVslmbGto7Q" name="extension_Auditable" type="_i9V2ICevEeSTVslmbGto7Q" aggregation="composite" association="_7YmEESevEeSTVslmbGto7Q"/>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_TANIIDIwEeSm0-Xoj3UZsQ" name="E_CrudService_Class1" memberEnd="_TANIITIwEeSm0-Xoj3UZsQ _TAMhEDIwEeSm0-Xoj3UZsQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_TANIITIwEeSm0-Xoj3UZsQ" name="extension_CrudService" type="_TGUMoDIvEeSm0-Xoj3UZsQ" aggregation="composite" association="_TANIIDIwEeSm0-Xoj3UZsQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ZyrhgDIwEeSm0-Xoj3UZsQ" name="enums">
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_v8RrUDIvEeSm0-Xoj3UZsQ" name="TernaryBoolean">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1Y0MgDIvEeSm0-Xoj3UZsQ" name="default"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2KVwEDIvEeSm0-Xoj3UZsQ" name="true"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2-nFoDIvEeSm0-Xoj3UZsQ" name="false"/>
+    </packagedElement>
   </packagedElement>
 </uml:Profile>
