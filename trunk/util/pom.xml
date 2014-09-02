@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- These settings apply specifically to the andromda code generation process. To generate code without
+    compiling or testing or packaging, run mvn install from /mda instead of from the root directory. -->
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.googlecode.ouvidoria</groupId>
+        <artifactId>ouvidoria</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>ouvidoria-util</artifactId>
+    <packaging>pom</packaging>
+    <name>Sistema de Ouvidoria Utilitarios</name>
+    <modules>
+        <module>util-core</module>
+        <module>util-mda</module>
+    </modules>
+</project>
