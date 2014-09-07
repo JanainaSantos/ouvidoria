@@ -1120,11 +1120,11 @@
   <notation:Diagram xmi:id="_VqwT8CiaEeSmYfDYt_Kosg" type="PapyrusUMLClassDiagram" name="manutencao services" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_WRKMoCiaEeSmYfDYt_Kosg" type="2008" fillColor="8905185">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZrJAMCiaEeSmYfDYt_Kosg" source="Stereotype_Annotation">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Afb8DIwEeSm0-Xoj3UZsQ" key="StereotypeWithQualifiedNameList" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Afb8TIwEeSm0-Xoj3UZsQ" key="StereotypeList" value="andromda-service::Service,OuvidoriaProfile::CrudService"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Afb8jIwEeSm0-Xoj3UZsQ" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Afb8zIwEeSm0-Xoj3UZsQ" key="PropStereoDisplay" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Afb9DIwEeSm0-Xoj3UZsQ" key="StereotypePropertyLocation" value="Compartment"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gHlPsDayEeSca6oEiGm6og" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gHlPsTayEeSca6oEiGm6og" key="StereotypeList" value="andromda-service::Service"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gHlPsjayEeSca6oEiGm6og" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gHl2wDayEeSca6oEiGm6og" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gHl2wTayEeSca6oEiGm6og" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_WRKMoiiaEeSmYfDYt_Kosg" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_WRKMoyiaEeSmYfDYt_Kosg" type="7017">
@@ -2006,11 +2006,11 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hfTJkTIdEeSm0-Xoj3UZsQ" key="displayNameLabelIcon_value" value="true"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_A_AHIDIdEeSm0-Xoj3UZsQ" source="Stereotype_Annotation">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orV9cDK1EeS9f-U1NPhq8A" key="StereotypeWithQualifiedNameList" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orV9cTK1EeS9f-U1NPhq8A" key="StereotypeList" value=",andromda-presentation::FrontEndUseCase"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orV9cjK1EeS9f-U1NPhq8A" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orV9czK1EeS9f-U1NPhq8A" key="PropStereoDisplay" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_orV9dDK1EeS9f-U1NPhq8A" key="StereotypePropertyLocation" value="Compartment"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9fIUDa0EeSca6oEiGm6og" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9fIUTa0EeSca6oEiGm6og" key="StereotypeList" value=",andromda-presentation::FrontEndUseCase,OuvidoriaProfile::CasoDeUso"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9fIUja0EeSca6oEiGm6og" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9fIUza0EeSca6oEiGm6og" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9fIVDa0EeSca6oEiGm6og" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_4T0fsjIcEeSm0-Xoj3UZsQ" type="5016"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_4T1GwDIcEeSm0-Xoj3UZsQ" type="7009">
