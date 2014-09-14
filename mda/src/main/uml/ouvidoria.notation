@@ -3165,7 +3165,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_7zFwUDgZEeSN0LCe_KdGSQ"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_7zFwUTgZEeSN0LCe_KdGSQ" type="7003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7zFwUjgZEeSN0LCe_KdGSQ" y="60"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7zFwUjgZEeSN0LCe_KdGSQ" x="2" y="23"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_7zFJQTgZEeSN0LCe_KdGSQ"/>
       <element xmi:type="uml:Transition" href="ouvidoria.uml#_7zCF8DgZEeSN0LCe_KdGSQ"/>
