@@ -2,10 +2,18 @@
 Class {
 	gradient: white vertical;
 	elementIcon: false;
+	bold: true;
 	
-	/*bold: true;
+	/*
 	 * shadow: true;
 	qualifiedNameDepth: full;*/
+}
+
+Enumeration {
+	gradient: white vertical;
+	elementIcon: false;
+	fillColor:#C0C0C0;
+	bold: true;
 }
 
 Class[appliedStereotypes~=Entity]{
@@ -15,26 +23,29 @@ Class[appliedStereotypes~=Entity]{
 	 *  A class on which the stereotypes "Block" and "MyCustomStereotype" are applied, 
 	*  and on which the stereotype property "isEncapsulated" is set to true, 
 	*  the stereotype property "myCustomProperty" is set to "SomeValue", and 
-	*  the UML Property "isAbstract" is set to false */
+	*  the UML Property "isAbstract" is set to false  */
  
-	fillColor:red;
+	fillColor:#A3C392;
 }
 
 Class[appliedStereotypes~=Entity][appliedStereotypes~=Manageable]{
-	fillColor:green;
+	fillColor:#A3C392;
+	gradient: white horizontal;
 }
 
 Class[appliedStereotypes~=Service]{
-	fillColor:red;
+	fillColor:#E2E276;
 }
 
 Class[appliedStereotypes~=ValueObject]{
-	fillColor:red;
+	fillColor:#BB94C5;
 }
 
-Enumeration {
-	fillColor:red;
+Class[appliedStereotypes~=WebService]{
+	fillColor:#F3C869;
 }
+
+
 
 
 
