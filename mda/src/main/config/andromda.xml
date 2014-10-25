@@ -162,6 +162,13 @@
 				<property name="criteria">${common.generated.dir}</property>
 				<property name="value-objects">${common.generated.dir}</property>
 				
+				<!--
+					customizacao necessaria para a geracao das classes de teste unitario (easymock) - service-tests-impls: indica onde as classes IMPL (que nao sao sobrescritas) serao geradas -
+					service-tests-generated: indica onde as classes abstratas de teste unitario serao geradas
+				-->
+				<property name="service-tests-impls">${core.manual.test.dir}</property>
+				<property name="service-tests-generated">${core.generated.test.dir}</property>
+				
 				<!--Definicao do Merge Point para substituicao dos templates do cartucho;
 					o local onde o andromda deve procurar templates velocity para "tratar"
 				-->

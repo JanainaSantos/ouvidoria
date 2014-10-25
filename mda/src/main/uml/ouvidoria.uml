@@ -26,7 +26,7 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_yBfSICesEeSTVslmbGto7Q" name="com.googlecode.ouvidoria">
       <packagedElement xmi:type="uml:Package" xmi:id="_0N-X0CesEeSTVslmbGto7Q" name="negocio">
         <packagedElement xmi:type="uml:Package" xmi:id="_2QJq8CesEeSTVslmbGto7Q" clientDependency="_fG09oDfAEeSN0LCe_KdGSQ" name="demanda">
-          <packagedElement xmi:type="uml:Class" xmi:id="_Bkl20CexEeSTVslmbGto7Q" name="Demanda">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Bkl20CexEeSTVslmbGto7Q" clientDependency="_i1OEUFxGEeSI_r_DQzLvpg" name="Demanda">
             <ownedComment xmi:type="uml:Comment" xmi:id="_RzjNMCe7EeSTVslmbGto7Q" annotatedElement="_Bkl20CexEeSTVslmbGto7Q">
               <body>Representa uma demanda realizada por um usuario no sistema de ouvidoria</body>
             </ownedComment>
@@ -53,8 +53,42 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W0QRMTfFEeSN0LCe_KdGSQ"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W0QRMjfFEeSN0LCe_KdGSQ" value="1"/>
             </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_pIyi4FxAEeSI_r_DQzLvpg" name="demandante" type="_4T0qgCe6EeSTVslmbGto7Q" association="_pIzJ8FxAEeSI_r_DQzLvpg">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pIyi4VxAEeSI_r_DQzLvpg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pIyi4lxAEeSI_r_DQzLvpg" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_vJTT0FxAEeSI_r_DQzLvpg" name="situacaoDemanda" visibility="public" type="_w6ovwDe7EeSN0LCe_KdGSQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vWPjoFxAEeSI_r_DQzLvpg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vWPjoVxAEeSI_r_DQzLvpg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_vWQKsFxAEeSI_r_DQzLvpg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1MsZoFxAEeSI_r_DQzLvpg" name="formaContato" visibility="public" type="_b90WYFxAEeSI_r_DQzLvpg">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1YWQAFxAEeSI_r_DQzLvpg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1YZ6YFxAEeSI_r_DQzLvpg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_1YbIgFxAEeSI_r_DQzLvpg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1dHB8FxFEeSI_r_DQzLvpg" name="senhaAcompanhamento" visibility="public">
+              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1ulzgFxFEeSI_r_DQzLvpg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1unBoFxFEeSI_r_DQzLvpg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_1unosFxFEeSI_r_DQzLvpg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_GvkoQFxGEeSI_r_DQzLvpg" name="data" visibility="public">
+              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_433788_5"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G9LmcFxGEeSI_r_DQzLvpg" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G9LmcVxGEeSI_r_DQzLvpg" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_G9MNgFxGEeSI_r_DQzLvpg">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_t-_B0CezEeSTVslmbGto7Q" name="TipoDemanda">
+          <packagedElement xmi:type="uml:Class" xmi:id="_t-_B0CezEeSTVslmbGto7Q" clientDependency="_fPizkFxFEeSI_r_DQzLvpg" name="TipoDemanda">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_9PDk0Ci_EeS908UQl6F1Rw" name="nome" visibility="public">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9azh0Ci_EeS908UQl6F1Rw" value="1"/>
@@ -80,7 +114,7 @@
               </defaultValue>
             </ownedAttribute>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_8NgHQCe5EeSTVslmbGto7Q" name="Assunto">
+          <packagedElement xmi:type="uml:Class" xmi:id="_8NgHQCe5EeSTVslmbGto7Q" clientDependency="_f4PyUFxFEeSI_r_DQzLvpg" name="Assunto">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_T_mZ4Ci_EeS908UQl6F1Rw" name="nome" visibility="public">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UbBKkCi_EeS908UQl6F1Rw" value="1"/>
@@ -111,42 +145,125 @@
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_9u8r4Ce5EeSTVslmbGto7Q" name="FormaContato">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_utVn0Ci_EeS908UQl6F1Rw" name="nome" visibility="public">
-              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u9zFsCi_EeS908UQl6F1Rw" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u9zFsSi_EeS908UQl6F1Rw" value="1"/>
-              <defaultValue xmi:type="uml:LiteralString" xmi:id="_u9zswCi_EeS908UQl6F1Rw">
-                <value xsi:nil="true"/>
-              </defaultValue>
-            </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_xO8B4Ci_EeS908UQl6F1Rw" name="descricao" visibility="public" isUnique="false">
-              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xaiN4Ci_EeS908UQl6F1Rw"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xajcACi_EeS908UQl6F1Rw" value="1"/>
-              <defaultValue xmi:type="uml:LiteralString" xmi:id="_xakDECi_EeS908UQl6F1Rw">
-                <value xsi:nil="true"/>
-              </defaultValue>
-            </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_zAk-oCi_EeS908UQl6F1Rw" name="ativo" visibility="public" isUnique="false">
-              <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_877505_40"/>
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJFaYCi_EeS908UQl6F1Rw" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJGogCi_EeS908UQl6F1Rw" value="1"/>
-              <defaultValue xmi:type="uml:LiteralString" xmi:id="_zJHPkCi_EeS908UQl6F1Rw">
-                <value xsi:nil="true"/>
-              </defaultValue>
-            </ownedAttribute>
+          <packagedElement xmi:type="uml:Package" xmi:id="_UtY9kCe6EeSTVslmbGto7Q" name="vo">
+            <packagedElement xmi:type="uml:Class" xmi:id="_STfCQFxEEeSI_r_DQzLvpg" name="DemandaResumidaVO">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RY4wUFxGEeSI_r_DQzLvpg" name="id" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RkXnkFxGEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RkYOoFxGEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_RkY1sFxGEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_TKq3AFxGEeSI_r_DQzLvpg" name="data" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_433788_5"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TeSWkFxGEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TeTksFxGEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_TeULwFxGEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_YENY0FxGEeSI_r_DQzLvpg" name="senhaAcompanhamento" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YQb28FxGEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YQb28VxGEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_YQceAFxGEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_nhbUwFxGEeSI_r_DQzLvpg" name="situacaoDemanda" visibility="public" type="_w6ovwDe7EeSN0LCe_KdGSQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nzjmkFxGEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nzkNoFxGEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_nzk0sFxGEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_hCBTQFxEEeSI_r_DQzLvpg" name="SimpleVO">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_xJiwcFxEEeSI_r_DQzLvpg" name="id" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xXAksFxEEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xXAksVxEEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_xXBLwFxEEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_2RjMEFxEEeSI_r_DQzLvpg" name="nome" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2gjRYFxEEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2gj4cFxEEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_2gltoFxEEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_8n308FxEEeSI_r_DQzLvpg" name="descricao" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_82YyEFxEEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_82ZZIFxEEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_82aAMFxEEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_ANROUFxFEeSI_r_DQzLvpg" name="ativo" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_877505_40"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AfxTkFxFEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AfyhsFxFEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_AfyhsVxFEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_SNjj8FxFEeSI_r_DQzLvpg" name="TipoDemandaVO">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_SNjj8VxFEeSI_r_DQzLvpg" name="id" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SNjj8lxFEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNjj81xFEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_SNjj9FxFEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_SNjj9VxFEeSI_r_DQzLvpg" name="nome" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SNjj9lxFEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNjj91xFEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_SNjj-FxFEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_SNjj-VxFEeSI_r_DQzLvpg" name="descricao" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SNjj-lxFEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNjj-1xFEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_SNjj_FxFEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_SNjj_VxFEeSI_r_DQzLvpg" name="ativo" visibility="public">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_877505_40"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SNjj_lxFEeSI_r_DQzLvpg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNjj_1xFEeSI_r_DQzLvpg" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_SNjkAFxFEeSI_r_DQzLvpg">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
           </packagedElement>
-          <packagedElement xmi:type="uml:Package" xmi:id="_UtY9kCe6EeSTVslmbGto7Q" name="vo"/>
           <packagedElement xmi:type="uml:Package" xmi:id="_1CxCwDe7EeSN0LCe_KdGSQ" name="enums">
             <packagedElement xmi:type="uml:Enumeration" xmi:id="_w6ovwDe7EeSN0LCe_KdGSQ" name="SituacaoDemanda">
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Igy6ADfCEeSN0LCe_KdGSQ" name="CRIADA"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_J-E64DfDEeSN0LCe_KdGSQ" name="EM_ANALISE"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LjgAkDfDEeSN0LCe_KdGSQ" name="FINALIZADA"/>
             </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_b90WYFxAEeSI_r_DQzLvpg" name="FormaContato">
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gBF-kFxAEeSI_r_DQzLvpg" name="SITE"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hfPXkFxAEeSI_r_DQzLvpg" name="EMAIL"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jAcroFxAEeSI_r_DQzLvpg" name="TELEFONE"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_kWAwYFxAEeSI_r_DQzLvpg" name="CARTA"/>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_llgCUFxAEeSI_r_DQzLvpg" name="PESSOALMENTE"/>
+            </packagedElement>
           </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_fG09oDfAEeSN0LCe_KdGSQ" name="" client="_2QJq8CesEeSTVslmbGto7Q" supplier="_1J_scCeyEeSTVslmbGto7Q"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_-5lvMDfBEeSN0LCe_KdGSQ" name="FormaResposta">
+          <packagedElement xmi:type="uml:Class" xmi:id="_-5lvMDfBEeSN0LCe_KdGSQ" clientDependency="_vWwHsFxFEeSI_r_DQzLvpg" name="FormaResposta">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_sS-HcDfDEeSN0LCe_KdGSQ" name="nome" visibility="public">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sS-HcTfDEeSN0LCe_KdGSQ" value="1"/>
@@ -190,8 +307,16 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W0Q4QzfFEeSN0LCe_KdGSQ" value="*"/>
             </ownedEnd>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_411vAEz0EeSH1-Co_lBSAA" name="Class1"/>
-          <packagedElement xmi:type="uml:Class" xmi:id="_E2luoEz2EeSH1-Co_lBSAA" name="Class2"/>
+          <packagedElement xmi:type="uml:Association" xmi:id="_pIzJ8FxAEeSI_r_DQzLvpg" name="" memberEnd="_pIzJ8VxAEeSI_r_DQzLvpg _pIyi4FxAEeSI_r_DQzLvpg">
+            <ownedEnd xmi:type="uml:Property" xmi:id="_pIzJ8VxAEeSI_r_DQzLvpg" name="demandas" type="_Bkl20CexEeSTVslmbGto7Q" association="_pIzJ8FxAEeSI_r_DQzLvpg">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pIzJ8lxAEeSI_r_DQzLvpg"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pIzJ81xAEeSI_r_DQzLvpg" value="*"/>
+            </ownedEnd>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_fPizkFxFEeSI_r_DQzLvpg" name="" client="_t-_B0CezEeSTVslmbGto7Q" supplier="_hCBTQFxEEeSI_r_DQzLvpg"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_f4PyUFxFEeSI_r_DQzLvpg" name="" client="_8NgHQCe5EeSTVslmbGto7Q" supplier="_hCBTQFxEEeSI_r_DQzLvpg"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_vWwHsFxFEeSI_r_DQzLvpg" name="" client="_-5lvMDfBEeSN0LCe_KdGSQ" supplier="_hCBTQFxEEeSI_r_DQzLvpg"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_i1OEUFxGEeSI_r_DQzLvpg" name="" client="_Bkl20CexEeSTVslmbGto7Q" supplier="_STfCQFxEEeSI_r_DQzLvpg"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_6EgtYCesEeSTVslmbGto7Q" name="localidade">
           <ownedComment xmi:type="uml:Comment" xmi:id="_mEY4MCjDEeS908UQl6F1Rw">
@@ -652,7 +777,19 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
           <packagedElement xmi:type="uml:Class" xmi:id="_8n_1cCe6EeSTVslmbGto7Q" name="DemandanteService"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_TlQnECiaEeSmYfDYt_Kosg" name="manutencao">
-          <packagedElement xmi:type="uml:Class" xmi:id="_WRI-gCiaEeSmYfDYt_Kosg" clientDependency="_zsiFgCiaEeSmYfDYt_Kosg" name="UnidadeFederacaoService"/>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wJppoFxYEeSI_r_DQzLvpg">
+            <body>TODO: apenas para teste incial</body>
+          </ownedComment>
+          <packagedElement xmi:type="uml:Class" xmi:id="_WRI-gCiaEeSmYfDYt_Kosg" clientDependency="_zsiFgCiaEeSmYfDYt_Kosg" name="UnidadeFederacaoService">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_iHFt0FxYEeSI_r_DQzLvpg" name="recuperaUnidadeFederacao">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_o3PzAFxYEeSI_r_DQzLvpg" direction="return">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_r3lXgFxYEeSI_r_DQzLvpg" name="idUf">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_zsiFgCiaEeSmYfDYt_Kosg" name="" client="_WRI-gCiaEeSmYfDYt_Kosg" supplier="_9VLz8CesEeSTVslmbGto7Q"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_WOmZwDIPEeSm0-Xoj3UZsQ" name="usuario">
@@ -1550,8 +1687,6 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapersistence:FinderMethod xmi:id="_5Y-ygCi8EeS908UQl6F1Rw" andromda_hibernate_query="from com.googlecode.ouvidoria.localidade.UnidadeFederacaoImpl as uf where uf.ativo = true" base_Operation="_vJzowCi8EeS908UQl6F1Rw"/>
   <andromdapersistence:Entity xmi:id="_R6nqYCi_EeS908UQl6F1Rw" base_Class="_8NgHQCe5EeSTVslmbGto7Q"/>
   <andromdapersistence:Manageable xmi:id="_R6w0UCi_EeS908UQl6F1Rw" base_Class="_8NgHQCe5EeSTVslmbGto7Q"/>
-  <andromdapersistence:Entity xmi:id="_q0dRwCi_EeS908UQl6F1Rw" base_Class="_9u8r4Ce5EeSTVslmbGto7Q"/>
-  <andromdapersistence:Manageable xmi:id="_q0lNkCi_EeS908UQl6F1Rw" base_Class="_9u8r4Ce5EeSTVslmbGto7Q"/>
   <andromdapersistence:Entity xmi:id="_AnJiACjAEeS908UQl6F1Rw" base_Class="_t-_B0CezEeSTVslmbGto7Q"/>
   <andromdapersistence:Manageable xmi:id="_AnYLgCjAEeS908UQl6F1Rw" base_Class="_t-_B0CezEeSTVslmbGto7Q"/>
   <andromdapersistence:Entity xmi:id="_-8JjUCjAEeS908UQl6F1Rw" base_Class="_Nx2HwCe6EeSTVslmbGto7Q"/>
@@ -1610,7 +1745,6 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapresentation:FrontEndAction xmi:id="_PemIsDe5EeSN0LCe_KdGSQ" andromda_presentation_web_action_type="hyperlink" base_Transition="_IFzWMDe5EeSN0LCe_KdGSQ"/>
   <OuvidoriaProfile_1:CasoDeUso xmi:id="_Z_mCQDe5EeSN0LCe_KdGSQ" base_UseCase="_zTjPQDe4EeSN0LCe_KdGSQ"/>
   <andromdapresentation:FrontEndUseCase xmi:id="_Z_sI4De5EeSN0LCe_KdGSQ" base_UseCase="_zTjPQDe4EeSN0LCe_KdGSQ"/>
-  <andromdapersistence:Unique xmi:id="_E3KEYDfDEeSN0LCe_KdGSQ" base_Property="_utVn0Ci_EeS908UQl6F1Rw"/>
   <andromdapersistence:Unique xmi:id="_GM2sADfDEeSN0LCe_KdGSQ" base_Property="_9PDk0Ci_EeS908UQl6F1Rw"/>
   <andromdapersistence:Unique xmi:id="_H07dEDfDEeSN0LCe_KdGSQ" base_Property="_T_mZ4Ci_EeS908UQl6F1Rw"/>
   <andromdapersistence:Entity xmi:id="_lt1mgDfDEeSN0LCe_KdGSQ" base_Class="_-5lvMDfBEeSN0LCe_KdGSQ"/>
@@ -1627,7 +1761,6 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   </andromdapresentation:FrontEndTable>
   <andromdapresentation:FrontEndField xmi:id="_SwrGYDgaEeSN0LCe_KdGSQ" andromda_presentation_web_view_field_type="link" base_Parameter="_MR2BwDgaEeSN0LCe_KdGSQ"/>
   <andromdapresentation:FrontEndAction xmi:id="_ZY2UQDgaEeSN0LCe_KdGSQ" andromda_presentation_web_action_tablelink="timecardSummaries" base_Transition="_7zCF8DgZEeSN0LCe_KdGSQ"/>
-  <andromdapersistence:Entity xmi:id="_6Yje8Ez0EeSH1-Co_lBSAA" base_Class="_411vAEz0EeSH1-Co_lBSAA"/>
   <andromdapresentation:FrontEndUseCase xmi:id="_3ijQQFa6EeSxa4pDHAgHAg" base_UseCase="_q-3GMFa6EeSxa4pDHAgHAg"/>
   <andromdapresentation:FrontEndView xmi:id="_rIGewFu9EeSykOGA1aIEdw" base_State="_AIcIAFa7EeSxa4pDHAgHAg"/>
   <andromdapresentation:FrontEndView xmi:id="_OnRtIFu-EeSykOGA1aIEdw" base_State="_I70mMFu-EeSykOGA1aIEdw"/>
@@ -1641,4 +1774,7 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapresentation:FrontEndField xmi:id="_3pTNsFw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" base_Parameter="_3pQKYFw6EeSI_r_DQzLvpg"/>
   <andromdapresentation:FrontEndField xmi:id="_4VIY8Fw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_rows="8" andromda_presentation_web_view_field_type="textarea" base_Parameter="_4VFVoFw6EeSI_r_DQzLvpg"/>
   <andromdapresentation:FrontEndField xmi:id="_OdWNQFw7EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" base_Parameter="_LlwVEFw7EeSI_r_DQzLvpg"/>
+  <andromdacommon:ValueObject xmi:id="_gFFw8FxEEeSI_r_DQzLvpg" base_Class="_STfCQFxEEeSI_r_DQzLvpg"/>
+  <andromdacommon:ValueObject xmi:id="_pOgMgFxEEeSI_r_DQzLvpg" base_Class="_hCBTQFxEEeSI_r_DQzLvpg"/>
+  <andromdacommon:ValueObject xmi:id="_SNkLAFxFEeSI_r_DQzLvpg" base_Class="_SNjj8FxFEeSI_r_DQzLvpg"/>
 </xmi:XMI>
