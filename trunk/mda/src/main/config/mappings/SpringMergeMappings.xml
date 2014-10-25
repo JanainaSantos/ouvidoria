@@ -12,15 +12,53 @@
 		</from>
 		<to>
 			<![CDATA[			
-		    <!-- <template path="templates/spring/AbstractEasyMockServiceTest.vsl" 
-		    	outputPattern="$generatedFile" 
-		    	outlet="service-tests-generated" 
-		    	overwrite="true">
+		   <template path="templates/spring/AbstractEasyMockServiceTest.vsl" outputPattern="$generatedFile" outlet="service-tests-generated" overwrite="true">
 				<modelElements variable="service">
-					<modelElement stereotype="CrudService" />
+					<modelElement>
+						<type name="org.andromda.cartridges.spring.metafacades.SpringService">
+							<property name="configonly">false</property>
+						</type>
+					</modelElement>
 				</modelElements>
-			</template> -->
+			</template>
+			<template path="templates/spring/EasyMockServiceImplTest.vsl" outputPattern="$generatedFile" outlet="service-tests-impls" overwrite="false">
+				<modelElements variable="service">
+					<modelElement>
+						<type name="org.andromda.cartridges.spring.metafacades.SpringService">
+							<property name="configonly">false</property>
+						</type>
+					</modelElement>
+				</modelElements>
+			</template>
 			]]>
+		</to>
+	</mapping>
+	<!-- Inclusao de variaveis de namespace customizadas do spring-->
+	<mapping>
+		<from><![CDATA[<!-- namespace-propertyGroup merge-point -->]]></from>
+		<to>
+            <![CDATA[       
+				<propertyGroup name="TestsOutlets">
+                  <documentation>
+                      Define Paths das classes de Testes Unitarios.
+                  </documentation>
+                  <property name="service-tests">
+                      <documentation>
+                          TODO: Localizacao das Interfaces e das Bases dos Testes.
+                        </documentation>
+                  </property>
+                  <property name="service-tests-impls">
+                      <documentation>
+                          Localizacao das classes de implementacao dos Testes.
+                      </documentation>
+                  </property>
+                  <property name="service-tests-generated">
+                      <documentation>
+                          Localizacao das classes abstratas dos Testes.
+                      </documentation>
+                  </property>
+               </propertyGroup>
+            ]]>
 		</to>
 	</mapping>
     <mapping>

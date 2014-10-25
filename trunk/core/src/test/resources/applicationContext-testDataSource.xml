@@ -42,7 +42,6 @@
                 <value>classpath:com/googlecode/ouvidoria/negocio/demanda/Demanda.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/negocio/demanda/TipoDemanda.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/negocio/demanda/Assunto.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demanda/FormaContato.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/negocio/demanda/FormaResposta.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/negocio/localidade/UnidadeFederacao.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/negocio/localidade/Municipio.hbm.xml</value>
@@ -114,17 +113,6 @@
     <bean id="assuntoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.AssuntoDaoImpl"/>
         <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.AssuntoDao"/>
-    </bean>
-
-    <bean id="com.googlecode.ouvidoria.negocio.demanda.FormaContatoDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.FormaContatoDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- FormaContato entity property merge-point -->
-    </bean>
-
-    <!-- FormaContato Entity Proxy with inner FormaContato Entity implementation -->
-    <bean id="formaContatoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.FormaContatoDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.FormaContatoDao"/>
     </bean>
 
     <bean id="com.googlecode.ouvidoria.negocio.demanda.FormaRespostaDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.FormaRespostaDaoImpl">
