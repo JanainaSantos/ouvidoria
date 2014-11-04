@@ -175,6 +175,24 @@ $attribute.getDocumentation("     * ")
 ##Customizacao: mostrar marcacoes (estereotipos, tagged values e constraints)
 #renderMarcacoes($operation)
 
+##Customizacao: testes iniciais com o CallOperation (actionProfile)
+/*
+#set($callOperationEnabled = $operation.hasExactStereotype("CallOperation"))
+callOperationEnabled=$callOperationEnabled
+#if($callOperationEnabled)
+	call operation .................. action_call_operation
+	#set($callOperation = $operation.findTaggedValue("action_call_operation"))
+	operation: $callOperation
+	$callOperation.class
+#end
+*/
+
+
+
+
+
+
+
 #if ($operation.incomingMessageOperation)
     private $jmsMessageListenerContainerImplementation $operation.messageListenerContainerReferenceName;
 
