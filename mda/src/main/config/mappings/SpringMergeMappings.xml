@@ -30,6 +30,31 @@
 					</modelElement>
 				</modelElements>
 			</template>
+			<template path="templates/ouvidoria/RelatorioAnotacoes.vsl"
+				outputPattern="$relatorioFileName"
+		        outlet="relatorio-generated"
+		        overwrite="true"
+		        outputToSingleFile="true"
+		        outputOnEmptyElements="false">
+		        <modelElements>
+		            <modelElement variable="entities">
+		                <type name="org.andromda.cartridges.spring.metafacades.SpringEntity"/>
+		            </modelElement>
+		            <modelElement variable="manageables">
+		                <type name="org.andromda.cartridges.spring.metafacades.SpringManageableEntity"/>
+		            </modelElement>
+		            <modelElement variable="services">
+		                <type name="org.andromda.cartridges.spring.metafacades.SpringService"/>
+		            </modelElement>
+		            <modelElement variable="vos">
+		                <type name="org.andromda.metafacades.uml.ValueObject"/>
+		            </modelElement>
+		            <modelElement variable="enums">
+		                <type name="org.andromda.metafacades.uml.EnumerationFacade" />
+		            </modelElement>
+		            <!-- TODO: excecoes -->
+		        </modelElements>
+		    </template>
 			]]>
 		</to>
 	</mapping>
@@ -58,9 +83,32 @@
                       </documentation>
                   </property>
                </propertyGroup>
+               <propertyGroup name="RelatorioOutlets">
+                  <documentation>
+                      Define Paths relativos aos relatorios gerados (sobre anotacoes usadas)
+                  </documentation>
+                  <property name="relatorioFileName">
+                      <documentation>
+                          Nome do arquivo ou pattern
+                      </documentation>
+                  </property>
+                  <property name="relatorio-generated">
+                      <documentation>
+                          Localizacao dos artefatos do relatorio sobre o modelo
+                      </documentation>
+                  </property>
+               </propertyGroup>
             ]]>
 		</to>
 	</mapping>
+	<mapping>
+        <from><![CDATA[<!-- cartridge-property merge-point -->]]></from>
+        <to>
+            <![CDATA[
+               	<property reference="relatorioFileName"/>
+            ]]>
+        </to>
+    </mapping>
     <mapping>
         <from><![CDATA[<!-- cartridge-macrolibrary merge-point-->]]></from>
         <to>

@@ -124,8 +124,8 @@
 				<property name="driver">${jdbc.driver}</property>
 				<property name="connectionUrl">${jdbc.url}</property>
 				<property name="hibernateDialect">${hibernate.dialect}</property>
-				<!-- <property name="hibernateHbm2DDLAuto">update</property> -->
-				<property name="hibernateHbm2DDLAuto">create</property>
+				<!-- <property name="hibernateHbm2DDLAuto">update/create</property> -->
+				<property name="hibernateHbm2DDLAuto">update</property>
 				<property name="hibernateQueryUseNamedParameters">true</property>
 				<property name="hibernateEnableCache">false</property>
 				<!-- hibernate 3
@@ -180,6 +180,10 @@
 				<property name="testDriver">${testdb.driver}</property>
 				<property name="testPassword">${testdb.password}</property>
 				<property name="testUsername">${testdb.username}</property>
+				
+				<!-- Customizacao para o relatorio sobre o modelo -->
+				<property name="relatorioFileName">${relatorio.name}</property>
+				<property name="relatorio-generated">${relatorio.dir}</property>
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-hibernate-cartridge/namespace.html -->
@@ -210,10 +214,10 @@
 			</properties>
 		</namespace>
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-webservice-cartridge/namespace.html -->
-		<namespace name="webservice">
+		<!-- <namespace name="webservice">
 			<properties>
 				<property name="soapStack">jaxws</property>
-				<!-- springVersion original=3.2.5.RELEASE -->
+				springVersion original=3.2.5.RELEASE
 				<property name="springVersion">${spring.version}</property>
 				<property name="schemaTypeMappingsUri">XmlSchema</property>
 				<property name="languageMappingsUri">JavaMappings</property>
@@ -223,27 +227,27 @@
 				<property name="webserviceTypesPackage">${application.package}</property>
 				<property name="ejbInterfacePattern">{0}.ejb.{1}</property>
 				<property name="ejbHomeInterfacePattern">{0}.ejb.{1}Home</property>
-				<!-- maxOccurs=unlimited is generated instead of arrayOf<> wrapper types -->
+				maxOccurs=unlimited is generated instead of arrayOf<> wrapper types
 				<property name="useArrayWrapper">false</property>
 				<property name="reverseNamespace">true</property>
 				<property name="defaultStyle">document</property>
 				<property name="defaultUse">literal</property>
 				<property name="defaultParameterStyle">wrapped</property>
-				<!--Use minOccurs=0 for elements and required=false for attributes, instead of nillable=true -->
+				Use minOccurs=0 for elements and required=false for attributes, instead of nillable=true
 				<property name="makeNillable">false</property>
-				<!--WSDL imports XSD, package must be stereotyped with 'XMLSchema' so that imported xsd file is created. -->
+				WSDL imports XSD, package must be stereotyped with 'XMLSchema' so that imported xsd file is created.
 				<property name="importedXSD">true</property>
 				<property name="simpleBindingMode">true</property>
-				<!-- CXF XJC binding arguments, using Jaxb2 commons plugins which must be added to %JAXB_HOME%\commons
+				CXF XJC binding arguments, using Jaxb2 commons plugins which must be added to %JAXB_HOME%\commons
 					directory. Suggested value:
-					-Xcommons-lang,-Xcommons-lang:ToStringStyle=DEFAULT_STYLE,-Xdefault-value,-Xvalue-constructor,-Xcollection-setter-injector,-simple-preserve -->
+					-Xcommons-lang,-Xcommons-lang:ToStringStyle=DEFAULT_STYLE,-Xdefault-value,-Xvalue-constructor,-Xcollection-setter-injector,-simple-preserve
 				<property name="xjcArguments">-Xts,-Xts:style:simple,-Xdv</property>
-				<!-- webserviceHost:webservicePort/webContext/servicesPath used in wsdl and spring configuration -->
+				webserviceHost:webservicePort/webContext/servicesPath used in wsdl and spring configuration
 				<property name="webserviceHost">${service.host}</property>
 				<property name="webservicePort">${service.port}</property>
 				<property name="webContext">${application.id}-webservice</property>
 				<property name="servicesPath">services</property>
-				<!-- Creates default/dummy implementation for service, iterating down through parameter hierarchy -->
+				Creates default/dummy implementation for service, iterating down through parameter hierarchy
 				<property name="generateMethodImpl">true</property>
 				<property name="wsdls">${webservice.generated.dir}/wsdl</property>
 				<property name="configuration">${webservice.generated.dir}</property>
@@ -256,11 +260,11 @@
 				<property name="jaxb-impl">${common.manual.dir}</property>
 				<property name="jaxb-gen">${common.generated.dir}</property>
 			</properties>
-		</namespace>
+		</namespace> -->
 		<!-- See http://docs.andromda.org/andromda-cartridges/andromda-java-cartridge/namespace.html -->
 		<namespace name="java">
 			<properties>
-				<property name="languageMappingsUri">AxisJavaMappings</property>
+				<property name="languageMappingsUri">JavaMappings</property>
 				<property name="useArraysForMultiplicitiesOfTypeMany">true</property>
 				<property name="XMLBindingAnnotations">false</property>
 				<property name="generateEqualPropertiesMethod">true</property>
@@ -285,7 +289,7 @@
 				<property name="facesConfigFiles"></property>
 				<property name="defaultDateFormat">dd/MM/yyyy</property>
 
-				<property name="languageMappingsUri">AxisJavaMappings</property>
+				<property name="languageMappingsUri">JavaMappings</property>
 				<!-- generates smaller resource bundles with duplicate element names specified by a single message.
 					This optimization is turned off by default for backward compatibility
 					<property name="normalizeMessages">true</property -->

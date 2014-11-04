@@ -1,4 +1,4 @@
-
+/* DIAGRAMAS DE CLASSES */
 Class {
 	gradient: white vertical;
 	elementIcon: false;
@@ -7,13 +7,6 @@ Class {
 	/*
 	 * shadow: true;
 	qualifiedNameDepth: full;*/
-}
-
-Enumeration {
-	gradient: white vertical;
-	elementIcon: false;
-	fillColor:#C0C0C0;
-	bold: true;
 }
 
 Class[appliedStereotypes~=Entity]{
@@ -27,6 +20,12 @@ Class[appliedStereotypes~=Entity]{
  
 	fillColor:#A3C392;
 }
+
+/*
+Class[name~=CTL]{
+	fillColor:black;
+}
+*/
 
 Class[appliedStereotypes~=Entity][appliedStereotypes~=Manageable]{
 	fillColor:#A3C392;
@@ -45,8 +44,65 @@ Class[appliedStereotypes~=WebService]{
 	fillColor:#F3C869;
 }
 
+Constraint {
+	/*fillColor:#F3C869;*/
+}
+
+Enumeration {
+	gradient: white vertical;
+	elementIcon: false;
+	fillColor:#C0C0C0;
+	bold: true;
+}
+
+ 
+ 
+/* DIAGRAMAS DE MAQUINA DE ESTADO */
+Activity {
+	italic: true;
+}
+Choice {
+	fillColor: black;
+}
+/* 
+Guard {
+	bold: true;
+}
+*/
+Region {
+	/*fillColor:blue;*/
+}
+State {
+	gradient: white vertical;
+	fillColor: #94c9cf;
+	elementIcon: false;
+	bold: false;
+}
+State[appliedStereotypes~=FrontEndView] {
+	bold: true;
+}
+StateMachine {
+	bold: true;
+}
+Transition {
+	italic: true;
+}
+Transition[appliedStereotypes~=FrontEndAction] {
+	/*bold: true;*/
+}
+Transition[appliedStereotypes~=FrontEndMessage] {
+	/*bold: true;*/
+}
 
 
+
+/* DIAGRAMAS DE CASO DE USO */
+UseCase {
+	/*border: 2px;
+	gradient: white vertical;
+	fillColor: green;*/
+	elementIcon: false;
+}
 
 
 /*

@@ -1,0 +1,27 @@
+#set ($generatedFile = "RelatorioAnotacoes.html")
+
+<html>
+
+<body>
+
+#foreach ($service in $services)
+	Service: $service.name <br />
+	#renderMarcacoes($service) 
+	<br />
+#end
+
+#foreach ($entity in $entities)
+	Entity: $entity.name <br />
+	#renderMarcacoes($entity) 
+	<br />
+#end
+
+#foreach ($vo in $vos)
+	VO: $vo.name <br />
+	#renderMarcacoes($vo) 
+	<br />
+#end
+
+</body>
+
+</html>
