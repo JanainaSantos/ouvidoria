@@ -39,16 +39,16 @@
         <property name="sourceList">
             <list>
                 <!-- applicationContext hibernateMappingLocations merge-point -->
-                <value>classpath:com/googlecode/ouvidoria/negocio/demanda/Demanda.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demanda/TipoDemanda.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demanda/Assunto.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/localidade/UnidadeFederacao.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/localidade/Municipio.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demandante/Demandante.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demandante/TipoDemandante.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/demandante/TipoIdentificacao.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/usuario/Usuario.hbm.xml</value>
-                <value>classpath:com/googlecode/ouvidoria/negocio/usuario/Perfil.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/complaint/Complaint.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/complaint/ComplaintType.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/complaint/Subject.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/locality/State.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/locality/City.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/demandant/Demandant.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/demandant/DemandantType.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/demandant/Identification.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/user/User.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/user/Role.hbm.xml</value>
             </list>
          </property>
     </bean>
@@ -81,114 +81,114 @@
     <!-- Translates Hibernate exceptions to Spring Data Access Exceptions -->
     <bean class="org.springframework.orm.hibernate4.HibernateExceptionTranslator"/>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.complaint.ComplaintDaoImpl" class="com.googlecode.ouvidoria.model.complaint.ComplaintDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Demanda entity property merge-point -->
+        <!-- Complaint entity property merge-point -->
     </bean>
 
-    <!-- Demanda Entity Proxy with inner Demanda Entity implementation -->
-    <bean id="demandaDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.DemandaDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.DemandaDao"/>
+    <!-- Complaint Entity Proxy with inner Complaint Entity implementation -->
+    <bean id="complaintDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.complaint.ComplaintDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.complaint.ComplaintDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demanda.TipoDemandaDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.TipoDemandaDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.complaint.ComplaintTypeDaoImpl" class="com.googlecode.ouvidoria.model.complaint.ComplaintTypeDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- TipoDemanda entity property merge-point -->
+        <!-- ComplaintType entity property merge-point -->
     </bean>
 
-    <!-- TipoDemanda Entity Proxy with inner TipoDemanda Entity implementation -->
-    <bean id="tipoDemandaDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.TipoDemandaDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.TipoDemandaDao"/>
+    <!-- ComplaintType Entity Proxy with inner ComplaintType Entity implementation -->
+    <bean id="complaintTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.complaint.ComplaintTypeDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.complaint.ComplaintTypeDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demanda.AssuntoDaoImpl" class="com.googlecode.ouvidoria.negocio.demanda.AssuntoDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.complaint.SubjectDaoImpl" class="com.googlecode.ouvidoria.model.complaint.SubjectDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Assunto entity property merge-point -->
+        <!-- Subject entity property merge-point -->
     </bean>
 
-    <!-- Assunto Entity Proxy with inner Assunto Entity implementation -->
-    <bean id="assuntoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demanda.AssuntoDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demanda.AssuntoDao"/>
+    <!-- Subject Entity Proxy with inner Subject Entity implementation -->
+    <bean id="subjectDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.complaint.SubjectDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.complaint.SubjectDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl" class="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.locality.StateDaoImpl" class="com.googlecode.ouvidoria.model.locality.StateDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- UnidadeFederacao entity property merge-point -->
+        <!-- State entity property merge-point -->
     </bean>
 
-    <!-- UnidadeFederacao Entity Proxy with inner UnidadeFederacao Entity implementation -->
-    <bean id="unidadeFederacaoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.localidade.UnidadeFederacaoDao"/>
+    <!-- State Entity Proxy with inner State Entity implementation -->
+    <bean id="stateDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.locality.StateDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.locality.StateDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl" class="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.locality.CityDaoImpl" class="com.googlecode.ouvidoria.model.locality.CityDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Municipio entity property merge-point -->
+        <!-- City entity property merge-point -->
     </bean>
 
-    <!-- Municipio Entity Proxy with inner Municipio Entity implementation -->
-    <bean id="municipioDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.localidade.MunicipioDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.localidade.MunicipioDao"/>
+    <!-- City Entity Proxy with inner City Entity implementation -->
+    <bean id="cityDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.locality.CityDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.locality.CityDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demandante.DemandanteDaoImpl" class="com.googlecode.ouvidoria.negocio.demandante.DemandanteDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.demandant.DemandantDaoImpl" class="com.googlecode.ouvidoria.model.demandant.DemandantDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Demandante entity property merge-point -->
+        <!-- Demandant entity property merge-point -->
     </bean>
 
-    <!-- Demandante Entity Proxy with inner Demandante Entity implementation -->
-    <bean id="demandanteDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demandante.DemandanteDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demandante.DemandanteDao"/>
+    <!-- Demandant Entity Proxy with inner Demandant Entity implementation -->
+    <bean id="demandantDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.demandant.DemandantDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.demandant.DemandantDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demandante.TipoDemandanteDaoImpl" class="com.googlecode.ouvidoria.negocio.demandante.TipoDemandanteDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.demandant.DemandantTypeDaoImpl" class="com.googlecode.ouvidoria.model.demandant.DemandantTypeDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- TipoDemandante entity property merge-point -->
+        <!-- DemandantType entity property merge-point -->
     </bean>
 
-    <!-- TipoDemandante Entity Proxy with inner TipoDemandante Entity implementation -->
-    <bean id="tipoDemandanteDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demandante.TipoDemandanteDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demandante.TipoDemandanteDao"/>
+    <!-- DemandantType Entity Proxy with inner DemandantType Entity implementation -->
+    <bean id="demandantTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.demandant.DemandantTypeDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.demandant.DemandantTypeDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.demandante.TipoIdentificacaoDaoImpl" class="com.googlecode.ouvidoria.negocio.demandante.TipoIdentificacaoDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.demandant.IdentificationDaoImpl" class="com.googlecode.ouvidoria.model.demandant.IdentificationDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- TipoIdentificacao entity property merge-point -->
+        <!-- Identification entity property merge-point -->
     </bean>
 
-    <!-- TipoIdentificacao Entity Proxy with inner TipoIdentificacao Entity implementation -->
-    <bean id="tipoIdentificacaoDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.demandante.TipoIdentificacaoDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.demandante.TipoIdentificacaoDao"/>
+    <!-- Identification Entity Proxy with inner Identification Entity implementation -->
+    <bean id="identificationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.demandant.IdentificationDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.demandant.IdentificationDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.usuario.UsuarioDaoImpl" class="com.googlecode.ouvidoria.negocio.usuario.UsuarioDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.user.UserDaoImpl" class="com.googlecode.ouvidoria.model.user.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Usuario entity property merge-point -->
+        <!-- User entity property merge-point -->
     </bean>
 
-    <!-- Usuario Entity Proxy with inner Usuario Entity implementation -->
-    <bean id="usuarioDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.usuario.UsuarioDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.usuario.UsuarioDao"/>
+    <!-- User Entity Proxy with inner User Entity implementation -->
+    <bean id="userDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.user.UserDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.user.UserDao"/>
     </bean>
 
-    <bean id="com.googlecode.ouvidoria.negocio.usuario.PerfilDaoImpl" class="com.googlecode.ouvidoria.negocio.usuario.PerfilDaoImpl">
+    <bean id="com.googlecode.ouvidoria.model.user.RoleDaoImpl" class="com.googlecode.ouvidoria.model.user.RoleDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
-        <!-- Perfil entity property merge-point -->
+        <!-- Role entity property merge-point -->
     </bean>
 
-    <!-- Perfil Entity Proxy with inner Perfil Entity implementation -->
-    <bean id="perfilDao" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="target" ref="com.googlecode.ouvidoria.negocio.usuario.PerfilDaoImpl"/>
-        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.negocio.usuario.PerfilDao"/>
+    <!-- Role Entity Proxy with inner Role Entity implementation -->
+    <bean id="roleDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.user.RoleDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.user.RoleDao"/>
     </bean>
 
    

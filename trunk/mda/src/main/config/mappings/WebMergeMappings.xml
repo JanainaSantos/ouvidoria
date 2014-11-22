@@ -130,11 +130,10 @@
     <!--
         This next mapping will merge the entire messages.properties into the generated
         messages.properties
-    -->
     <mapping>
         <from><![CDATA[# custom-messages merge-point]]></from>
         <to>
             <path>../../../../../web/src/main/properties/messages.properties</path>
         </to>
-    </mapping>
+    </mapping> -->
 </mappings>

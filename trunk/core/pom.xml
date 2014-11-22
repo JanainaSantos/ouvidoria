@@ -224,9 +224,11 @@
 							<value>${project.basedir}/../web/target/schema-drop.sql</value>
 						</property>
 					</properties>
-					<!-- You might need to execute additional scripts, just uncomment and 
-						add them here: <scripts> <script>${project.basedir}/path/to/scripts/script1.sql</script> 
-						<script>${project.basedir}/path/to/scripts/script2.sql</script> </scripts> -->
+					<!-- Execute custom scripts -->
+					<scripts>
+						<script>${project.basedir}/src/main/sql/locality.sql</script>
+						<script>${project.basedir}/src/main/sql/complaint.sql</script>
+					</scripts>
 				</configuration>
 				<dependencies>
 					<dependency>
