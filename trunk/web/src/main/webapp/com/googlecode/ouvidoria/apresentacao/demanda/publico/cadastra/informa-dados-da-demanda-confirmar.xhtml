@@ -71,7 +71,7 @@
         <p:outputLabel id="uf_label" for="uf" value="#{messages['uf']}:"/>
         <p:selectOneMenu id="uf" value="#{cadastraDemandaCSUInformaDadosDaDemandaConfirmarForm.uf}" label="#{messages['uf']}:" required="false" readonly="false">
        		<p:ajax listener="#{cadastraDemandaCSUInformaDadosDaDemandaConfirmarForm.onChangeUnidadeFederacao()}" update="municipio" />
-            <f:selectItem itemLabel="--- SELECT ---" itemValue="" noSelectionOption="true" />
+            <f:selectItem itemLabel="--- SELECIONE ---" itemValue="" noSelectionOption="true" />
             <f:selectItems value="#{cadastraDemandaCSUInformaDadosDaDemandaConfirmarForm.ufBackingList}" />
         </p:selectOneMenu>
         <p:message id="uf_message" for="uf"/>

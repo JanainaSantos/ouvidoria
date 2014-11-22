@@ -35,6 +35,7 @@ public abstract class $service.baseName
 ## CUSTOMIZACAO: crud service
 #set($crudServiceEnabled = $service.hasExactStereotype("CrudService"))
 #set($crudCreate = true)
+//service.findTaggedValue("ouvidoria_service_crud_create")=$service.findTaggedValue("ouvidoria_service_crud_create")
 #if(false == $service.findTaggedValue("ouvidoria_service_crud_create"))
 	#set($crudCreate = false)
 #end
@@ -55,6 +56,8 @@ public abstract class $service.baseName
 //crudUpdate=$crudUpdate
 //crudDelete=$crudDelete
 //crudSearch=$crudSearch
+#set($mainDao = "")
+#set($mainEntity = "")
 ## CUSTOMIZACAO: crud service FIM
 ## 
 	
