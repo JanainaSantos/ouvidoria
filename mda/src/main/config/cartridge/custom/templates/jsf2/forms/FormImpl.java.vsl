@@ -5,7 +5,7 @@
 package $action.packageName;
 
 import com.googlecode.ouvidoria.ServiceLocator;
-import com.googlecode.ouvidoria.negocio.localidade.vo.MunicipioVO;
+import com.googlecode.ouvidoria.model.locality.vo.CityVO;
 import javax.faces.model.SelectItem;
 
 /**
@@ -27,27 +27,27 @@ public class $action.formImplementationName
 #end
     }
 
-#if ($action.formImplementationName == "InformaDadosDaDemandaConfirmarFormImpl")
+#if ($action.formImplementationName == "InformComplaintDataSubmitFormImpl")
 //igual
 
 
 public void onChangeUnidadeFederacao()
     {
-    	System.out.println("***************************************** UF="+uf);
+    	System.out.println("***************************************** UF="+state);
     	
-    	System.out.println("facade="+ServiceLocator.instance().getDemandaFacade());
-    	MunicipioVO m1 = new MunicipioVO(1L,"Municipio 1",true,null);
-    	MunicipioVO m2 = new MunicipioVO(1L,"Municipio 2",true,null);
-    	MunicipioVO m3 = new MunicipioVO(1L,"Municipio 3",true,null);
-    	MunicipioVO[] array = new MunicipioVO[] {m1, m2, m3};
+    	System.out.println("facade="+ServiceLocator.instance().getComplaintFacade());
+    	CityVO m1 = new CityVO(1L,"Municipio 1",true,null);
+    	CityVO m2 = new CityVO(1L,"Municipio 2",true,null);
+    	CityVO m3 = new CityVO(1L,"Municipio 3",true,null);
+    	CityVO[] array = new CityVO[] {m1, m2, m3};
     	System.out.println("Municipios criados ... ");
     	
     	final java.util.Collection<SelectItem> list=new java.util.ArrayList<SelectItem>();
-    	for(MunicipioVO uf: array){
-    		list.add(new SelectItem(uf.getId(), uf.getNome(), uf.getNome()));
+    	for(CityVO uf: array){
+    		list.add(new SelectItem(uf.getId(), uf.getName(), uf.getName()));
     	}
     	System.out.println("setMunicipioBackingList: "+list.size());
-    	setMunicipioBackingList(list);
+    	setCityBackingList(list);
     }
 
 #else
