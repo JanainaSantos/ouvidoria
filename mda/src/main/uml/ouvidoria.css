@@ -32,6 +32,10 @@ Class[appliedStereotypes~=Entity][appliedStereotypes~=Manageable]{
 	gradient: white horizontal;
 }
 
+Class[appliedStereotypes~=FrontEndController]{
+	fillColor: white;
+}
+
 Class[appliedStereotypes~=Service]{
 	fillColor:#E2E276;
 }
