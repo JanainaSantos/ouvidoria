@@ -6,6 +6,36 @@
     use the following merge points.
 -->
 <mappings name="WebMerge">
+	<mapping>
+		<from><![CDATA[<!-- cartridge-template merge-point -->]]></from>
+		<to>
+			<![CDATA[
+	<template
+        path="templates/ouvidoria/messages/messages_pt_BR.properties.vsl"
+        outputPattern="WEB-INF/classes/${messageResources}_pt_BR.properties"
+        outlet="messages"
+        overwrite="true"
+        outputToSingleFile="true">
+        <modelElements>
+            <modelElement variable="applicationUseCases">
+                <type name="org.andromda.metafacades.uml.FrontEndUseCase">
+                    <property name="entryUseCase"/>
+                </type>
+            </modelElement>
+            <modelElement variable="enumerations">
+                <type name="org.andromda.cartridges.jsf2.metafacades.JSFEnumeration"/>
+            </modelElement>
+            <!-- the crud entity messages are also generated in this bundle -->
+            <modelElement variable="manageables">
+                <type name="org.andromda.cartridges.jsf2.metafacades.JSFManageableEntity">
+                    <property name="needsUserInterface"/>
+                </type>
+            </modelElement>
+        </modelElements>
+    </template>
+            ]]>
+		</to>
+	</mapping>
     <mapping>
         <from><![CDATA[<!-- context-param merge-point -->]]></from>
         <to>
@@ -135,5 +165,5 @@
         <to>
             <path>../../../../../web/src/main/properties/messages.properties</path>
         </to>
-    </mapping> -->
+    </mapping>  -->
 </mappings>

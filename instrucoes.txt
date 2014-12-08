@@ -1,0 +1,21 @@
+## Instrucoes para executar o projeto
+
+PRE-REQUISITOS
+- java 8
+- maven 3
+- banco de dados relacional: postgresql 9.3
+- tomcat 8
+
+PROCEDIMENTO
+* criar banco de dados e configurar o pom.xml (raiz do projeto) de acordo
+
+* copiar o jar do driver do banco para a pasta lib do tomcat ($CATALINA_HOME/lib)
+
+* criar e executar scripts do banco de dados
+mvn -f core/pom.xml andromdapp:schema -Dtasks=drop,create
+
+* fazer o build do projeto
+mvn install
+
+* fazer deploy do WAR. Copiar o WAR gerado para $CATALINA_HOME/webapps
+
