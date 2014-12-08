@@ -65,7 +65,7 @@
 		<hibernate.version>4.2.11.Final</hibernate.version>
 		<!-- TODO v4 migration needed ... original=3.2.6.RELEASE ... atual=4.0.6.RELEASE -->
 		<spring.version>3.2.6.RELEASE</spring.version>
-		<postgresql.driver.version>9.3-1102-jdbc41</postgresql.driver.version>
+		<postgresql.driver.version>9.3-1102-jdbc41</postgresql.driver.version> 
 		<maven-site-plugin.version>3.4</maven-site-plugin.version>
 
 		<!-- To override parent default settings for compiler plugin and compliance 
@@ -77,10 +77,10 @@
 		<java.required.version>[${compiler.version},)</java.required.version>
 		<java.source.version>${compiler.version}</java.source.version>
 		<java.runtime.version>${compiler.version}</java.runtime.version>
-		<compiler.showDeprecation>true</compiler.showDeprecation>
-		<compiler.showWarnings>true</compiler.showWarnings>
-		<compiler.verbose>true</compiler.verbose>
-		<compiler.debug>true</compiler.debug>
+		<compiler.showDeprecation>false</compiler.showDeprecation>
+		<compiler.showWarnings>false</compiler.showWarnings>
+		<compiler.verbose>false</compiler.verbose>
+		<compiler.debug>false</compiler.debug>
 		<!-- <compiler.argument>-Xlint:cast,unchecked,fallthrough,finally,serial</compiler.argument> -->
 		<!-- SCM user ID and Password here, or in user specific settings.xml file> 
 			<username>admin</username> <password>admin123</password -->

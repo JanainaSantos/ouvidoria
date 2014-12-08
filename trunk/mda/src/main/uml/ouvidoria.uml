@@ -489,7 +489,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               </defaultValue>
             </ownedAttribute>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_5IWewCe6EeSTVslmbGto7Q" name="DemandantType">
+          <packagedElement xmi:type="uml:Class" xmi:id="_5IWewCe6EeSTVslmbGto7Q" clientDependency="_i3_C0H7UEeS_QoUe2Cnyww" name="DemandantType">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_07-ggDIkEeSm0-Xoj3UZsQ" name="name" visibility="public">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1MgP0DIkEeSm0-Xoj3UZsQ" value="1"/>
@@ -498,7 +498,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                 <value xsi:nil="true"/>
               </defaultValue>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_-r2fIDIkEeSm0-Xoj3UZsQ" name="active" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_-r2fIDIkEeSm0-Xoj3UZsQ" name="active" visibility="public" isUnique="false">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_877505_40"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-0y_wDIkEeSm0-Xoj3UZsQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-0zm0DIkEeSm0-Xoj3UZsQ" value="1"/>
@@ -512,8 +512,8 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_ik8CUDIlEeSm0-Xoj3UZsQ" name="Identification">
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_1XPqwDIlEeSm0-Xoj3UZsQ" name="active" visibility="public">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ik8CUDIlEeSm0-Xoj3UZsQ" clientDependency="_kC8aEH7UEeS_QoUe2Cnyww" name="Identification">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_1XPqwDIlEeSm0-Xoj3UZsQ" name="active" visibility="public" isUnique="false">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_877505_40"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1XPqwTIlEeSm0-Xoj3UZsQ" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1XPqwjIlEeSm0-Xoj3UZsQ" value="1"/>
@@ -561,6 +561,8 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_QOJSIDfAEeSN0LCe_KdGSQ" name="vo"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_hOiRADfAEeSN0LCe_KdGSQ" name="" client="_1J_scCeyEeSTVslmbGto7Q" supplier="_6EgtYCesEeSTVslmbGto7Q"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_i3_C0H7UEeS_QoUe2Cnyww" name="" client="_5IWewCe6EeSTVslmbGto7Q" supplier="_hCBTQFxEEeSI_r_DQzLvpg"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_kC8aEH7UEeS_QoUe2Cnyww" name="" client="_ik8CUDIlEeSm0-Xoj3UZsQ" supplier="_hCBTQFxEEeSI_r_DQzLvpg"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="__qMQkCe5EeSTVslmbGto7Q" name="user">
           <packagedElement xmi:type="uml:Class" xmi:id="_Nx2HwCe6EeSTVslmbGto7Q" clientDependency="_hiALMDIQEeSm0-Xoj3UZsQ" name="User">
@@ -748,7 +750,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_mHA_oF-QEeSC0thIrubyJw" type="_STfCQFxEEeSI_r_DQzLvpg" direction="return"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_F4sBgF-REeSC0thIrubyJw" name="vo" type="_uH_zgF-QEeSC0thIrubyJw"/>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_FIIwQGUhEeSv_eYmcg47ow" name="check">
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_FIIwQGUhEeSv_eYmcg47ow" name="checkStatus">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_JIu34GUhEeSv_eYmcg47ow" type="_uH_zgF-QEeSC0thIrubyJw" direction="return"/>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_RPEs4GUhEeSv_eYmcg47ow" name="id">
                 <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
@@ -764,7 +766,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_4y-8AGUhEeSv_eYmcg47ow" name="search">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-cwA4GUhEeSv_eYmcg47ow" type="_uH_zgF-QEeSC0thIrubyJw" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_-cwA4GUhEeSv_eYmcg47ow" type="_uH_zgF-QEeSC0thIrubyJw" isOrdered="true" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_630dYGUoEeSv_eYmcg47ow" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_631EcGUoEeSv_eYmcg47ow" value="*"/>
               </ownedParameter>
@@ -782,28 +784,27 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_xWzHQF-PEeSC0thIrubyJw" clientDependency="_X99aQF-QEeSC0thIrubyJw _ekCWYF-QEeSC0thIrubyJw _lS31kGUlEeSv_eYmcg47ow" name="ComplaintFacade">
+          <packagedElement xmi:type="uml:Class" xmi:id="_xWzHQF-PEeSC0thIrubyJw" clientDependency="_X99aQF-QEeSC0thIrubyJw _lS31kGUlEeSv_eYmcg47ow" name="ComplaintHelper">
             <ownedOperation xmi:type="uml:Operation" xmi:id="__-bfAF-PEeSC0thIrubyJw" name="getSubjects">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_FMKIIF-QEeSC0thIrubyJw" name="" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_FMKIIF-QEeSC0thIrubyJw" name="" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MuVgIF-QEeSC0thIrubyJw" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MuWuQF-QEeSC0thIrubyJw" value="*"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_JjIYEGUlEeSv_eYmcg47ow" name="getComplaintTypes">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_U6pp8GUlEeSv_eYmcg47ow" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_U6pp8GUlEeSv_eYmcg47ow" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_x7gpsGUoEeSv_eYmcg47ow" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_x7gpsWUoEeSv_eYmcg47ow" value="*"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_aYXP0GUlEeSv_eYmcg47ow" name="getContacts">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_dY62wGUlEeSv_eYmcg47ow" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_dY62wGUlEeSv_eYmcg47ow" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
                 <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zpGM4GUoEeSv_eYmcg47ow" value="1"/>
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpGM4WUoEeSv_eYmcg47ow" value="*"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_X99aQF-QEeSC0thIrubyJw" name="" client="_xWzHQF-PEeSC0thIrubyJw" supplier="_8NgHQCe5EeSTVslmbGto7Q"/>
-          <packagedElement xmi:type="uml:Dependency" xmi:id="_ekCWYF-QEeSC0thIrubyJw" name="" client="_xWzHQF-PEeSC0thIrubyJw" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_L-Jj4F-REeSC0thIrubyJw" name="" client="_Bm4xUCe7EeSTVslmbGto7Q" supplier="_Bkl20CexEeSTVslmbGto7Q"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_NKYGcF-REeSC0thIrubyJw" name="" client="_Bm4xUCe7EeSTVslmbGto7Q" supplier="_8NgHQCe5EeSTVslmbGto7Q"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_1IA-wGUkEeSv_eYmcg47ow" name="" client="_DJtO8Ce7EeSTVslmbGto7Q" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
@@ -811,27 +812,38 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
           <packagedElement xmi:type="uml:Dependency" xmi:id="_mpFakGUlEeSv_eYmcg47ow" name="" client="_Bm4xUCe7EeSTVslmbGto7Q" supplier="_t-_B0CezEeSTVslmbGto7Q"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_r70MACe6EeSTVslmbGto7Q" name="demandant">
-          <packagedElement xmi:type="uml:Class" xmi:id="_78ghwHJTEeS-8MiPDVC1lA" clientDependency="_m3okUHJUEeS-8MiPDVC1lA" name="DemandantService">
+          <packagedElement xmi:type="uml:Class" xmi:id="_78ghwHJTEeS-8MiPDVC1lA" clientDependency="_m3okUHJUEeS-8MiPDVC1lA _K4hhkH7rEeS_QoUe2Cnyww _L6waoH7rEeS_QoUe2Cnyww" name="DemandantService">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_qxWA0HJUEeS-8MiPDVC1lA" name="save">
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_s8S1cHJUEeS-8MiPDVC1lA" direction="return">
                 <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_KWSqwHJUEeS-8MiPDVC1lA" clientDependency="_ja5-wHJUEeS-8MiPDVC1lA _kX5LcHJUEeS-8MiPDVC1lA" name="DemandantFacade">
+          <packagedElement xmi:type="uml:Class" xmi:id="_KWSqwHJUEeS-8MiPDVC1lA" clientDependency="_ja5-wHJUEeS-8MiPDVC1lA _kX5LcHJUEeS-8MiPDVC1lA" name="DemandantHelper">
             <ownedOperation xmi:type="uml:Operation" xmi:id="_SdKrQHJUEeS-8MiPDVC1lA" name="getDemandantTypes">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_XsvugHJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_XsvugHJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bJ-gMH7SEeS_QoUe2Cnyww" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bJ_uUH7SEeS_QoUe2Cnyww" value="*"/>
+              </ownedParameter>
             </ownedOperation>
-            <ownedOperation xmi:type="uml:Operation" xmi:id="_ZgmRwHJUEeS-8MiPDVC1lA" name="getIdentifications">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_clJn4HJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_ZgmRwHJUEeS-8MiPDVC1lA" name="getIdentificationTypes">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_clJn4HJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cdCDgH7SEeS_QoUe2Cnyww" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cdDRoH7SEeS_QoUe2Cnyww" value="*"/>
+              </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_eEvLUHJUEeS-8MiPDVC1lA" name="getSexTypes">
-              <ownedParameter xmi:type="uml:Parameter" xmi:id="_g5ntwHJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" direction="return"/>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_g5ntwHJUEeS-8MiPDVC1lA" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eBzo8H7SEeS_QoUe2Cnyww" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eB03EH7SEeS_QoUe2Cnyww" value="*"/>
+              </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_ja5-wHJUEeS-8MiPDVC1lA" name="" client="_KWSqwHJUEeS-8MiPDVC1lA" supplier="_5IWewCe6EeSTVslmbGto7Q"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_kX5LcHJUEeS-8MiPDVC1lA" name="" client="_KWSqwHJUEeS-8MiPDVC1lA" supplier="_ik8CUDIlEeSm0-Xoj3UZsQ"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_m3okUHJUEeS-8MiPDVC1lA" name="" client="_78ghwHJTEeS-8MiPDVC1lA" supplier="_4T0qgCe6EeSTVslmbGto7Q"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_K4hhkH7rEeS_QoUe2Cnyww" name="" client="_78ghwHJTEeS-8MiPDVC1lA" supplier="_ik8CUDIlEeSm0-Xoj3UZsQ"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_L6waoH7rEeS_QoUe2Cnyww" name="" client="_78ghwHJTEeS-8MiPDVC1lA" supplier="_5IWewCe6EeSTVslmbGto7Q"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_TlQnECiaEeSmYfDYt_Kosg" name="maintenance">
           <ownedComment xmi:type="uml:Comment" xmi:id="_wJppoFxYEeSI_r_DQzLvpg">
@@ -1780,8 +1792,8 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdacommon:ValueObject xmi:id="_cg7zgCiYEeSmYfDYt_Kosg" base_Class="_Jhl0oCiYEeSmYfDYt_Kosg"/>
   <andromdacommon:ValueObject xmi:id="_Y45gYCiZEeSmYfDYt_Kosg" base_Class="_VI1vICiZEeSmYfDYt_Kosg"/>
   <andromdaservice:Service xmi:id="_ZrFV0CiaEeSmYfDYt_Kosg" base_Class="_WRI-gCiaEeSmYfDYt_Kosg"/>
-  <andromdapersistence:FinderMethod xmi:id="_ewVf8Ci8EeS908UQl6F1Rw" andromda_hibernate_query="from State as s where s.abbreviation = :abbreviation" base_Operation="_w8x3sCi7EeS908UQl6F1Rw"/>
-  <andromdapersistence:FinderMethod xmi:id="_5Y-ygCi8EeS908UQl6F1Rw" andromda_hibernate_query="from State as s where s.active = true order by name asc" base_Operation="_vJzowCi8EeS908UQl6F1Rw"/>
+  <andromdapersistence:FinderMethod xmi:id="_ewVf8Ci8EeS908UQl6F1Rw" andromda_hibernate_query="from StateImpl as s where s.abbreviation = :abbreviation" base_Operation="_w8x3sCi7EeS908UQl6F1Rw"/>
+  <andromdapersistence:FinderMethod xmi:id="_5Y-ygCi8EeS908UQl6F1Rw" andromda_hibernate_query="from StateImpl as s where s.active = true order by name asc" base_Operation="_vJzowCi8EeS908UQl6F1Rw"/>
   <andromdapersistence:Entity xmi:id="_R6nqYCi_EeS908UQl6F1Rw" base_Class="_8NgHQCe5EeSTVslmbGto7Q"/>
   <andromdapersistence:Manageable xmi:id="_R6w0UCi_EeS908UQl6F1Rw" base_Class="_8NgHQCe5EeSTVslmbGto7Q"/>
   <andromdapersistence:Entity xmi:id="_AnJiACjAEeS908UQl6F1Rw" base_Class="_t-_B0CezEeSTVslmbGto7Q"/>
@@ -1794,7 +1806,7 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapersistence:PersistentAttribute xmi:id="_Y48cgCjBEeS908UQl6F1Rw" base_Property="_W_2M4CjBEeS908UQl6F1Rw">
     <andromda_persistence_column_length>20</andromda_persistence_column_length>
   </andromdapersistence:PersistentAttribute>
-  <andromdapersistence:FinderMethod xmi:id="_m3pPMCjFEeS908UQl6F1Rw" andromda_hibernate_query="from Subject as s where s.active = true order by name asc" base_Operation="_aeSF0CjFEeS908UQl6F1Rw"/>
+  <andromdapersistence:FinderMethod xmi:id="_m3pPMCjFEeS908UQl6F1Rw" andromda_hibernate_query="from SubjectImpl as s where s.active = true order by name asc" base_Operation="_aeSF0CjFEeS908UQl6F1Rw"/>
   <andromdaxml:XmlSchema xmi:id="_U2v78CjNEeS908UQl6F1Rw" base_Package="_GBfK8CiYEeSmYfDYt_Kosg"/>
   <andromdapersistence:Unique xmi:id="_wIGI0ClzEeSUasgTTN9qGA" base_Property="_CvbPECetEeSTVslmbGto7Q"/>
   <andromdapersistence:Unique xmi:id="_0u6i8ClzEeSUasgTTN9qGA" base_Property="_H_9GICjBEeS908UQl6F1Rw"/>
@@ -1860,7 +1872,7 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <ActionProfile_1:CallOperation xmi:id="__txhIF_BEeSI2P8oVUEqwQ" action_call_operation="_aeSF0CjFEeS908UQl6F1Rw" base_Operation="__-bfAF-PEeSC0thIrubyJw"/>
   <ActionProfile_2:CallOperation xmi:id="_iC13YF_DEeSI2P8oVUEqwQ" action_call_operation="_aeSF0CjFEeS908UQl6F1Rw" base_Operation="__-bfAF-PEeSC0thIrubyJw" action_call_return="true"/>
   <andromdapresentation:FrontEndField xmi:id="_OXHL0GUiEeSv_eYmcg47ow" andromda_presentation_web_view_field_type="textarea" base_Property="_bZc8UCi_EeS908UQl6F1Rw"/>
-  <andromdapersistence:FinderMethod xmi:id="_f8LlEGUiEeSv_eYmcg47ow" andromda_hibernate_query="from ComplaintType as t where t.active = true order by name asc" base_Operation="_YkwrkGUiEeSv_eYmcg47ow"/>
+  <andromdapersistence:FinderMethod xmi:id="_f8LlEGUiEeSv_eYmcg47ow" andromda_hibernate_query="from ComplaintTypeImpl as t where t.active = true order by name asc" base_Operation="_YkwrkGUiEeSv_eYmcg47ow"/>
   <andromdapersistence:PersistentAttribute xmi:id="_msGZsGUiEeSv_eYmcg47ow" base_Property="_9PDk0Ci_EeS908UQl6F1Rw">
     <andromda_persistence_column_length>80</andromda_persistence_column_length>
   </andromdapersistence:PersistentAttribute>
@@ -1873,10 +1885,10 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdawebservice:WebService xmi:id="_qFcCIGUkEeSv_eYmcg47ow" base_Class="_DJtO8Ce7EeSTVslmbGto7Q"/>
   <andromdapresentation:FrontEndController xmi:id="_IB4yUGUmEeSv_eYmcg47ow" base_Class="_z_5B0Fa6EeSxa4pDHAgHAg"/>
   <andromdapresentation:FrontEndField xmi:id="_MP7qoGUnEeSv_eYmcg47ow" andromda_presentation_view_field_required="false" base_Parameter="_S8HwkFw5EeSI_r_DQzLvpg"/>
-  <andromdapersistence:FinderMethod xmi:id="_2yuYwHI4EeSTFtkstC-9JA" andromda_hibernate_query="from City as c where c.active = true order by name asc" base_Operation="_WTvRoCi9EeS908UQl6F1Rw"/>
-  <andromdapersistence:FinderMethod xmi:id="_9KyuEHI4EeSTFtkstC-9JA" andromda_hibernate_query="from City as c where c.state.id=:stateId order by name asc" base_Operation="_n0OTkCjCEeS908UQl6F1Rw"/>
-  <andromdapersistence:FinderMethod xmi:id="_sPXSQHI5EeSTFtkstC-9JA" andromda_hibernate_query="from DemandantType as t where t.active = true order by name asc" base_Operation="_oYMzcHI5EeSTFtkstC-9JA"/>
-  <andromdapersistence:FinderMethod xmi:id="_8FqckHI5EeSTFtkstC-9JA" andromda_hibernate_query="from Identification as i where i.active = true order by name asc" base_Operation="_xtUvwHI5EeSTFtkstC-9JA"/>
+  <andromdapersistence:FinderMethod xmi:id="_2yuYwHI4EeSTFtkstC-9JA" andromda_hibernate_query="from CityImpl as c where c.active = true order by name asc" base_Operation="_WTvRoCi9EeS908UQl6F1Rw"/>
+  <andromdapersistence:FinderMethod xmi:id="_9KyuEHI4EeSTFtkstC-9JA" andromda_hibernate_query="from CityImpl as c where c.state.id=:stateId order by name asc" base_Operation="_n0OTkCjCEeS908UQl6F1Rw"/>
+  <andromdapersistence:FinderMethod xmi:id="_sPXSQHI5EeSTFtkstC-9JA" andromda_hibernate_query="from DemandantTypeImpl as t where t.active = true order by name asc" base_Operation="_oYMzcHI5EeSTFtkstC-9JA"/>
+  <andromdapersistence:FinderMethod xmi:id="_8FqckHI5EeSTFtkstC-9JA" andromda_hibernate_query="from IdentificationImpl as i where i.active = true order by name asc" base_Operation="_xtUvwHI5EeSTFtkstC-9JA"/>
   <andromdapersistence:FinderMethod xmi:id="_UztDoHI6EeSTFtkstC-9JA" andromda_hibernate_query="from User as u where u.login=:login" base_Operation="_t1Zg8CjEEeS908UQl6F1Rw"/>
   <andromdapersistence:FinderMethod xmi:id="_26PEEHI6EeSTFtkstC-9JA" andromda_hibernate_query="from Role as r where r.users.id=:userId order by name asc" base_Operation="_LRH4MDISEeSm0-Xoj3UZsQ"/>
   <andromdapresentation:FrontEndField xmi:id="_VA0D0HJAEeSTFtkstC-9JA" andromda_presentation_web_view_field_type="select" andromda_presentation_view_field_required="true" base_Parameter="_QMtboHJAEeSTFtkstC-9JA"/>

@@ -7,4 +7,4 @@ INSERT INTO tb_complaint_type(id, name, description, active) VALUES (nextval('tb
 INSERT INTO tb_complaint_type(id, name, description, active) VALUES (nextval('tb_complaint_type_seq'), 'SUGESTAO', '', true);
 INSERT INTO tb_complaint_type(id, name, description, active) VALUES (nextval('tb_complaint_type_seq'), 'OUTROS', '', true);
 
---INSERT INTO tb_subject(name, description, active) VALUES (?, ?, ?);
+INSERT INTO tb_subject(id, name, description, active) VALUES (nextval('tb_subject_seq'), 'OUTROS', '', true);

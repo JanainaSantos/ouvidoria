@@ -35,7 +35,7 @@ public void onChangeUnidadeFederacao()
     {
     	System.out.println("***************************************** UF="+state);
     	
-    	System.out.println("facade="+ServiceLocator.instance().getComplaintFacade());
+    	System.out.println("facade="+ServiceLocator.instance().getComplaintHelper());
     	CityVO m1 = new CityVO(1L,"Municipio 1",true,null);
     	CityVO m2 = new CityVO(1L,"Municipio 2",true,null);
     	CityVO m3 = new CityVO(1L,"Municipio 3",true,null);

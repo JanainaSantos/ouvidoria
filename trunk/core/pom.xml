@@ -227,6 +227,7 @@
 					<!-- Execute custom scripts -->
 					<scripts>
 						<script>${project.basedir}/src/main/sql/locality.sql</script>
+						<script>${project.basedir}/src/main/sql/demandant.sql</script>
 						<script>${project.basedir}/src/main/sql/complaint.sql</script>
 					</scripts>
 				</configuration>
