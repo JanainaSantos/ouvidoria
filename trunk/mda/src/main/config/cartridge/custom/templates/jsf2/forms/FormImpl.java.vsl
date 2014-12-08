@@ -5,7 +5,7 @@
 package $action.packageName;
 
 import com.googlecode.ouvidoria.ServiceLocator;
-import com.googlecode.ouvidoria.model.locality.vo.CityVO;
+import com.googlecode.ouvidoria.model.vo.SimpleVO;
 import javax.faces.model.SelectItem;
 
 /**
@@ -36,15 +36,15 @@ public void onChangeUnidadeFederacao()
     	System.out.println("***************************************** UF="+state);
     	
     	System.out.println("facade="+ServiceLocator.instance().getComplaintHelper());
-    	CityVO m1 = new CityVO(1L,"Municipio 1",true,null);
-    	CityVO m2 = new CityVO(1L,"Municipio 2",true,null);
-    	CityVO m3 = new CityVO(1L,"Municipio 3",true,null);
-    	CityVO[] array = new CityVO[] {m1, m2, m3};
+    	SimpleVO m1 = new SimpleVO(1L,"Municipio 1","",null);
+    	SimpleVO m2 = new SimpleVO(1L,"Municipio 2","",null);
+    	SimpleVO m3 = new SimpleVO(1L,"Municipio 3","",null);
+    	SimpleVO[] array = new SimpleVO[] {m1, m2, m3};
     	System.out.println("Municipios criados ... ");
     	
-    	final java.util.Collection<SelectItem> list=new java.util.ArrayList<SelectItem>();
-    	for(CityVO uf: array){
-    		list.add(new SelectItem(uf.getId(), uf.getName(), uf.getName()));
+    	final Collection<SelectItem> list=new java.util.ArrayList<SelectItem>();
+    	for(SimpleVO city: array){
+    		list.add(new SelectItem(city.getId(), city.getName(), city.getName()));
     	}
     	System.out.println("setMunicipioBackingList: "+list.size());
     	setCityBackingList(list);

@@ -4,6 +4,9 @@
 package $controller.packageName;
 
 ##Customizacao: (1/2) metodos para converter colecoes para serem usadas em comboboxes 
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
 import javax.faces.model.SelectItem;
 import com.googlecode.ouvidoria.model.vo.SimpleVO;
 
@@ -21,15 +24,18 @@ public abstract class $controller.name
     private static final long serialVersionUID = 1L;
 
 ##Customizacao: (2/2) metodos para converter colecoes para serem usadas em comboboxes 
-	protected java.util.Collection<SelectItem> toSelectItemCollection(java.util.List<SimpleVO> vos){
-		java.util.List<SelectItem> items = new java.util.ArrayList<SelectItem>();
+	protected Collection<SelectItem> toSelectItemCollection(List<SimpleVO> vos){
+		return toSelectItemCollection(vos,true);
+	}
+	protected Collection<SelectItem> toSelectItemCollection(List<SimpleVO> vos, boolean isLong){
+		List<SelectItem> items = new ArrayList<SelectItem>();
 		for(SimpleVO vo: vos){
-			items.add(toSelectItem(vo));
+			items.add(toSelectItem(vo, isLong));
 		}
 		return items;
 	}
-	protected SelectItem toSelectItem(SimpleVO vo){
-		return new SelectItem(vo.getId(), vo.getName(), vo.getDescription());
+	private SelectItem toSelectItem(SimpleVO vo, boolean isLong){
+		return new SelectItem((isLong)?vo.getId():vo.getName(), vo.getName(), vo.getDescription());
 	}
 
     /**
