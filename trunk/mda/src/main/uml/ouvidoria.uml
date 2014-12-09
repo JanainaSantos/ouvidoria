@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionProfile="http:///schemas/ActionProfile/_xlpmUF-1EeSkXPPaj4navw/0" xmlns:ActionProfile_1="http:///schemas/ActionProfile/_3zdV8F_BEeSZsv5QfgBwXw/0" xmlns:ActionProfile_2="http:///schemas/ActionProfile/_dX2u8F_DEeSZsv5QfgBwXw/0" xmlns:OuvidoriaProfile="http:///schemas/OuvidoriaProfile/_Mh8VUCiaEeSmYfDYt_Kosg/1" xmlns:OuvidoriaProfile_1="http:///schemas/OuvidoriaProfile/_OyikkTa0EeSo0LxjHAhEew/0" xmlns:andromdacommon="http:///schemas/andromdacommon/_UlGuYyOuEd6Yv5u3OIooDQ/0" xmlns:andromdapersistence="http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0" xmlns:andromdapresentation="http:///schemas/andromdapresentation/_UlQfZSOuEd6Yv5u3OIooDQ/0" xmlns:andromdaservice="http:///schemas/andromdaservice/_UlGuYSOuEd6Yv5u3OIooDQ/0" xmlns:andromdawebservice="http:///schemas/andromdawebservice/_RbxZUR-lEd6lZ_21UMRSKg/0" xmlns:andromdaxml="http:///schemas/andromdaxml/_Rb7KUR-lEd6lZ_21UMRSKg/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/ActionProfile/_xlpmUF-1EeSkXPPaj4navw/0 ActionProfile.profile.uml#_xz2asV-1EeSkXPPaj4navw http:///schemas/ActionProfile/_3zdV8F_BEeSZsv5QfgBwXw/0 ActionProfile.profile.uml#_5W8iFV_BEeSZsv5QfgBwXw http:///schemas/ActionProfile/_dX2u8F_DEeSZsv5QfgBwXw/0 ActionProfile.profile.uml#_djEg9V_DEeSZsv5QfgBwXw http:///schemas/OuvidoriaProfile/_Mh8VUCiaEeSmYfDYt_Kosg/1 ouvidoria-profile.profile.uml#_Mh-xkCiaEeSmYfDYt_Kosg http:///schemas/OuvidoriaProfile/_OyikkTa0EeSo0LxjHAhEew/0 OuvidoriaProfile.profile.uml#_O9AJwza0EeSo0LxjHAhEew http:///schemas/andromdacommon/_UlGuYyOuEd6Yv5u3OIooDQ/0 andromda-common-3.5-SNAPSHOT.profile.uml#_UlacSiOuEd6Yv5u3OIooDQ http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0 andromda-persistence-3.5-SNAPSHOT.profile.uml#_UlaW6yOuEd6Yv5u3OIooDQ http:///schemas/andromdapresentation/_UlQfZSOuEd6Yv5u3OIooDQ/0 andromda-presentation-3.5-SNAPSHOT.profile.uml#_UlaRsSOuEd6Yv5u3OIooDQ http:///schemas/andromdaservice/_UlGuYSOuEd6Yv5u3OIooDQ/0 andromda-service-3.5-SNAPSHOT.profile.uml#_UlaeICOuEd6Yv5u3OIooDQ http:///schemas/andromdawebservice/_RbxZUR-lEd6lZ_21UMRSKg/0 andromda-webservice-3.5-SNAPSHOT.profile.uml#_RcYASR-lEd6lZ_21UMRSKg http:///schemas/andromdaxml/_Rb7KUR-lEd6lZ_21UMRSKg/0 andromda-xml-3.5-SNAPSHOT.profile.uml#_RcX_pR-lEd6lZ_21UMRSKg">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionProfile="http:///schemas/ActionProfile/_xlpmUF-1EeSkXPPaj4navw/0" xmlns:ActionProfile_1="http:///schemas/ActionProfile/_3zdV8F_BEeSZsv5QfgBwXw/0" xmlns:ActionProfile_2="http:///schemas/ActionProfile/_dX2u8F_DEeSZsv5QfgBwXw/0" xmlns:OuvidoriaProfile="http:///schemas/OuvidoriaProfile/_Mh8VUCiaEeSmYfDYt_Kosg/1" xmlns:OuvidoriaProfile_1="http:///schemas/OuvidoriaProfile/_OyikkTa0EeSo0LxjHAhEew/0" xmlns:OuvidoriaProfile_2="http:///schemas/OuvidoriaProfile/_YHJkUH_CEeSWFOHdd9uOwA/0" xmlns:OuvidoriaProfile_3="http:///schemas/OuvidoriaProfile/_mY0BMH_EEeSWFOHdd9uOwA/0" xmlns:andromdacommon="http:///schemas/andromdacommon/_UlGuYyOuEd6Yv5u3OIooDQ/0" xmlns:andromdapersistence="http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0" xmlns:andromdapresentation="http:///schemas/andromdapresentation/_UlQfZSOuEd6Yv5u3OIooDQ/0" xmlns:andromdaservice="http:///schemas/andromdaservice/_UlGuYSOuEd6Yv5u3OIooDQ/0" xmlns:andromdawebservice="http:///schemas/andromdawebservice/_RbxZUR-lEd6lZ_21UMRSKg/0" xmlns:andromdaxml="http:///schemas/andromdaxml/_Rb7KUR-lEd6lZ_21UMRSKg/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/ActionProfile/_xlpmUF-1EeSkXPPaj4navw/0 ActionProfile.profile.uml#_xz2asV-1EeSkXPPaj4navw http:///schemas/ActionProfile/_3zdV8F_BEeSZsv5QfgBwXw/0 ActionProfile.profile.uml#_5W8iFV_BEeSZsv5QfgBwXw http:///schemas/ActionProfile/_dX2u8F_DEeSZsv5QfgBwXw/0 ActionProfile.profile.uml#_djEg9V_DEeSZsv5QfgBwXw http:///schemas/OuvidoriaProfile/_Mh8VUCiaEeSmYfDYt_Kosg/1 ouvidoria-profile.profile.uml#_Mh-xkCiaEeSmYfDYt_Kosg http:///schemas/OuvidoriaProfile/_OyikkTa0EeSo0LxjHAhEew/0 OuvidoriaProfile.profile.uml#_O9AJwza0EeSo0LxjHAhEew http:///schemas/OuvidoriaProfile/_YHJkUH_CEeSWFOHdd9uOwA/0 OuvidoriaProfile.profile.uml#_Y6-OOX_CEeSWFOHdd9uOwA http:///schemas/OuvidoriaProfile/_mY0BMH_EEeSWFOHdd9uOwA/0 OuvidoriaProfile.profile.uml#_mjMFMn_EEeSWFOHdd9uOwA http:///schemas/andromdacommon/_UlGuYyOuEd6Yv5u3OIooDQ/0 andromda-common-3.5-SNAPSHOT.profile.uml#_UlacSiOuEd6Yv5u3OIooDQ http:///schemas/andromdapersistence/_Uk9kcCOuEd6Yv5u3OIooDQ/0 andromda-persistence-3.5-SNAPSHOT.profile.uml#_UlaW6yOuEd6Yv5u3OIooDQ http:///schemas/andromdapresentation/_UlQfZSOuEd6Yv5u3OIooDQ/0 andromda-presentation-3.5-SNAPSHOT.profile.uml#_UlaRsSOuEd6Yv5u3OIooDQ http:///schemas/andromdaservice/_UlGuYSOuEd6Yv5u3OIooDQ/0 andromda-service-3.5-SNAPSHOT.profile.uml#_UlaeICOuEd6Yv5u3OIooDQ http:///schemas/andromdawebservice/_RbxZUR-lEd6lZ_21UMRSKg/0 andromda-webservice-3.5-SNAPSHOT.profile.uml#_RcYASR-lEd6lZ_21UMRSKg http:///schemas/andromdaxml/_Rb7KUR-lEd6lZ_21UMRSKg/0 andromda-xml-3.5-SNAPSHOT.profile.uml#_RcX_pR-lEd6lZ_21UMRSKg">
   <uml:Model xmi:id="_7zZYwCXvEdyeC6-v07fheA" name="OuvidoriaModel">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NrW40CXwEdyeC6-v07fheA" source="http://www.eclipse.org/emf/2002/Ecore"/>
     <packageImport xmi:type="uml:PackageImport" xmi:id="_8AD7wCXvEdyeC6-v07fheA">
@@ -90,8 +90,17 @@
                 <value xsi:nil="true"/>
               </defaultValue>
             </ownedAttribute>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_bUW4sH8pEeSdqbw3e-A-gA" name="searchByCriteria" isQuery="true">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_mWBPUH8pEeSdqbw3e-A-gA" name="" isOrdered="true" direction="return">
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_809265_8"/>
+              </ownedParameter>
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_rmhfoH8pEeSdqbw3e-A-gA" name="criteria" type="_uH_zgF-QEeSC0thIrubyJw"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_t-_B0CezEeSTVslmbGto7Q" clientDependency="_fPizkFxFEeSI_r_DQzLvpg" name="ComplaintType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_j4FCsH8oEeSdqbw3e-A-gA" annotatedElement="_t-_B0CezEeSTVslmbGto7Q">
+              <body>Representa o tipo da demanda</body>
+            </ownedComment>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_9PDk0Ci_EeS908UQl6F1Rw" name="name" visibility="public">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9azh0Ci_EeS908UQl6F1Rw" value="1"/>
@@ -124,7 +133,7 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_8NgHQCe5EeSTVslmbGto7Q" clientDependency="_f4PyUFxFEeSI_r_DQzLvpg" name="Subject">
             <ownedComment xmi:type="uml:Comment" xmi:id="_ee6xYF-GEeSC0thIrubyJw" annotatedElement="_8NgHQCe5EeSTVslmbGto7Q">
-              <body>O assunto pre-definido da demanda</body>
+              <body>The  complaint subject</body>
             </ownedComment>
             <ownedAttribute xmi:type="uml:Property" xmi:id="_T_mZ4Ci_EeS908UQl6F1Rw" name="name" visibility="public">
               <ownedComment xmi:type="uml:Comment" xmi:id="_icQJoF-GEeSC0thIrubyJw" annotatedElement="_T_mZ4Ci_EeS908UQl6F1Rw">
@@ -215,11 +224,17 @@
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_1CxCwDe7EeSN0LCe_KdGSQ" name="enums">
             <packagedElement xmi:type="uml:Enumeration" xmi:id="_w6ovwDe7EeSN0LCe_KdGSQ" name="ComplaintStatus">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_oLD60H8oEeSdqbw3e-A-gA" annotatedElement="_w6ovwDe7EeSN0LCe_KdGSQ">
+                <body>O status da demanda</body>
+              </ownedComment>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Igy6ADfCEeSN0LCe_KdGSQ" name="CREATED"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_J-E64DfDEeSN0LCe_KdGSQ" name="ANALYSING"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LjgAkDfDEeSN0LCe_KdGSQ" name="CLOSED"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Enumeration" xmi:id="_b90WYFxAEeSI_r_DQzLvpg" name="Contact">
+              <ownedComment xmi:type="uml:Comment" xmi:id="_maXZQH8oEeSdqbw3e-A-gA" annotatedElement="_b90WYFxAEeSI_r_DQzLvpg">
+                <body>Representa uma forma de contato</body>
+              </ownedComment>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gBF-kFxAEeSI_r_DQzLvpg" name="SITE"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hfPXkFxAEeSI_r_DQzLvpg" name="EMAIL"/>
               <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jAcroFxAEeSI_r_DQzLvpg" name="PHONE"/>
@@ -326,7 +341,7 @@
                 <specification xmi:type="uml:LiteralString" xmi:id="_zEdD8Ci9EeS908UQl6F1Rw" name="" value="context Municipio::buscaPorAtivo( ativo:Boolean):Collection(Municipio) &#xA;body buscaPorAtivo: allInstances() -> select ( municipio | municipio.ativo = ativo )"/>
               </ownedRule>
               <ownedParameter xmi:type="uml:Parameter" xmi:id="_YlPaMCi9EeS908UQl6F1Rw" direction="return">
-                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_331753_26"/>
+                <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_809265_8"/>
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:type="uml:Operation" xmi:id="_n0OTkCjCEeS908UQl6F1Rw" name="searchByState" bodyCondition="_yDBC0CjCEeS908UQl6F1Rw" isQuery="true">
@@ -1015,39 +1030,63 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_S8HwkFw5EeSI_r_DQzLvpg" name="name">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KWYfMH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KWYfMX8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_TntEMFw5EeSI_r_DQzLvpg" name="sex">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LWsFoH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LWsssH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_TyqXAFw5EeSI_r_DQzLvpg" name="identification">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MFUGMH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MFUtQH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_T3QjIFw5EeSI_r_DQzLvpg" name="document">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NXaAMH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXanQH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_T6juwFw5EeSI_r_DQzLvpg" name="businessPhone">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N6qeQH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N6rFUH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_T9gVEFw5EeSI_r_DQzLvpg" name="celularPhone">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ox9SoH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ox95sH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_UANDwFw5EeSI_r_DQzLvpg" name="email">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PdPEQH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PdPrUH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_UMYekFw5EeSI_r_DQzLvpg" name="address">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QIPwIH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QIQXMH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_BXSycFw6EeSI_r_DQzLvpg" name="zipCode">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qws3QH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QwteUH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_BbcSoFw6EeSI_r_DQzLvpg" name="state">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RxAdsH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RxBEwH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_BfKVAFw6EeSI_r_DQzLvpg" name="city">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_StpsIH8qEeSdqbw3e-A-gA"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_StqTMH8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_QMtboHJAEeSTFtkstC-9JA" name="type">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T8OYEH8qEeSdqbw3e-A-gA" value="1"/>
+                          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T8OYEX8qEeSdqbw3e-A-gA" value="1"/>
                         </ownedParameter>
                         <ownedParameter xmi:type="uml:Parameter" xmi:id="_jPe0oH8HEeSdqbw3e-A-gA" name="subject">
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
@@ -1739,7 +1778,7 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_T5nzIDa0EeSca6oEiGm6og">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_T51OgDa0EeSca6oEiGm6og" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="OuvidoriaProfile.profile.uml#_O9AJwza0EeSo0LxjHAhEew"/>
+        <references xmi:type="ecore:EPackage" href="OuvidoriaProfile.profile.uml#_mjMFMn_EEeSWFOHdd9uOwA"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="OuvidoriaProfile.profile.uml#_16_5_1_648021b_1410108808251_865403_706"/>
     </profileApplication>
@@ -1815,8 +1854,8 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapresentation:FrontEndField xmi:id="_n0E24Fw5EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" andromda_presentation_view_field_required="false" base_Parameter="_TyqXAFw5EeSI_r_DQzLvpg"/>
   <andromdapresentation:FrontEndField xmi:id="_LkfmQFw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" base_Parameter="_BbcSoFw6EeSI_r_DQzLvpg"/>
   <andromdapresentation:FrontEndField xmi:id="_QVBWAFw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" base_Parameter="_BfKVAFw6EeSI_r_DQzLvpg"/>
-  <andromdapresentation:FrontEndField xmi:id="_g_fvQFw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_rows="8" andromda_presentation_web_view_field_type="text" base_Parameter="_eDvv0Fw6EeSI_r_DQzLvpg"/>
-  <andromdapresentation:FrontEndField xmi:id="_OdWNQFw7EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" base_Parameter="_LlwVEFw7EeSI_r_DQzLvpg"/>
+  <andromdapresentation:FrontEndField xmi:id="_g_fvQFw6EeSI_r_DQzLvpg" andromda_presentation_web_view_field_rows="15" andromda_presentation_web_view_field_size="30" andromda_presentation_web_view_field_type="textarea" andromda_presentation_view_field_required="true" base_Parameter="_eDvv0Fw6EeSI_r_DQzLvpg"/>
+  <andromdapresentation:FrontEndField xmi:id="_OdWNQFw7EeSI_r_DQzLvpg" andromda_presentation_web_view_field_type="select" andromda_presentation_view_field_required="true" base_Parameter="_LlwVEFw7EeSI_r_DQzLvpg"/>
   <andromdacommon:ValueObject xmi:id="_gFFw8FxEEeSI_r_DQzLvpg" base_Class="_STfCQFxEEeSI_r_DQzLvpg"/>
   <andromdacommon:ValueObject xmi:id="_pOgMgFxEEeSI_r_DQzLvpg" base_Class="_hCBTQFxEEeSI_r_DQzLvpg"/>
   <andromdapersistence:PersistentAttribute xmi:id="_B4aD8F-GEeSC0thIrubyJw" base_Property="_T_mZ4Ci_EeS908UQl6F1Rw">
@@ -1868,5 +1907,8 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
   <andromdapresentation:FrontEndField xmi:id="_7kYyIHJSEeS-8MiPDVC1lA" andromda_presentation_view_field_required="false" base_Parameter="_T3QjIFw5EeSI_r_DQzLvpg"/>
   <andromdaservice:Service xmi:id="__Ui0kHJTEeS-8MiPDVC1lA" base_Class="_78ghwHJTEeS-8MiPDVC1lA"/>
   <andromdaservice:Service xmi:id="_N2YGUHJUEeS-8MiPDVC1lA" base_Class="_KWSqwHJUEeS-8MiPDVC1lA"/>
-  <andromdapresentation:FrontEndField xmi:id="_pPP-sH8HEeSdqbw3e-A-gA" andromda_presentation_web_view_field_type="select" base_Parameter="_jPe0oH8HEeSdqbw3e-A-gA"/>
+  <andromdapresentation:FrontEndField xmi:id="_pPP-sH8HEeSdqbw3e-A-gA" andromda_presentation_web_view_field_type="select" andromda_presentation_view_field_required="true" base_Parameter="_jPe0oH8HEeSdqbw3e-A-gA"/>
+  <andromdapersistence:FinderMethod xmi:id="_qaSrIH8rEeSdqbw3e-A-gA" base_Operation="_bUW4sH8pEeSdqbw3e-A-gA"/>
+  <OuvidoriaProfile_2:NestedCombobox xmi:id="_jzeBgH_CEeSkbvrCglC0Yg" base_Parameter="_BbcSoFw6EeSI_r_DQzLvpg" nestedcomboboxlistener="registerComplaintCSUInformComplaintDataSubmitForm.onChangeState()" nestedcomboboxupdate="city"/>
+  <OuvidoriaProfile_3:NestedCombobox xmi:id="_s651MH_EEeSkbvrCglC0Yg" base_Parameter="_BbcSoFw6EeSI_r_DQzLvpg" nested_combobox_listener="onStateSelectionChange()" nested_combobox_update="city"/>
 </xmi:XMI>

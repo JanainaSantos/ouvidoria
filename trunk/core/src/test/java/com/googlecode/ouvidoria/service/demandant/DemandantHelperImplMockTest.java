@@ -4,218 +4,158 @@
 //
 package com.googlecode.ouvidoria.service.demandant;
 
+import static org.easymock.EasyMock.expect;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import static org.easymock.EasyMock.*;
-import com.googlecode.ouvidoria.service.demandant.AbstractDemandantHelperMockTest;
-
+import com.googlecode.ouvidoria.TestUtils;
+import com.googlecode.ouvidoria.model.demandant.DemandantTypeDao;
+import com.googlecode.ouvidoria.model.demandant.IdentificationDao;
+import com.googlecode.ouvidoria.model.vo.SimpleVO;
 
 /**
-* <p>
-* Caso de Teste para <code>com.googlecode.ouvidoria.service.demandant.DemandantHelper</code>. 
-* Sao criados 2 metodos de teste para cada metodo da classe de servico.
-* Um dos metodos testa valores validos e o outro testa valores invalidos.
-* </p>
-*
-* @see com.googlecode.ouvidoria.service.demandant.DemandantHelperImpl
-*/
-public class DemandantHelperImplMockTest extends AbstractDemandantHelperMockTest {
+ * <p>
+ * Caso de Teste para
+ * <code>com.googlecode.ouvidoria.service.demandant.DemandantHelper</code>. Sao
+ * criados 2 metodos de teste para cada metodo da classe de servico. Um dos
+ * metodos testa valores validos e o outro testa valores invalidos.
+ * </p>
+ *
+ * @see com.googlecode.ouvidoria.service.demandant.DemandantHelperImpl
+ */
+public class DemandantHelperImplMockTest extends
+		AbstractDemandantHelperMockTest {
 
-	//setup logging
+	// setup logging
 	private Log log = LogFactory.getLog(DemandantHelperImplMockTest.class);
 
-				
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetDemandantTypes com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getDemandantTypes()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo GetDemandantTypes
+	 * com valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getDemandantTypes()
+	 */
 	public void testGetDemandantTypes() throws Exception {
-
-		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetDemandantTypes()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = TestUtils.getSimpleVoList(2);
+		System.out.println("******************* testGetDemandantTypes="+list.size());
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.demandantTypeDaoMock.searchActive(DemandantTypeDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> demandantTypes = this.demandantHelper.getDemandantTypes();
+		assertNotNull("Resultado inesperado.", demandantTypes);
+		assertTrue("Deveria ter retornado 2 itens", demandantTypes.size() == 2);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
 
+	
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetDemandantTypes com valores invalidos.
-
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getDemandantTypes()
-	*/
-	public void testGetDemandantTypesValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+	 * Metodo responsavel por testar o comportamento do metodo GetDemandantTypes
+	 * com valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getDemandantTypes()
+	 */
+	public void testGetDemandantTypesValoresInvalidos() throws Exception {
 		log.info("Metodo: testGetDemandantTypesValoresInvalidos()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = new ArrayList();
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.demandantTypeDaoMock.searchActive(DemandantTypeDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> demandantTypes = this.demandantHelper.getDemandantTypes();
+		assertNotNull("Resultado inesperado.", demandantTypes);
+		assertTrue("A lista deveria estar vazia", demandantTypes.size() == 0);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
-				
+
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetIdentificationTypes com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getIdentificationTypes()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo
+	 * GetIdentificationTypes com valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getIdentificationTypes()
+	 */
 	public void testGetIdentificationTypes() throws Exception {
-
-		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetIdentificationTypes()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = TestUtils.getSimpleVoList(2);
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.identificationDaoMock.searchActive(IdentificationDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> identificationTypes = this.demandantHelper.getIdentificationTypes();
+		assertNotNull("Resultado inesperado.", identificationTypes);
+		assertTrue("Deveria ter retornado 2 itens", identificationTypes.size() == 2);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetIdentificationTypes com valores invalidos.
-
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getIdentificationTypes()
-	*/
-	public void testGetIdentificationTypesValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+	 * Metodo responsavel por testar o comportamento do metodo
+	 * GetIdentificationTypes com valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getIdentificationTypes()
+	 */
+	public void testGetIdentificationTypesValoresInvalidos() throws Exception {
+		// exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetIdentificationTypesValoresInvalidos()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = new ArrayList();
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.identificationDaoMock.searchActive(IdentificationDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> identificationTypes = this.demandantHelper.getIdentificationTypes();
+		assertNotNull("Resultado inesperado.", identificationTypes);
+		assertTrue("A lista deveria estar vazia", identificationTypes.size() == 0);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
-				
+
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetSexTypes com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getSexTypes()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo GetSexTypes com
+	 * valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getSexTypes()
+	 */
 	public void testGetSexTypes() throws Exception {
-
-		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetSexTypes()");
-	
-		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
-
-		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
-		replayMocks();
-
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
-		/* verifies mock */
-		verifyMocks();
+		//TODO
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetSexTypes com valores invalidos.
-
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getSexTypes()
-	*/
-	public void testGetSexTypesValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+	 * Metodo responsavel por testar o comportamento do metodo GetSexTypes com
+	 * valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantHelper#getSexTypes()
+	 */
+	public void testGetSexTypesValoresInvalidos() throws Exception {
 		log.info("Metodo: testGetSexTypesValoresInvalidos()");
-	
-		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
-
-		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
-		replayMocks();
-
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
-		/* verifies mock */
-		verifyMocks();
+		//TODO
 	}
 
-} 
+}
