@@ -4,218 +4,210 @@
 //
 package com.googlecode.ouvidoria.service.complaint;
 
+import static org.easymock.EasyMock.expect;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import static org.easymock.EasyMock.*;
-import com.googlecode.ouvidoria.service.complaint.AbstractComplaintHelperMockTest;
-
+import com.googlecode.ouvidoria.TestUtils;
+import com.googlecode.ouvidoria.model.complaint.ComplaintTypeDao;
+import com.googlecode.ouvidoria.model.complaint.SubjectDao;
+import com.googlecode.ouvidoria.model.vo.SimpleVO;
 
 /**
-* <p>
-* Caso de Teste para <code>com.googlecode.ouvidoria.service.complaint.ComplaintHelper</code>. 
-* Sao criados 2 metodos de teste para cada metodo da classe de servico.
-* Um dos metodos testa valores validos e o outro testa valores invalidos.
-* </p>
-*
-* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelperImpl
-*/
-public class ComplaintHelperImplMockTest extends AbstractComplaintHelperMockTest {
+ * <p>
+ * Caso de Teste para
+ * <code>com.googlecode.ouvidoria.service.complaint.ComplaintHelper</code>. Sao
+ * criados 2 metodos de teste para cada metodo da classe de servico. Um dos
+ * metodos testa valores validos e o outro testa valores invalidos.
+ * </p>
+ *
+ * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelperImpl
+ */
+public class ComplaintHelperImplMockTest extends
+		AbstractComplaintHelperMockTest {
 
-	//setup logging
+	// setup logging
 	private Log log = LogFactory.getLog(ComplaintHelperImplMockTest.class);
 
-				
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetSubjects com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getSubjects()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo GetSubjects com
+	 * valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getSubjects()
+	 */
 	public void testGetSubjects() throws Exception {
-
-		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetSubjects()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = TestUtils.getSimpleVoList(2);
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.subjectDaoMock.searchActive(SubjectDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> subjects = this.complaintHelper.getSubjects();
+		assertNotNull("Resultado inesperado.", subjects);
+		assertTrue("Deveria ter retornado 2 itens", subjects.size() == 2);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetSubjects com valores invalidos.
-
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getSubjects()
-	*/
-	public void testGetSubjectsValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+	 * Metodo responsavel por testar o comportamento do metodo GetSubjects com
+	 * valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getSubjects()
+	 */
+	public void testGetSubjectsValoresInvalidos() throws Exception {
 		log.info("Metodo: testGetSubjectsValoresInvalidos()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = new ArrayList();
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.subjectDaoMock.searchActive(SubjectDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> subjects = this.complaintHelper.getSubjects();
+		assertNotNull("Resultado inesperado.", subjects);
+		assertTrue("A lista deveria estar vazia", subjects.size() == 0);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
-				
+
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetComplaintTypes com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getComplaintTypes()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo GetComplaintTypes
+	 * com valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getComplaintTypes()
+	 */
 	public void testGetComplaintTypes() throws Exception {
-
-		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetComplaintTypes()");
-	
+
 		/* setup data */
-		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		List list = TestUtils.getSimpleVoList(2);
 
 		/* setup mock */
-		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		expect(this.complaintTypeDaoMock.searchActive(ComplaintTypeDao.TRANSFORM_SIMPLEVO)).andReturn(list);
+
 		replayMocks();
 
-		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		List<SimpleVO> complaintTypes = this.complaintHelper.getComplaintTypes();
+		assertNotNull("Resultado inesperado.", complaintTypes);
+		assertTrue("Deveria ter retornado 2 itens", complaintTypes.size() == 2);
+		
 		/* verifies mock */
 		verifyMocks();
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetComplaintTypes com valores invalidos.
+	 * Metodo responsavel por testar o comportamento do metodo GetComplaintTypes
+	 * com valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getComplaintTypes()
+	 */
+	public void testGetComplaintTypesValoresInvalidos() throws Exception {
 
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getComplaintTypes()
-	*/
-	public void testGetComplaintTypesValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+		// exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetComplaintTypesValoresInvalidos()");
-	
+
 		/* setup data */
 		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		 * TODO aqui sao criados, caso necessario, os objetos necessarios para
+		 * setar os metodos dos mocks
+		 */
 
 		/* setup mock */
 		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		 * TODO aqui vao as definicoes dos metodos dos mock que serao chamados.
+		 * Tambem os expects sao declarados neste ponto. Ex.:
+		 * expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
+		 **/
 		replayMocks();
 
 		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		 * TODO implementar a logica do teste
+		 */
+		// fail("Implementar a logica do teste");
+
 		/* verifies mock */
 		verifyMocks();
 	}
-				
+
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetContacts com valores validos.
-	*
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getContacts()
-	*/
+	 * Metodo responsavel por testar o comportamento do metodo GetContacts com
+	 * valores validos.
+	 *
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getContacts()
+	 */
 	public void testGetContacts() throws Exception {
 
-		//exibe o nome do metodo de teste sendo executado
+		// exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetContacts()");
-	
+
 		/* setup data */
 		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		 * TODO aqui sao criados, caso necessario, os objetos necessarios para
+		 * setar os metodos dos mocks
+		 */
 
 		/* setup mock */
 		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		 * TODO aqui vao as definicoes dos metodos dos mock que serao chamados.
+		 * Tambem os expects sao declarados neste ponto. Ex.:
+		 * expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
+		 **/
 		replayMocks();
 
 		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		 * TODO implementar a logica do teste
+		 */
+		// fail("Implementar a logica do teste");
+
 		/* verifies mock */
 		verifyMocks();
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo GetContacts com valores invalidos.
+	 * Metodo responsavel por testar o comportamento do metodo GetContacts com
+	 * valores invalidos.
+	 * 
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getContacts()
+	 */
+	public void testGetContactsValoresInvalidos() throws Exception {
 
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getContacts()
-	*/
-	public void testGetContactsValoresInvalidos() throws Exception
-	{
-
-		//exibe o nome do metodo de teste sendo executado
+		// exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testGetContactsValoresInvalidos()");
-	
+
 		/* setup data */
 		/**
-		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
-		*/
+		 * TODO aqui sao criados, caso necessario, os objetos necessarios para
+		 * setar os metodos dos mocks
+		 */
 
 		/* setup mock */
 		/**
-		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
-		* Tambem os expects sao declarados neste ponto.
-		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
-		**/
+		 * TODO aqui vao as definicoes dos metodos dos mock que serao chamados.
+		 * Tambem os expects sao declarados neste ponto. Ex.:
+		 * expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
+		 **/
 		replayMocks();
 
 		/**
-		* TODO implementar a logica do teste
-		*/
-		//fail("Implementar a logica do teste");
-	
+		 * TODO implementar a logica do teste
+		 */
+		// fail("Implementar a logica do teste");
+
 		/* verifies mock */
 		verifyMocks();
 	}
 
-} 
+}

@@ -46,13 +46,23 @@ ${ident}<p:selectBooleanButton id="$propertyId" value="#{${formValuePropertyName
 ${ident}<p:$selectBoxType id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" readonly="$parameter.readOnly">
 #if ($parameter.type.enumeration)
 ${ident}    <f:converter converterId="${parameter.type.fullyQualifiedName}"/>
+
 ##Customizacao: (1st) opcao padrao na combo
-${ident}    <f:selectItem itemLabel="#if($selectBoxType == "selectOneMenu")#{messages['$select.option.blank']}#end"/>
+${ident}    <f:selectItem itemLabel="#if($selectBoxType == "selectOneMenu")#{messages['select.option.blank']}#end"/>
 ${ident}    <f:selectItems value="#{ajsf:getEnumSelectItems('${parameter.type.messageKey}.','${parameter.type.fullyQualifiedName}')}"/>
 #else
+## Customizacao: combobox aninhada. Codigo java sendo inserido via merge (no form, nesta versao)
+#if($selectBoxType == "selectOneMenu")
+	#set($nestedComboEnabled = $parameter.hasExactStereotype("NestedCombobox"))
+	#if ($nestedComboEnabled)
+		#set($listener = $parameter.findTaggedValue("nested_combobox_listener"))
+		#set($update = $parameter.findTaggedValue("nested_combobox_update"))
+${ident}    <p:ajax listener="#{${formName}.${listener}}" update="$update" />
+	#end
+#end
 #if(!$parameter.required)
 ##Customizacao: (1st) opcao padrao na combo
-${ident}    <f:selectItem itemLabel="#if($selectBoxType == "selectOneMenu")#{messages['$select.option.blank']}#end"/>
+${ident}    <f:selectItem itemLabel="#if($selectBoxType == "selectOneMenu")#{messages['select.option.blank']}#end"/>
 #end
 ${ident}    <f:selectItems value="#{${formName}.${backingListName}}" />
 #end

@@ -8,14 +8,13 @@
  */
 package com.googlecode.ouvidoria.service.complaint;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.googlecode.ouvidoria.model.complaint.ComplaintTypeDao;
 import com.googlecode.ouvidoria.model.complaint.SubjectDao;
 import com.googlecode.ouvidoria.model.complaint.enums.Contact;
-import com.googlecode.ouvidoria.model.demandant.enums.Sex;
 import com.googlecode.ouvidoria.model.vo.SimpleVO;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper
@@ -26,6 +25,7 @@ public class ComplaintHelperImpl extends ComplaintHelperBase {
 	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getSubjects()
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	protected List<SimpleVO> handleGetSubjects() throws Exception {
 		return (List<SimpleVO>) getSubjectDao().searchActive(SubjectDao.TRANSFORM_SIMPLEVO);
 	}
@@ -34,6 +34,7 @@ public class ComplaintHelperImpl extends ComplaintHelperBase {
 	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintHelper#getComplaintTypes()
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	protected List<SimpleVO> handleGetComplaintTypes() throws Exception {
 		return (List<SimpleVO>) getComplaintTypeDao().searchActive(ComplaintTypeDao.TRANSFORM_SIMPLEVO);
 	}

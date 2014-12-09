@@ -51,6 +51,17 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BknE9yexEeSTVslmbGto7Q"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_BknE-CexEeSTVslmbGto7Q" type="7018">
+        <children xmi:type="notation:Shape" xmi:id="_bUYG0H8pEeSdqbw3e-A-gA" type="3013">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qaam8H8rEeSdqbw3e-A-gA" source="Stereotype_Annotation">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qabOAH8rEeSdqbw3e-A-gA" key="StereotypeWithQualifiedNameList" value=""/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qabOAX8rEeSdqbw3e-A-gA" key="StereotypeList" value="andromda-persistence::FinderMethod"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qabOAn8rEeSdqbw3e-A-gA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qabOA38rEeSdqbw3e-A-gA" key="PropStereoDisplay" value=""/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qabOBH8rEeSdqbw3e-A-gA" key="StereotypePropertyLocation" value="Compartment"/>
+          </eAnnotations>
+          <element xmi:type="uml:Operation" href="ouvidoria.uml#_bUW4sH8pEeSdqbw3e-A-gA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_bUYG0X8pEeSdqbw3e-A-gA"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_BknE-SexEeSTVslmbGto7Q"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_BknE-iexEeSTVslmbGto7Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_BknE-yexEeSTVslmbGto7Q"/>
@@ -73,7 +84,7 @@
       </children>
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_FS3TgDfEEeSN0LCe_KdGSQ" name="shape_visibility"/>
       <element xmi:type="uml:Class" href="ouvidoria.uml#_Bkl20CexEeSTVslmbGto7Q"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BknE8SexEeSTVslmbGto7Q" x="422" y="225" width="316" height="150"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BknE8SexEeSTVslmbGto7Q" x="422" y="225" width="437" height="168"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_t_CFICezEeSTVslmbGto7Q" type="2008" fillColor="10011046">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AnVvQCjAEeS908UQl6F1Rw" source="Stereotype_Annotation">
@@ -3518,7 +3529,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z8zHmVxFEeSI_r_DQzLvpg"/>
       </children>
       <element xmi:type="uml:Class" href="ouvidoria.uml#_t-_B0CezEeSTVslmbGto7Q"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z8yggVxFEeSI_r_DQzLvpg" x="566" y="26" width="128" height="43"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z8yggVxFEeSI_r_DQzLvpg" x="466" y="58" width="128" height="43"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_akD74FxFEeSI_r_DQzLvpg" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_akD74lxFEeSI_r_DQzLvpg" type="5029"/>
@@ -3541,7 +3552,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_akEi-VxFEeSI_r_DQzLvpg"/>
       </children>
       <element xmi:type="uml:Class" href="ouvidoria.uml#_8NgHQCe5EeSTVslmbGto7Q"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_akD74VxFEeSI_r_DQzLvpg" x="698" y="25" height="43"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_akD74VxFEeSI_r_DQzLvpg" x="580" y="1" height="43"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_gOJ7cFxGEeSI_r_DQzLvpg" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_gOJ7clxGEeSI_r_DQzLvpg" type="5029"/>
