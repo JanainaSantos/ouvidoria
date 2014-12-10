@@ -11,82 +11,52 @@ import com.googlecode.ouvidoria.model.vo.SimpleVO;
 /**
  * @see Subject
  */
-public class SubjectDaoImpl
-    extends SubjectDaoBase
-{
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void toSimpleVO(
-        Subject source,
-        SimpleVO target)
-    {
-        // TODO verify behavior of toSimpleVO
-        super.toSimpleVO(source, target);
-    }
+public class SubjectDaoImpl extends SubjectDaoBase {
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void toSimpleVO(Subject source, SimpleVO target) {
+		super.toSimpleVO(source, target);
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public SimpleVO toSimpleVO(final Subject entity)
-    {
-        // TODO verify behavior of toSimpleVO
-        return super.toSimpleVO(entity);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public SimpleVO toSimpleVO(final Subject entity) {
+		return super.toSimpleVO(entity);
+	}
 
-    /**
-     * Retrieves the entity object that is associated with the specified value object
-     * from the object store. If no such entity object exists in the object store,
-     * a new, blank entity is created
-     */
-        private Subject loadSubjectFromSimpleVO(SimpleVO vo)
-    {
-    	        Subject retorno = null;
-		if(vo.getId() == null){
+	/**
+	 * Retrieves the entity object that is associated with the specified value
+	 * object from the object store. If no such entity object exists in the
+	 * object store, a new, blank entity is created
+	 */
+	private Subject loadSubjectFromSimpleVO(SimpleVO vo) {
+		Subject retorno = null;
+		if (vo.getId() == null) {
 			retorno = Subject.Factory.newInstance();
-		}else{
+		} else {
 			retorno = load(vo.getId());
 		}
-		return retorno;	
-		
-        // TODO implement loadSubjectFromSimpleVO
-        //throw new UnsupportedOperationException("com.googlecode.ouvidoria.model.complaint.loadSubjectFromSimpleVO(SimpleVO) not yet implemented.");
+		return retorno;
+	}
 
-        /* A typical implementation looks like this:
-        if (simpleVO.getId() == null)
-        {
-            return  Subject.Factory.newInstance();
-        }
-        else
-        {
-            return this.load(simpleVO.getId());
-        }
-        */
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public Subject simpleVOToEntity(SimpleVO simpleVO) {
+		Subject entity = this.loadSubjectFromSimpleVO(simpleVO);
+		this.simpleVOToEntity(simpleVO, entity, true);
+		return entity;
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    public Subject simpleVOToEntity(SimpleVO simpleVO)
-    {
-        // TODO verify behavior of simpleVOToEntity
-        Subject entity = this.loadSubjectFromSimpleVO(simpleVO);
-        this.simpleVOToEntity(simpleVO, entity, true);
-        return entity;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void simpleVOToEntity(
-        SimpleVO source,
-        Subject target,
-        boolean copyIfNull)
-    {
-        // TODO verify behavior of simpleVOToEntity
-        super.simpleVOToEntity(source, target, copyIfNull);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void simpleVOToEntity(SimpleVO source, Subject target, boolean copyIfNull) {
+		super.simpleVOToEntity(source, target, copyIfNull);
+	}
 }
