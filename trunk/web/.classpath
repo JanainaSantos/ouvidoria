@@ -20,6 +20,8 @@
 			<attribute name="javadoc_location" value="jar:file:/home/pedro/desenvolvimento/repositorio/m2/javax/el/el-api/2.2.1-b04/el-api-2.2.1-b04-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="/ouvidoria-util-core"/>
 	<classpathentry kind="src" path="/ouvidoria-common"/>
 	<classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar">
 		<attributes>
@@ -155,11 +157,12 @@
 	</classpathentry>
 	<classpathentry kind="var" path="M2_REPO/cglib/cglib/2.1_3/cglib-2.1_3.jar" sourcepath="M2_REPO/cglib/cglib/2.1_3/cglib-2.1_3-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/asm/asm/1.5.3/asm-1.5.3.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/primefaces/primefaces/5.0/primefaces-5.0.jar" sourcepath="M2_REPO/org/primefaces/primefaces/5.0/primefaces-5.0-sources.jar">
+	<classpathentry kind="var" path="M2_REPO/org/primefaces/primefaces/5.1/primefaces-5.1.jar" sourcepath="M2_REPO/org/primefaces/primefaces/5.1/primefaces-5.1-sources.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/home/pedro/desenvolvimento/repositorio/m2/org/primefaces/primefaces/5.0/primefaces-5.0-javadoc.jar!/"/>
+			<attribute name="javadoc_location" value="jar:file:/home/pedro/desenvolvimento/repositorio/m2/org/primefaces/primefaces/5.1/primefaces-5.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/primefaces/themes/all-themes/1.0.10/all-themes-1.0.10.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/andromda/andromda-utils/3.5-SNAPSHOT/andromda-utils-3.5-SNAPSHOT.jar" sourcepath="M2_REPO/org/andromda/andromda-utils/3.5-SNAPSHOT/andromda-utils-3.5-SNAPSHOT-sources.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/andromda/andromda-script-wrappers/3.5-SNAPSHOT/andromda-script-wrappers-3.5-SNAPSHOT.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/beanshell/bsh/2.0b5/bsh-2.0b5.jar" sourcepath="M2_REPO/org/beanshell/bsh/2.0b5/bsh-2.0b5-sources.jar">
@@ -169,10 +172,5 @@
 	</classpathentry>
 	<classpathentry kind="var" path="M2_REPO/org/codehaus/groovy/groovy-all/2.2.1/groovy-all-2.2.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/jboss/jboss-j2ee/4.2.2.GA/jboss-j2ee-4.2.2.GA.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

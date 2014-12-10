@@ -11,6 +11,11 @@
     <packaging>war</packaging>
     <name>Sistema de Ouvidoria Web</name>
     <dependencies>
+    	<dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ouvidoria-util-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>ouvidoria-common</artifactId>

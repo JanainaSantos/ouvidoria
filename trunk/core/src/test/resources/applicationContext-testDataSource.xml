@@ -83,6 +83,8 @@
 
     <bean id="com.googlecode.ouvidoria.model.complaint.ComplaintDaoImpl" class="com.googlecode.ouvidoria.model.complaint.ComplaintDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
+        <lookup-method name="getComplaintTypeDao" bean="complaintTypeDao"/>
+        <lookup-method name="getSubjectDao" bean="subjectDao"/>
         <!-- Complaint entity property merge-point -->
     </bean>
 
@@ -138,6 +140,8 @@
 
     <bean id="com.googlecode.ouvidoria.model.demandant.DemandantDaoImpl" class="com.googlecode.ouvidoria.model.demandant.DemandantDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
+        <lookup-method name="getDemandantTypeDao" bean="demandantTypeDao"/>
+        <lookup-method name="getIdentificationDao" bean="identificationDao"/>
         <!-- Demandant entity property merge-point -->
     </bean>
 

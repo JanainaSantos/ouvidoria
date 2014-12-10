@@ -1,7 +1,7 @@
 <project default="copy-resources">
   <target name="init"/>
   <target name="copy-resources" depends="init">
-    <copy todir="target/classes/home/pedro/desenvolvimento/workspace/ouvidoria/web/target/src/main/webapp" filtering="true">
+    <copy todir="target/classes/home/pedro/desenvolvimento/workspace-pos/ouvidoria/web/target/src/main/webapp" filtering="true">
       <fileset dir="src/main/resources" includes="" excludes="**/*.java"/>
     </copy>
   </target>
