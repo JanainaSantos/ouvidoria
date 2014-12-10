@@ -7,6 +7,7 @@
 	<classpathentry kind="src" path="common/target/src/main/java"/>
 	<classpathentry kind="src" path="core/target/src/main/java"/>
 	<classpathentry kind="src" path="util/util-mda/src/main/java"/>
+	<classpathentry kind="src" path="util/util-web/src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ouvidoria-common"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ouvidoria-core"/>

@@ -4,6 +4,9 @@
     <property name="context-root" value="ouvidoria-web"/>
     <wb-resource deploy-path="/" source-path="target/src/main/webapp"/>
     <property name="java-output-path" value="/target/classes"/>
+    <dependent-module archiveName="ouvidoria-util-core.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ouvidoria-util-core/ouvidoria-util-core">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
     <dependent-module archiveName="ouvidoria-common.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ouvidoria-common/ouvidoria-common">
       <dependency-type>uses</dependency-type>
     </dependent-module>
@@ -187,7 +190,10 @@
     <dependent-module archiveName="asm-1.5.3.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/asm/asm/1.5.3/asm-1.5.3.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
-    <dependent-module archiveName="primefaces-5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/primefaces/primefaces/5.0/primefaces-5.0.jar">
+    <dependent-module archiveName="primefaces-5.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/primefaces/primefaces/5.1/primefaces-5.1.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="all-themes-1.0.10.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/primefaces/themes/all-themes/1.0.10/all-themes-1.0.10.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
     <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>

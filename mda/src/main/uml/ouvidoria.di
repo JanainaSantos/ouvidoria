@@ -98,6 +98,12 @@
         <children>
           <emfPageIdentifier href="ouvidoria.notation#_AZMPICe7EeSTVslmbGto7Q"/>
         </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_PpycIFxEEeSI_r_DQzLvpg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="ouvidoria.notation#_SLXUgH7UEeS_QoUe2Cnyww"/>
+        </children>
       </children>
     </windows>
   </sashModel>
