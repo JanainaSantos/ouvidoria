@@ -159,11 +159,35 @@
     </mapping>
     <!--
         This next mapping will merge the entire messages.properties into the generated
-        messages.properties
+        messages.properties -->
     <mapping>
         <from><![CDATA[# custom-messages merge-point]]></from>
         <to>
-            <path>../../../../../web/src/main/properties/messages.properties</path>
+            <path>../../../../../web/src/main/props/messages.properties</path>
         </to>
-    </mapping>  -->
+    </mapping>  
+    <mapping>
+        <from><![CDATA[// com.googlecode.ouvidoria.presentation.complaint.internet.registerInformComplaintDataSubmitFormImpl import merge-point]]></from>
+        <to>
+            <![CDATA[
+import static com.googlecode.ouvidoria.presentation.util.ComboboxUtil.toSelectItemCollection;
+import java.util.ArrayList;
+import com.googlecode.ouvidoria.ServiceLocator;
+            ]]>
+        </to>
+    </mapping>
+    <mapping>
+        <from><![CDATA[// com.googlecode.ouvidoria.presentation.complaint.internet.registerInformComplaintDataSubmitFormImpl body merge-point]]></from>
+        <to>
+            <![CDATA[
+            public void onStateSelectionChange() {
+		    	Collection<SelectItem> list = new ArrayList<SelectItem>();
+		    	if(state != null){
+		    		list = toSelectItemCollection(ServiceLocator.instance().getLocalityService().listCities(state));
+		    	}
+		    	setCityBackingList(list);
+		    }
+            ]]>
+        </to>
+    </mapping>
 </mappings>
