@@ -6,8 +6,6 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
-import com.googlecode.ouvidoria.util.criptografia.CriptografiaUtils;
-
 /**Classe utilitaria usada para zipar/dezipar objetos
  * @author pedro
  *
@@ -21,7 +19,7 @@ public class ZipUtils {
 	 * @throws IOException 
 	 */
 	public static byte[] zipar(Object obj) throws IOException {	
-		byte[] input = CriptografiaUtils.toByteArray(obj);
+		byte[] input = ByteArrayUtils.toByteArray(obj);
 	    // Create the compressor with highest level of compression
 	    Deflater compressor = new Deflater();
 	    compressor.setLevel(Deflater.BEST_COMPRESSION);
