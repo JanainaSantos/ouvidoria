@@ -317,6 +317,8 @@
 				
 				<!--Definicao do Merge Point para substituicao dos templates do jsf2;  -->
 				<property name="mergeLocation">${conf.dir}/cartridge/custom</property>
+				
+				<property name="normalizeMessages">true</property>
 			</properties>
 		</namespace>
 	</namespaces>
