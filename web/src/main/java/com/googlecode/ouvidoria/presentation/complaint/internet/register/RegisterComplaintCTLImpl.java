@@ -84,11 +84,12 @@ public class RegisterComplaintCTLImpl extends RegisterComplaintCTL {
 			ComplaintVO complaintVO = toComplaintVO(form);
 			SimpleComplaintVO saved = getComplaintService().save(complaintVO);
 			System.out.println("SAVED="+saved.getId());
-			form.setCode("CODE 123");
-			form.setPassword("123");
+			form.setCode(saved.getId()+"");//TODO formatar (EX: 00001)
+			form.setPassword(saved.getPassword());
 		} catch (Exception e) {
 			// TODO mostrar mensagem de erro
 			e.printStackTrace();
+			throw new RuntimeException("ERRO: "+e.getLocalizedMessage(), e);
 		}
 	}
 
@@ -107,8 +108,7 @@ public class RegisterComplaintCTLImpl extends RegisterComplaintCTL {
 		log.info("validateComplaint ...");
 		try {
 			ComplaintVO complaintVO = toComplaintVO(form);
-			return true;
-			//return getComplaintService().validate(complaintVO);
+			return getComplaintService().validate(complaintVO);
 		} catch (Exception e) {
 			// TODO mostrar mensagem de erro
 			e.printStackTrace();
@@ -121,6 +121,7 @@ public class RegisterComplaintCTLImpl extends RegisterComplaintCTL {
 		ComplaintVO vo = new ComplaintVO();
 
 		String answer = getString(form, "answer");
+		System.out.println("***************** ANSWER="+answer);
 		vo.setAnswerType((answer == null) ? Contact.SITE : Contact.fromString(answer));
 
 		vo.setSubjectId(getLong(form, "subject"));
