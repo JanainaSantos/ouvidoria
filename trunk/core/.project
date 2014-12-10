@@ -3,6 +3,7 @@
   <name>ouvidoria-core</name>
   <comment>The Sistema de Ouvidoria Project. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
   <projects>
+    <project>ouvidoria-util-core</project>
     <project>ouvidoria-common</project>
   </projects>
   <buildSpec>

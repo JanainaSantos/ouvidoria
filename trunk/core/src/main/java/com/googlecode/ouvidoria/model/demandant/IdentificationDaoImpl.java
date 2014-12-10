@@ -11,82 +11,52 @@ import com.googlecode.ouvidoria.model.vo.SimpleVO;
 /**
  * @see Identification
  */
-public class IdentificationDaoImpl
-    extends IdentificationDaoBase
-{
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void toSimpleVO(
-        Identification source,
-        SimpleVO target)
-    {
-        // TODO verify behavior of toSimpleVO
-        super.toSimpleVO(source, target);
-    }
+public class IdentificationDaoImpl extends IdentificationDaoBase {
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void toSimpleVO(Identification source, SimpleVO target) {
+		super.toSimpleVO(source, target);
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public SimpleVO toSimpleVO(final Identification entity)
-    {
-        // TODO verify behavior of toSimpleVO
-        return super.toSimpleVO(entity);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public SimpleVO toSimpleVO(final Identification entity) {
+		return super.toSimpleVO(entity);
+	}
 
-    /**
-     * Retrieves the entity object that is associated with the specified value object
-     * from the object store. If no such entity object exists in the object store,
-     * a new, blank entity is created
-     */
-        private Identification loadIdentificationFromSimpleVO(SimpleVO vo)
-    {
-    	        Identification retorno = null;
-		if(vo.getId() == null){
+	/**
+	 * Retrieves the entity object that is associated with the specified value
+	 * object from the object store. If no such entity object exists in the
+	 * object store, a new, blank entity is created
+	 */
+	private Identification loadIdentificationFromSimpleVO(SimpleVO vo) {
+		Identification retorno = null;
+		if (vo.getId() == null) {
 			retorno = Identification.Factory.newInstance();
-		}else{
+		} else {
 			retorno = load(vo.getId());
 		}
-		return retorno;	
-		
-        // TODO implement loadIdentificationFromSimpleVO
-        //throw new UnsupportedOperationException("com.googlecode.ouvidoria.model.demandant.loadIdentificationFromSimpleVO(SimpleVO) not yet implemented.");
+		return retorno;
+	}
 
-        /* A typical implementation looks like this:
-        if (simpleVO.getId() == null)
-        {
-            return  Identification.Factory.newInstance();
-        }
-        else
-        {
-            return this.load(simpleVO.getId());
-        }
-        */
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public Identification simpleVOToEntity(SimpleVO simpleVO) {
+		Identification entity = this.loadIdentificationFromSimpleVO(simpleVO);
+		this.simpleVOToEntity(simpleVO, entity, true);
+		return entity;
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    public Identification simpleVOToEntity(SimpleVO simpleVO)
-    {
-        // TODO verify behavior of simpleVOToEntity
-        Identification entity = this.loadIdentificationFromSimpleVO(simpleVO);
-        this.simpleVOToEntity(simpleVO, entity, true);
-        return entity;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void simpleVOToEntity(
-        SimpleVO source,
-        Identification target,
-        boolean copyIfNull)
-    {
-        // TODO verify behavior of simpleVOToEntity
-        super.simpleVOToEntity(source, target, copyIfNull);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void simpleVOToEntity(SimpleVO source, Identification target, boolean copyIfNull) {
+		super.simpleVOToEntity(source, target, copyIfNull);
+	}
 }

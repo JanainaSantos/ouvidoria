@@ -8,22 +8,37 @@
  */
 package com.googlecode.ouvidoria.service.demandant;
 
+import com.googlecode.ouvidoria.model.demandant.Demandant;
+import com.googlecode.ouvidoria.model.demandant.vo.DemandantVO;
+
+import com.google.gson.Gson;
+
 /**
  * @see com.googlecode.ouvidoria.service.demandant.DemandantService
  */
-public class DemandantServiceImpl
-    extends DemandantServiceBase
-{
+public class DemandantServiceImpl extends DemandantServiceBase {
 
-    /**
-     * @see com.googlecode.ouvidoria.service.demandant.DemandantService#save()
-     */
-    @Override
-    protected  void handleSave()
-        throws Exception
-    {
-        // TODO implement protected  void handleSave()
-        throw new UnsupportedOperationException("com.googlecode.ouvidoria.service.demandant.DemandantService.handleSave() Not implemented!");
-    }
+	/**
+	 * @see com.googlecode.ouvidoria.service.demandant.DemandantService#save(DemandantVO)
+	 */
+	@Override
+	protected Long handleSave(DemandantVO demandantVO) throws Exception {
+		System.out.println("SAVE: "+demandantVO);
+		
+		Gson gson = new Gson();
+		 
+		// convert java object to JSON format,
+		// and returned as JSON formatted string
+		//String json = gson.toJson(obj);
+		
+		// transforma vo em entity
+		Demandant demandant = getDemandantDao().demandantVOToEntity(demandantVO);
+		System.out.println("((((((((((((before) DEMANDANT_VO="+gson.toJson(demandantVO));
+		// salva entity
+		Demandant newDemandant = getDemandantDao().create(demandant);
+		System.out.println("((((((((((((after) DEMANDANT="+newDemandant.getId());
+		// retorna id
+		return newDemandant.getId();
+	}
 
 }

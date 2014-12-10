@@ -11,6 +11,11 @@
 	<name>Sistema de Ouvidoria Core Business Tier</name>
 	<dependencies>
 		<dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ouvidoria-util-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>ouvidoria-common</artifactId>
 			<version>${project.version}</version>
@@ -179,6 +184,12 @@
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
+		</dependency>
+		
+		<!-- gson . TODO remover, temp apenas-->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
