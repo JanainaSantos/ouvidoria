@@ -29,7 +29,7 @@ public class DemandantServiceImplMockTest extends AbstractDemandantServiceMockTe
 	/**
 	* Metodo responsavel por testar o comportamento do metodo Save com valores validos.
 	*
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantService#save()
+	* @see com.googlecode.ouvidoria.service.demandant.DemandantService#save(com.googlecode.ouvidoria.model.demandant.vo.DemandantVO)
 	*/
 	public void testSave() throws Exception {
 
@@ -60,7 +60,7 @@ public class DemandantServiceImplMockTest extends AbstractDemandantServiceMockTe
 	/**
 	* Metodo responsavel por testar o comportamento do metodo Save com valores invalidos.
 
-	* @see com.googlecode.ouvidoria.service.demandant.DemandantService#save()
+	* @see com.googlecode.ouvidoria.service.demandant.DemandantService#save(com.googlecode.ouvidoria.model.demandant.vo.DemandantVO)
 	*/
 	public void testSaveValoresInvalidos() throws Exception
 	{
