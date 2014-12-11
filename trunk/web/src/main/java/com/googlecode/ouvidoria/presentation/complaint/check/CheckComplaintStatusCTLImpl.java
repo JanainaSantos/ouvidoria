@@ -27,7 +27,8 @@ public class CheckComplaintStatusCTLImpl
     @Override
     public boolean checkComplaint(CheckComplaintForm form)
     {
-        return false;
+    	System.out.println("**************** checkComplaint: id="+form.getCode()+"; senha="+form.getPassword());
+        return true;
     }
 
     /**
@@ -36,6 +37,9 @@ public class CheckComplaintStatusCTLImpl
     @Override
     public void initializeComplaintId(InitializeComplaintIdForm form)
     {
+    	System.out.println("**************** initializeComplaintId .................. code="+form.getCode()+" ... id="+form.getComplaintId());
+    	form.setComplaintId(form.getCode());
+    	getComplaintSessionObject().setComplaintId(form.getCode());
     }
 
 }
