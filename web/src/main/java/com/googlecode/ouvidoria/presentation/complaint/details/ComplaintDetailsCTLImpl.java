@@ -13,4 +13,10 @@ public class ComplaintDetailsCTLImpl
      */
     private static final long serialVersionUID = 2744774673113236011L;
 
+	@Override
+	public void retrieveComplaint(RetrieveComplaintForm form) throws Throwable {
+		System.out.println("retrieveComplaint: form="+form.getComplaintId()+" .... session="+getComplaintSessionObject().getComplaintId());
+		form.setComplaintId(getComplaintSessionObject().getComplaintId());
+	}
+
 }
