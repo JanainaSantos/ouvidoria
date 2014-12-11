@@ -85,6 +85,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
         <lookup-method name="getComplaintTypeDao" bean="complaintTypeDao"/>
         <lookup-method name="getSubjectDao" bean="subjectDao"/>
+        <lookup-method name="getDemandantDao" bean="demandantDao"/>
         <!-- Complaint entity property merge-point -->
     </bean>
 
@@ -142,6 +143,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
         <lookup-method name="getDemandantTypeDao" bean="demandantTypeDao"/>
         <lookup-method name="getIdentificationDao" bean="identificationDao"/>
+        <lookup-method name="getCityDao" bean="cityDao"/>
         <!-- Demandant entity property merge-point -->
     </bean>
 
