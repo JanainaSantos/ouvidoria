@@ -9,9 +9,18 @@
 ## - combo aninhada
 ## - valor padrao para a primeira opcao da combo (EX: --- SELECIONE ---)
 ##         --> TODO <p:selectOneMenu ... itemValue="" noSelectionOption="true" />
-##
+## - tratando textArea
 #
 #macro(renderActionInputPrimeFaces $parameter $ownerParameter $ident)
+<!--
+parameter=$parameter
+parameter.name=$parameter.name
+parameter.type=$parameter.type
+parameter.isInputTextarea=$parameter.isInputTextarea
+parameter.inputTextarea=$parameter.inputTextarea
+parameter.required=$parameter.required
+
+-->
 #if ($parameter.backingListName)
 #if ($ownerParameter.type.hasStereotype('Entity'))
 #set ($propertyId = $parameter.getFormPropertyId($ownerParameter))
@@ -79,6 +88,14 @@ ${ident}    <f:selectItems value="#{${formName}.${backingListName}}" />
 ${ident}</p:selectOneRadio>
 #elseif ($parameter.plainText)
 ${ident}<p:inputText id="$propertyId" value="#{${formValuePropertyName}}" disabled="true" required="$parameter.required" readonly="true"/>
+
+##customizacao: textarea
+## TODO: arrumar "display" + texto; cols, rows
+#elseif ($parameter.inputTextarea)
+${ident}<p:inputTextarea id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" rows="5" cols="40" maxlength="1024" counter="display" counterTemplate="{0} characters remaining." autoResize="true" />
+${ident}<br />
+${ident}<h:outputText id="display" />
+
 #elseif ($parameter.inputSecret)
 ${ident}<p:password id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" feedback="true"#if($parameter.maxLength) maxlength="$parameter.maxLength"#end readonly="$parameter.readOnly"/>
 #else

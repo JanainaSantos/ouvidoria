@@ -42,6 +42,7 @@
                 <value>classpath:com/googlecode/ouvidoria/model/complaint/Complaint.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/model/complaint/ComplaintType.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/model/complaint/Subject.hbm.xml</value>
+                <value>classpath:com/googlecode/ouvidoria/model/complaint/Answer.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/model/locality/State.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/model/locality/City.hbm.xml</value>
                 <value>classpath:com/googlecode/ouvidoria/model/demandant/Demandant.hbm.xml</value>
@@ -86,6 +87,7 @@
         <lookup-method name="getComplaintTypeDao" bean="complaintTypeDao"/>
         <lookup-method name="getSubjectDao" bean="subjectDao"/>
         <lookup-method name="getDemandantDao" bean="demandantDao"/>
+        <lookup-method name="getAnswerDao" bean="answerDao"/>
         <!-- Complaint entity property merge-point -->
     </bean>
 
@@ -115,6 +117,17 @@
     <bean id="subjectDao" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="com.googlecode.ouvidoria.model.complaint.SubjectDaoImpl"/>
         <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.complaint.SubjectDao"/>
+    </bean>
+
+    <bean id="com.googlecode.ouvidoria.model.complaint.AnswerDaoImpl" class="com.googlecode.ouvidoria.model.complaint.AnswerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+        <!-- Answer entity property merge-point -->
+    </bean>
+
+    <!-- Answer Entity Proxy with inner Answer Entity implementation -->
+    <bean id="answerDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="com.googlecode.ouvidoria.model.complaint.AnswerDaoImpl"/>
+        <property name="proxyInterfaces" value="com.googlecode.ouvidoria.model.complaint.AnswerDao"/>
     </bean>
 
     <bean id="com.googlecode.ouvidoria.model.locality.StateDaoImpl" class="com.googlecode.ouvidoria.model.locality.StateDaoImpl">

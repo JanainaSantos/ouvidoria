@@ -13,7 +13,9 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.googlecode.ouvidoria.model.complaint.Complaint;
 import com.googlecode.ouvidoria.model.complaint.ComplaintDao;
+import com.googlecode.ouvidoria.model.complaint.vo.AnswerVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ComplaintVO;
+import com.googlecode.ouvidoria.model.complaint.vo.ResumedComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.SimpleComplaintVO;
 import com.googlecode.ouvidoria.model.demandant.Demandant;
 import com.googlecode.ouvidoria.util.criptografia.CriptografiaUtils;
@@ -73,20 +75,12 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	}
 
 	/**
-	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintService#get(Long)
-	 */
-	@Override
-	protected ComplaintVO handleGet(Long id) throws Exception {
-		return (ComplaintVO) getComplaintDao().load(ComplaintDao.TRANSFORM_COMPLAINTVO, id);
-	}
-
-	/**
 	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintService#search(ComplaintVO)
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	protected List<ComplaintVO> handleSearch(ComplaintVO criteria) throws Exception {
-		return (List<ComplaintVO>) getComplaintDao().searchByCriteria(ComplaintDao.TRANSFORM_COMPLAINTVO, criteria);
+	protected List<ResumedComplaintVO> handleSearch(ComplaintVO criteria) throws Exception {
+		return (List<ResumedComplaintVO>) getComplaintDao().searchByCriteria(ComplaintDao.TRANSFORM_RESUMEDCOMPLAINTVO, criteria);
 	}
 
 	/**
@@ -96,6 +90,20 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	protected boolean handleValidate(ComplaintVO vo) throws Exception {
 		// TODO implement protected boolean handleValidate(ComplaintVO vo)
 		return true;
+	}
+
+	/**
+	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintService#load(Long)
+	 */
+	@Override
+	protected ComplaintVO handleLoad(Long id) throws Exception {
+		return (ComplaintVO) getComplaintDao().load(ComplaintDao.TRANSFORM_COMPLAINTVO, id);
+	}
+
+	@Override
+	protected void handleAnswer(AnswerVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
