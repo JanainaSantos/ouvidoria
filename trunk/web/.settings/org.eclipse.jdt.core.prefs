@@ -4,7 +4,6 @@ encoding/src/main/resources=UTF-8
 encoding/src/test/java=UTF-8
 encoding/src/test/resources=UTF-8
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-org.eclipse.jdt.core.compiler.codegen.methodParameters=do not generate
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
 org.eclipse.jdt.core.compiler.compliance=1.8

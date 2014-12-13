@@ -1,0 +1,38 @@
+/** Add any custom styles to this css 
+Style Class                                Applies
+.ui-layout                                   Main wrapper container element
+.ui-layout-doc                             Layout container
+.ui-layout-unit                             Each layout unit container
+.ui-layout-{position}                     Position based layout unit
+.ui-layout-unit-header                  Layout unit header
+.ui-layout-unit-content                 Layout unit body
+* 
+* 
+* background-color: darkblue !important
+ * */
+
+
+.ui-layout-container {
+    overflow: auto !important;
+}
+.ui-layout-north, .ui-layout-west, .ui-layout-south {
+    z-index:100 !important;
+}
+.ui-layout-north, .ui-layout-east, .ui-layout-west, .ui-layout-south {
+    background-color: darkblue !important;
+}
+.ui-layout-south {
+    position: fixed !important;
+}
+.ui-layout-north .ui-layout-unit-content, .ui-layout-west, .ui-layout-north, .ui-layout-center, .ui-panelgrid td, .ui-panelgrid tr {
+    border:none !important;
+}
+.ui-layout-west  .ui-layout-unit-content, .ui-layout-north, .ui-widget-content, .ui-datatable *{
+    overflow: visible !important;
+}
+#pageContent {
+    width: 98% !important;
+}
+table.padding_autocompletenew td {
+    padding-left: 0px;
+}
