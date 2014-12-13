@@ -155,14 +155,14 @@ public class ComplaintServiceImplMockTest extends AbstractComplaintServiceMockTe
 	}
 				
 	/**
-	* Metodo responsavel por testar o comportamento do metodo Get com valores validos.
+	* Metodo responsavel por testar o comportamento do metodo Load com valores validos.
 	*
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#get(java.lang.Long)
+	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#load(java.lang.Long)
 	*/
-	public void testGet() throws Exception {
+	public void testLoad() throws Exception {
 
 		//exibe o nome do metodo de teste sendo executado
-		log.info("Metodo: testGet()");
+		log.info("Metodo: testLoad()");
 	
 		/* setup data */
 		/**
@@ -186,15 +186,15 @@ public class ComplaintServiceImplMockTest extends AbstractComplaintServiceMockTe
 	}
 
 	/**
-	* Metodo responsavel por testar o comportamento do metodo Get com valores invalidos.
+	* Metodo responsavel por testar o comportamento do metodo Load com valores invalidos.
 
-	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#get(java.lang.Long)
+	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#load(java.lang.Long)
 	*/
-	public void testGetValoresInvalidos() throws Exception
+	public void testLoadValoresInvalidos() throws Exception
 	{
 
 		//exibe o nome do metodo de teste sendo executado
-		log.info("Metodo: testGetValoresInvalidos()");
+		log.info("Metodo: testLoadValoresInvalidos()");
 	
 		/* setup data */
 		/**
@@ -323,6 +323,70 @@ public class ComplaintServiceImplMockTest extends AbstractComplaintServiceMockTe
 
 		//exibe o nome do metodo de teste sendo executado
 		log.info("Metodo: testValidateValoresInvalidos()");
+	
+		/* setup data */
+		/**
+		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
+		*/
+
+		/* setup mock */
+		/**
+		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. 
+		* Tambem os expects sao declarados neste ponto.
+		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
+		**/
+		replayMocks();
+
+		/**
+		* TODO implementar a logica do teste
+		*/
+		//fail("Implementar a logica do teste");
+	
+		/* verifies mock */
+		verifyMocks();
+	}
+				
+	/**
+	* Metodo responsavel por testar o comportamento do metodo Answer com valores validos.
+	*
+	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#answer(com.googlecode.ouvidoria.model.complaint.vo.AnswerVO)
+	*/
+	public void testAnswer() throws Exception {
+
+		//exibe o nome do metodo de teste sendo executado
+		log.info("Metodo: testAnswer()");
+	
+		/* setup data */
+		/**
+		* TODO aqui sao criados, caso necessario, os objetos necessarios para setar os metodos dos mocks
+		*/
+
+		/* setup mock */
+		/**
+		* TODO aqui vao as definicoes dos metodos dos mock que serao chamados. Tambem os expects sao declarados neste ponto.
+		* Ex.: expect(this.objetoMock.metodoFake(param1, param2)).andReturn(ret);
+		**/
+		replayMocks();
+
+		/**
+		* TODO implementar a logica do teste
+		*/
+		//fail("Implementar a logica do teste");
+	
+		/* verifies mock */
+		verifyMocks();
+	}
+
+	/**
+	* Metodo responsavel por testar o comportamento do metodo Answer com valores invalidos.
+
+	* @see com.googlecode.ouvidoria.service.complaint.ComplaintService#answer(com.googlecode.ouvidoria.model.complaint.vo.AnswerVO)
+	*/
+	public void testAnswerValoresInvalidos() throws Exception
+	{
+
+		//exibe o nome do metodo de teste sendo executado
+		log.info("Metodo: testAnswerValoresInvalidos()");
 	
 		/* setup data */
 		/**

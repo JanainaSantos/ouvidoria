@@ -7,6 +7,7 @@
 package com.googlecode.ouvidoria.model.complaint;
 
 import com.googlecode.ouvidoria.model.complaint.vo.ComplaintVO;
+import com.googlecode.ouvidoria.model.complaint.vo.ResumedComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.SimpleComplaintVO;
 
 /**
@@ -48,7 +49,8 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 	/**
 	 * {@inheritDoc}
 	 */
-	public Complaint simpleComplaintVOToEntity(SimpleComplaintVO simpleComplaintVO) {
+	public Complaint simpleComplaintVOToEntity(
+			SimpleComplaintVO simpleComplaintVO) {
 		return this.loadComplaintFromSimpleComplaintVO(simpleComplaintVO);
 	}
 
@@ -109,7 +111,8 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void complaintVOToEntity(ComplaintVO source, Complaint target, boolean copyIfNull) {
+	public void complaintVOToEntity(ComplaintVO source, Complaint target,
+			boolean copyIfNull) {
 		super.complaintVOToEntity(source, target, copyIfNull);
 
 		if (copyIfNull || source.getAnswerType() != null) {
@@ -120,8 +123,10 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 			target.setDate(source.getDate());
 		}
 
-		if (source.getDemandant() != null && source.getDemandant().getId() != null) {
-			target.setDemandant(getDemandantDao().load(source.getDemandant().getId()));
+		if (source.getDemandant() != null
+				&& source.getDemandant().getId() != null) {
+			target.setDemandant(getDemandantDao().load(
+					source.getDemandant().getId()));
 		}
 
 		if (copyIfNull || source.getSubjectId() != null) {
@@ -133,4 +138,21 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 		}
 	}
 
+	@Override
+	public Complaint resumedComplaintVOToEntity(
+			ResumedComplaintVO resumedComplaintVO) {
+		return load(resumedComplaintVO.getId());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void toResumedComplaintVO(Complaint source, ResumedComplaintVO target) {
+		target.setId(source.getId());
+		target.setDate(source.getDate().toString());
+		target.setStatus(source.getStatus().getValue());
+		target.setSubject((source.getSubject() == null) ? "" : source.getSubject().getName());
+		target.setType((source.getType() == null) ? "" : source.getType().getName());
+	}
 }

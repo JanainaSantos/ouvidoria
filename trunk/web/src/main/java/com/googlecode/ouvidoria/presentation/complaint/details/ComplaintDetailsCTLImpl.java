@@ -5,18 +5,24 @@ package com.googlecode.ouvidoria.presentation.complaint.details;
 /**
  * @see com.googlecode.ouvidoria.presentation.complaint.details.ComplaintDetailsCTL
  */
-public class ComplaintDetailsCTLImpl
-    extends ComplaintDetailsCTL
-{
-    /**
-     * The serial version UID of this class. Needed for serialization.
-     */
-    private static final long serialVersionUID = 2744774673113236011L;
+public class ComplaintDetailsCTLImpl extends ComplaintDetailsCTL {
+	/**
+	 * The serial version UID of this class. Needed for serialization.
+	 */
+	private static final long serialVersionUID = 2744774673113236011L;
 
 	@Override
 	public void retrieveComplaint(RetrieveComplaintForm form) throws Throwable {
-		System.out.println("retrieveComplaint: form="+form.getComplaintId()+" .... session="+getComplaintSessionObject().getComplaintId());
+		System.out.println("retrieveComplaint: form=" + form.getComplaintId()
+				+ " .... session="
+				+ getComplaintSessionObject().getComplaintId());
 		form.setComplaintId(getComplaintSessionObject().getComplaintId());
+	}
+
+	@Override
+	public boolean isParameterPresent() throws Throwable {
+		return getComplaintSessionObject().getComplaintId() != null
+				&& getComplaintSessionObject().getComplaintId() > 0;
 	}
 
 }
