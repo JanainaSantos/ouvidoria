@@ -890,7 +890,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                 <value xsi:nil="true"/>
               </defaultValue>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_laM2QCjEEeS908UQl6F1Rw" name="roles" type="_PROP0Ce6EeSTVslmbGto7Q" association="_laNdUCjEEeS908UQl6F1Rw">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_laM2QCjEEeS908UQl6F1Rw" name="role" type="_PROP0Ce6EeSTVslmbGto7Q" association="_laNdUCjEEeS908UQl6F1Rw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_laM2QSjEEeS908UQl6F1Rw" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_laM2QijEEeS908UQl6F1Rw" value="1"/>
             </ownedAttribute>
@@ -2082,6 +2082,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                   <subvertex xmi:type="uml:FinalState" xmi:id="_J3s7YIEoEeSBLcITk83AdQ" name="complaintDetailsCSU"/>
                 </region>
               </ownedBehavior>
+              <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_W1UooIL6EeSF35LKUCUBkg" name="point"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_o4VlEIEsEeSBLcITk83AdQ" name="" client="_U4AO4Fu_EeSykOGA1aIEdw" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_qZcygIEsEeSBLcITk83AdQ" name="" client="_U4AO4Fu_EeSykOGA1aIEdw" supplier="_jNtaAIErEeSBLcITk83AdQ"/>
@@ -2429,6 +2430,8 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                   <subvertex xmi:type="uml:Pseudostate" xmi:id="_Ry9uYILAEeSzBMc5qatBNg" name="" kind="choice"/>
                 </region>
               </ownedBehavior>
+              <extend xmi:type="uml:Extend" xmi:id="_V6lesIL6EeSF35LKUCUBkg" extendedCase="_Oa-1AIK3EeSzBMc5qatBNg" extensionLocation="_V7WTsIL6EeSF35LKUCUBkg"/>
+              <extend xmi:type="uml:Extend" xmi:id="_W1OiAIL6EeSF35LKUCUBkg" extendedCase="_FK9uQFu_EeSykOGA1aIEdw" extensionLocation="_W1UooIL6EeSF35LKUCUBkg"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_LTJo4IEsEeSBLcITk83AdQ" name="" client="_b4PoUIErEeSBLcITk83AdQ" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_MuV0gIEsEeSBLcITk83AdQ" name="" client="_b4PoUIErEeSBLcITk83AdQ" supplier="_jNtaAIErEeSBLcITk83AdQ"/>
@@ -2605,6 +2608,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                   <subvertex xmi:type="uml:State" xmi:id="_oHw8QIK3EeSzBMc5qatBNg" name="Search Complaints"/>
                 </region>
               </ownedBehavior>
+              <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_V7WTsIL6EeSF35LKUCUBkg" name="point"/>
             </packagedElement>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_GqYxEIK4EeSzBMc5qatBNg" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_6u39IIK-EeSzBMc5qatBNg" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_xWzHQF-PEeSC0thIrubyJw"/>
@@ -2664,10 +2668,20 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_vevycCjGEeS908UQl6F1Rw" name="users">
-      <packagedElement xmi:type="uml:Actor" xmi:id="_zakHwCjGEeS908UQl6F1Rw" name="Colaborator"/>
-      <packagedElement xmi:type="uml:Actor" xmi:id="_1R7SACjGEeS908UQl6F1Rw" name="Operator"/>
-      <packagedElement xmi:type="uml:Actor" xmi:id="_2tX8UCjGEeS908UQl6F1Rw" name="Demandant"/>
-      <packagedElement xmi:type="uml:Actor" xmi:id="_56xFYCjGEeS908UQl6F1Rw" name="Ombudsman"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_1R7SACjGEeS908UQl6F1Rw" name="OPERATOR"/>
+      <packagedElement xmi:type="uml:Actor" xmi:id="_56xFYCjGEeS908UQl6F1Rw" name="OMBUDSMAN">
+        <generalization xmi:type="uml:Generalization" xmi:id="_3op70IL6EeSF35LKUCUBkg" general="_1R7SACjGEeS908UQl6F1Rw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_lgni8IL7EeSF35LKUCUBkg" name="" memberEnd="_lgni8YL7EeSF35LKUCUBkg _lgni9IL7EeSF35LKUCUBkg">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_lgni8YL7EeSF35LKUCUBkg" name="operator" type="_1R7SACjGEeS908UQl6F1Rw" association="_lgni8IL7EeSF35LKUCUBkg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lgni8oL7EeSF35LKUCUBkg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lgni84L7EeSF35LKUCUBkg" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_lgni9IL7EeSF35LKUCUBkg" name="searchcomplaintcsu" type="_Oa-1AIK3EeSzBMc5qatBNg" association="_lgni8IL7EeSF35LKUCUBkg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lgni9YL7EeSF35LKUCUBkg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lgni9oL7EeSF35LKUCUBkg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_-LCyUCjHEeS908UQl6F1Rw" name="ciclo de vida da demanda">
       <packagedElement xmi:type="uml:StateMachine" xmi:id="_CCCSACjIEeS908UQl6F1Rw" name="CicloVidaDemanda">
@@ -2788,7 +2802,7 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
     <andromda_persistence_column_length>64</andromda_persistence_column_length>
   </andromdapersistence:PersistentAttribute>
   <andromdapersistence:PersistentAttribute xmi:id="_Y48cgCjBEeS908UQl6F1Rw" base_Property="_W_2M4CjBEeS908UQl6F1Rw">
-    <andromda_persistence_column_length>20</andromda_persistence_column_length>
+    <andromda_persistence_column_length>32</andromda_persistence_column_length>
   </andromdapersistence:PersistentAttribute>
   <andromdapersistence:FinderMethod xmi:id="_m3pPMCjFEeS908UQl6F1Rw" andromda_hibernate_query="from SubjectImpl as s where s.active = true order by name asc" base_Operation="_aeSF0CjFEeS908UQl6F1Rw"/>
   <andromdaxml:XmlSchema xmi:id="_U2v78CjNEeS908UQl6F1Rw" base_Package="_GBfK8CiYEeSmYfDYt_Kosg"/>
@@ -2925,4 +2939,5 @@ TODO: tramite fica para uma segunda etapa. Apenas CRIADA, EM_ABERTO e FINALIZADA
     <andromda_presentation_view_table_columns>id, date, status, type, subject</andromda_presentation_view_table_columns>
   </andromdapresentation:FrontEndTable>
   <andromdawebservice:WebFault xmi:id="_TVCsgIK9EeSzBMc5qatBNg" base_Class="_NbVuMIK9EeSzBMc5qatBNg"/>
+  <andromdapersistence:Manageable xmi:id="_nNVmoIL_EeSF35LKUCUBkg" base_Class="_PROP0Ce6EeSTVslmbGto7Q"/>
 </xmi:XMI>

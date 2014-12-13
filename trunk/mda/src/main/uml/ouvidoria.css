@@ -101,23 +101,18 @@ Transition[appliedStereotypes~=FrontEndMessage] {
 
 
 /* DIAGRAMAS DE CASO DE USO */
-UseCase {
+UseCaseDiagram {
 	/*border: 2px;
 	gradient: white vertical;
-	fillColor: green;*/
+	lineColor: #000000;
+	 lineWidth: 2;*/
+	 
+}
+
+
+UseCase[appliedStereotypes~=FrontEndUseCase] {
 	elementIcon: false;
+	fillColor: #F3FAAA;
+	gradient: white vertical;
 }
 
-
-/*
-Compartment[kind="structure"]{
-    collapsed:true;
-}
-
-Compartment[kind=attribute]{
-    visible:false;
-}
-Class > Compartment[kind~=attribute] {
-    visible: false;
-}
-*  */
