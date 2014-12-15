@@ -6,6 +6,12 @@
  */
 package com.googlecode.ouvidoria.model.complaint;
 
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+
 import com.googlecode.ouvidoria.model.complaint.vo.ComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ResumedComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.SimpleComplaintVO;
@@ -14,6 +20,44 @@ import com.googlecode.ouvidoria.model.complaint.vo.SimpleComplaintVO;
  * @see Complaint
  */
 public class ComplaintDaoImpl extends ComplaintDaoBase {
+	
+	@Override
+    @SuppressWarnings("unchecked")
+    public List<?> searchByCriteria(final int transform, final String queryString, int pageNumber, int pageSize, final ComplaintVO vo) {
+		Criteria criteria = this.getSession().createCriteria(Complaint.class);
+		
+		if(vo != null){
+			if(vo.getId() != null){
+				criteria.add(Restrictions.idEq(vo.getId()));
+			} else{
+				if(vo.getStatus() != null){
+					criteria.add(Restrictions.eq("status", vo.getStatus()));
+				}
+				//TODO demandant
+				if(vo.getSubjectId() != null){
+					criteria.createCriteria("subject").add(Restrictions.idEq(vo.getSubjectId()));
+				}
+				if(vo.getText() != null){
+					criteria.add(Restrictions.ilike("text", "%" + vo.getText() + "%"));
+				}
+				if(vo.getTypeId() != null){
+					criteria.createCriteria("type").add(Restrictions.idEq(vo.getTypeId()));
+				}
+			}
+		}
+		criteria.addOrder(Order.desc("date"));
+		
+		if (pageNumber > 0 && pageSize > 0)
+        {
+			criteria.setFirstResult(super.calculateFirstResult(pageNumber, pageSize));
+			criteria.setMaxResults(pageSize);
+        }
+		
+        List results = criteria.list();
+        transformEntities(transform, results);
+        return results;
+    }
+	
 	/**
 	 * {@inheritDoc}
 	 */
