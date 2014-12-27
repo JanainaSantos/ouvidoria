@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import static org.easymock.EasyMock.*;
+
 import com.googlecode.ouvidoria.service.complaint.AbstractComplaintServiceMockTest;
 
 
@@ -408,6 +409,18 @@ public class ComplaintServiceImplMockTest extends AbstractComplaintServiceMockTe
 	
 		/* verifies mock */
 		verifyMocks();
+	}
+
+	@Override
+	public void testClose() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void testCloseValoresInvalidos() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 } 
