@@ -11,8 +11,10 @@ package com.googlecode.ouvidoria.service.complaint;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.googlecode.ouvidoria.model.complaint.Answer;
 import com.googlecode.ouvidoria.model.complaint.Complaint;
 import com.googlecode.ouvidoria.model.complaint.ComplaintDao;
+import com.googlecode.ouvidoria.model.complaint.enums.ComplaintStatus;
 import com.googlecode.ouvidoria.model.complaint.vo.AnswerVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ResumedComplaintVO;
@@ -102,8 +104,21 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 
 	@Override
 	protected void handleAnswer(AnswerVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		if(vo.getComplaintId() != null){
+			Complaint complaint = getComplaintDao().load(vo.getComplaintId());
+			Answer answer = getAnswerDao().answerVOToEntity(vo);
+			answer.setComplaint(complaint);
+			getAnswerDao().create(answer);
+		}else{
+			throw new IllegalArgumentException("Complaint ID must not be null");
+		}
+	}
+
+	@Override
+	protected void handleClose(Long complaintId) throws Exception {
+		Complaint complaint = getComplaintDao().load(complaintId);
+		complaint.setStatus(ComplaintStatus.CLOSED);
+		getComplaintDao().update(complaint);
 	}
 
 }

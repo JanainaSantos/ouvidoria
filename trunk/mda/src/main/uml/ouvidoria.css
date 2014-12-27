@@ -1,4 +1,8 @@
-/* DIAGRAMAS DE CLASSES */
+/*
+ * https://wiki.eclipse.org/MDT/Papyrus/UserGuide/CSS#Diagram_Stylesheets
+ */
+ 
+ /* DIAGRAMAS DE CLASSES */
 Class {
 	gradient: white vertical;
 	elementIcon: false;
@@ -21,7 +25,14 @@ Class[appliedStereotypes~=Entity]{
 	fillColor:#A3C392;
 }
 
+* {
+	displayTag: true;
+}
+
 /*
+*[collapsed=true]{
+	displayTag: true;
+}
 Class[name~=CTL]{
 	fillColor:black;
 }

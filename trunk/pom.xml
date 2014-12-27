@@ -586,7 +586,58 @@
 						</dependency>
 					</dependencies>
 				</plugin>
-
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+					<executions>
+						<execution>
+							<id>tomcat-run</id>
+							<goals>
+								<goal>run-war-only</goal>
+							</goals>
+							<phase>pre-integration-test</phase>
+							<configuration>
+								<port>8080</port>
+								<fork>true</fork>
+							</configuration>
+						</execution>
+						<execution>
+							<id>tomcat-shutdown</id>
+							<goals>
+								<goal>shutdown</goal>
+							</goals>
+							<phase>post-integration-test</phase>
+						</execution>
+					</executions>
+					<dependencies>
+			        <!-- Used to allow embedded Tomcat to connect to a postgresql database -->
+			        <dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>${postgresql.driver.version}</version>
+			        </dependency>
+			    </dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>selenium-maven-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<browser>*firefox</browser>
+						<suite>src/test/selenium/TestSuite.html</suite>
+						<startURL>http://localhost:8080</startURL>
+					</configuration>
+					<executions>
+						<execution>
+							<id>run-selenium-tests</id>
+							<phase>integration-test</phase>
+							<goals>
+								<goal>selenese</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -761,12 +812,24 @@
 	</profiles>
 	<repositories>
 		<repository>
+			<id>phtcosta</id>
+			<name>phtcosta</name>
+			<url>http://phtcosta.5gbfree.com/m2/</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+		<repository>
 			<id>sonatype</id>
 			<name>Sonatype AndroMDA Repository</name>
 			<url>http://oss.sonatype.org/content/groups/public</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
+		<pluginRepository>
+			<id>phtcosta</id>
+			<name>phtcosta</name>
+			<url>http://phtcosta.5gbfree.com/m2/</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>sonatype</id>
 			<name>Sonatype AndroMDA Repository</name>
