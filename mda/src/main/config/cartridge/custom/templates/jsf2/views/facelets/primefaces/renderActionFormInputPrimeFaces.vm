@@ -92,9 +92,7 @@ ${ident}<p:inputText id="$propertyId" value="#{${formValuePropertyName}}" disabl
 ##customizacao: textarea
 ## TODO: arrumar "display" + texto; cols, rows
 #elseif ($parameter.inputTextarea)
-${ident}<p:inputTextarea id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" rows="5" cols="40" maxlength="1024" counter="display" counterTemplate="{0} characters remaining." autoResize="true" />
-${ident}<br />
-${ident}<h:outputText id="display" />
+${ident}<p:inputTextarea id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" rows="5" cols="40" maxlength="4096" autoResize="true" />
 
 #elseif ($parameter.inputSecret)
 ${ident}<p:password id="$propertyId" value="#{${formValuePropertyName}}" label="#{messages['$parameter.messageKey']}:" required="$parameter.required" feedback="true"#if($parameter.maxLength) maxlength="$parameter.maxLength"#end readonly="$parameter.readOnly"/>

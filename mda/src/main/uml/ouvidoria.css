@@ -7,36 +7,11 @@ Class {
 	gradient: white vertical;
 	elementIcon: false;
 	bold: true;
-	
-	/*
-	 * shadow: true;
-	qualifiedNameDepth: full;*/
 }
 
 Class[appliedStereotypes~=Entity]{
-	/*Class[appliedStereotypes~=Block][appliedStereotypes~=MyCustomStereotype][isEncapsulated=true][myCustomProperty=SomeValue][isAbstract=false]{
-	fillColor:red;
-	}
-	 *  A class on which the stereotypes "Block" and "MyCustomStereotype" are applied, 
-	*  and on which the stereotype property "isEncapsulated" is set to true, 
-	*  the stereotype property "myCustomProperty" is set to "SomeValue", and 
-	*  the UML Property "isAbstract" is set to false  */
- 
 	fillColor:#A3C392;
 }
-
-* {
-	displayTag: true;
-}
-
-/*
-*[collapsed=true]{
-	displayTag: true;
-}
-Class[name~=CTL]{
-	fillColor:black;
-}
-*/
 
 Class[appliedStereotypes~=Entity][appliedStereotypes~=Manageable]{
 	fillColor:#A3C392;
@@ -116,14 +91,21 @@ UseCaseDiagram {
 	/*border: 2px;
 	gradient: white vertical;
 	lineColor: #000000;
-	 lineWidth: 2;*/
-	 
+	 lineWidth: 2;*/ 
 }
-
 
 UseCase[appliedStereotypes~=FrontEndUseCase] {
 	elementIcon: false;
 	fillColor: #F3FAAA;
-	gradient: white vertical;
 }
 
+UseCase[appliedStereotypes~=FrontEndUseCase][appliedStereotypes~=FrontEndApplication] {
+	elementIcon: true;
+	fillColor: #F3FAAA;
+	bold: true;
+}
+
+Actor{
+	elementIcon: true;
+	bold: true;
+}

@@ -519,7 +519,7 @@
             <ownedComment xmi:type="uml:Comment" xmi:id="_WgJ8YHJQEeS-8MiPDVC1lA" annotatedElement="_IDYpwCeyEeSTVslmbGto7Q">
               <body>Municipio</body>
             </ownedComment>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_RUeaoCeyEeSTVslmbGto7Q" name="name" visibility="public">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_RUeaoCeyEeSTVslmbGto7Q" name="name" visibility="public" isUnique="false">
               <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RcGFkCeyEeSTVslmbGto7Q" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RcGFkSeyEeSTVslmbGto7Q" value="1"/>
@@ -2304,6 +2304,12 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                       <specification xmi:type="uml:LiteralBoolean" xmi:id="_wTyzcYLAEeSzBMc5qatBNg" name="true" value="true"/>
                     </ownedRule>
                   </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_Ww1-8JJpEeSHBc7ryn1YcA" name="" source="_qz4WoIEqEeSBLcITk83AdQ" target="_K8Y5cJJpEeSHBc7ryn1YcA">
+                    <effect xmi:type="uml:Activity" xmi:id="_dNG3wJJpEeSHBc7ryn1YcA" name="Close"/>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_ggWxMJJpEeSHBc7ryn1YcA" name="" source="_qz4WoIEqEeSBLcITk83AdQ" target="_NJ6g8JJpEeSHBc7ryn1YcA">
+                    <effect xmi:type="uml:Activity" xmi:id="_kGEToJJpEeSHBc7ryn1YcA" name="Answer"/>
+                  </transition>
                   <subvertex xmi:type="uml:Pseudostate" xmi:id="_gob2UIEqEeSBLcITk83AdQ" name=""/>
                   <subvertex xmi:type="uml:State" xmi:id="_hjkB0IEqEeSBLcITk83AdQ" name="Recover complaint">
                     <entry xmi:type="uml:Activity" xmi:id="_LEkN8IFmEeSBLcITk83AdQ" name="" node="_QUblEIFmEeSBLcITk83AdQ">
@@ -2445,6 +2451,8 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                   <subvertex xmi:type="uml:State" xmi:id="_HGOe4ILAEeSzBMc5qatBNg" name="check parameter"/>
                   <subvertex xmi:type="uml:FinalState" xmi:id="_OJuW0ILAEeSzBMc5qatBNg" name="searchComplaintCSU"/>
                   <subvertex xmi:type="uml:Pseudostate" xmi:id="_Ry9uYILAEeSzBMc5qatBNg" name="" kind="choice"/>
+                  <subvertex xmi:type="uml:FinalState" xmi:id="_K8Y5cJJpEeSHBc7ryn1YcA" name="closeComplaintCSU"/>
+                  <subvertex xmi:type="uml:FinalState" xmi:id="_NJ6g8JJpEeSHBc7ryn1YcA" name="answerComplaintCSU"/>
                 </region>
               </ownedBehavior>
               <extend xmi:type="uml:Extend" xmi:id="_V6lesIL6EeSF35LKUCUBkg" extendedCase="_Oa-1AIK3EeSzBMc5qatBNg" extensionLocation="_V7WTsIL6EeSF35LKUCUBkg"/>
@@ -2870,6 +2878,109 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
               </ownedAttribute>
             </packagedElement>
           </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_lv41UJJiEeSHBc7ryn1YcA" name="close">
+            <packagedElement xmi:type="uml:UseCase" xmi:id="_oDZJAJJiEeSHBc7ryn1YcA" name="closeComplaintCSU" classifierBehavior="_vdAa4JJiEeSHBc7ryn1YcA">
+              <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_vdAa4JJiEeSHBc7ryn1YcA" name="Close Complaint">
+                <nestedClassifier xmi:type="uml:Class" xmi:id="_ek7YkJJkEeSHBc7ryn1YcA" clientDependency="_AKOUMJJlEeSHBc7ryn1YcA _BQBeoJJlEeSHBc7ryn1YcA" name="CloseComplaintCTL">
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_0XrTMJJkEeSHBc7ryn1YcA" name="isParameterPresent">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_4mxw4JJkEeSHBc7ryn1YcA" direction="return">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_736816_6"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_CT1sEJJlEeSHBc7ryn1YcA" name="retrieveComplaint">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_HL6OQJJlEeSHBc7ryn1YcA" direction="return">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_JcOrEJJlEeSHBc7ryn1YcA" name="closeComplaint">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_L9IhkJJlEeSHBc7ryn1YcA" direction="return">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                    </ownedParameter>
+                  </ownedOperation>
+                </nestedClassifier>
+                <region xmi:type="uml:Region" xmi:id="_wlSRkJJiEeSHBc7ryn1YcA" name="Region1">
+                  <transition xmi:type="uml:Transition" xmi:id="_bVD_wJJjEeSHBc7ryn1YcA" name="" source="_0vExcJJiEeSHBc7ryn1YcA" target="_1niDcJJiEeSHBc7ryn1YcA"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_kEE-UJJjEeSHBc7ryn1YcA" name="" source="_1niDcJJiEeSHBc7ryn1YcA" target="_e3gy0JJjEeSHBc7ryn1YcA">
+                    <effect xmi:type="uml:Activity" xmi:id="_PPEzcJJlEeSHBc7ryn1YcA" name="" node="_SqE6sJJlEeSHBc7ryn1YcA">
+                      <node xmi:type="uml:CallOperationAction" xmi:id="_SqE6sJJlEeSHBc7ryn1YcA" name="CallOperationAction" operation="_0XrTMJJkEeSHBc7ryn1YcA">
+                        <result xmi:type="uml:OutputPin" xmi:id="_V4L1cJJlEeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V4NqoJJlEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V4ORsJJlEeSHBc7ryn1YcA" key="PinToParameterLink" value="_4mxw4JJkEeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <name xsi:nil="true"/>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_736816_6"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_V4L1cZJlEeSHBc7ryn1YcA" value="1"/>
+                        </result>
+                        <target xmi:type="uml:InputPin" xmi:id="_V4ORsZJlEeSHBc7ryn1YcA" name="target" type="_ek7YkJJkEeSHBc7ryn1YcA">
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_V4ORspJlEeSHBc7ryn1YcA" value="1"/>
+                        </target>
+                      </node>
+                    </effect>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_I8Ox0JJkEeSHBc7ryn1YcA" name="" guard="_kgrv4JJlEeSHBc7ryn1YcA" source="_e3gy0JJjEeSHBc7ryn1YcA" target="_5WQigJJjEeSHBc7ryn1YcA">
+                    <ownedRule xmi:type="uml:Constraint" xmi:id="_kgrv4JJlEeSHBc7ryn1YcA" name="true">
+                      <specification xmi:type="uml:LiteralBoolean" xmi:id="_kgrv4ZJlEeSHBc7ryn1YcA" name="true" value="true"/>
+                    </ownedRule>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_KxMIUJJkEeSHBc7ryn1YcA" name="" source="_5WQigJJjEeSHBc7ryn1YcA" target="_-a9n8JJiEeSHBc7ryn1YcA"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_NDuLoJJkEeSHBc7ryn1YcA" name="" guard="_Y_xRcJJlEeSHBc7ryn1YcA" source="_e3gy0JJjEeSHBc7ryn1YcA" target="_XHhoUJJjEeSHBc7ryn1YcA">
+                    <ownedRule xmi:type="uml:Constraint" xmi:id="_Y_xRcJJlEeSHBc7ryn1YcA" name="false">
+                      <specification xmi:type="uml:LiteralBoolean" xmi:id="_Y_xRcZJlEeSHBc7ryn1YcA" name="false"/>
+                    </ownedRule>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_X5rokJJkEeSHBc7ryn1YcA" name="" source="_-a9n8JJiEeSHBc7ryn1YcA" target="_PCWbgJJkEeSHBc7ryn1YcA">
+                    <effect xmi:type="uml:Activity" xmi:id="_wzIY8JJlEeSHBc7ryn1YcA" name="Confirm"/>
+                  </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_tA1zEJJlEeSHBc7ryn1YcA" name="" source="_PCWbgJJkEeSHBc7ryn1YcA" target="_XHhoUJJjEeSHBc7ryn1YcA"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_7V6bMJJlEeSHBc7ryn1YcA" name="" source="_-a9n8JJiEeSHBc7ryn1YcA" target="_XHhoUJJjEeSHBc7ryn1YcA">
+                    <effect xmi:type="uml:Activity" xmi:id="_DKz64JJmEeSHBc7ryn1YcA" name="Cancel"/>
+                  </transition>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_0vExcJJiEeSHBc7ryn1YcA" name=""/>
+                  <subvertex xmi:type="uml:State" xmi:id="_1niDcJJiEeSHBc7ryn1YcA" name="Check parameter"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_-a9n8JJiEeSHBc7ryn1YcA" name="Confirm complaint shutdown"/>
+                  <subvertex xmi:type="uml:FinalState" xmi:id="_XHhoUJJjEeSHBc7ryn1YcA" name="complaintDetailsCSU"/>
+                  <subvertex xmi:type="uml:Pseudostate" xmi:id="_e3gy0JJjEeSHBc7ryn1YcA" name="" kind="choice"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_5WQigJJjEeSHBc7ryn1YcA" name="Retrieve complaint data">
+                    <entry xmi:type="uml:Activity" xmi:id="_m7V0cJJlEeSHBc7ryn1YcA" name="" node="_pQML8JJlEeSHBc7ryn1YcA">
+                      <node xmi:type="uml:CallOperationAction" xmi:id="_pQML8JJlEeSHBc7ryn1YcA" name="CallOperationAction" operation="_CT1sEJJlEeSHBc7ryn1YcA">
+                        <result xmi:type="uml:OutputPin" xmi:id="_qt-_oJJlEeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qt_msJJlEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qt_msZJlEeSHBc7ryn1YcA" key="PinToParameterLink" value="_HL6OQJJlEeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <name xsi:nil="true"/>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_qt-_oZJlEeSHBc7ryn1YcA" value="1"/>
+                        </result>
+                        <target xmi:type="uml:InputPin" xmi:id="_qt_mspJlEeSHBc7ryn1YcA" name="target" type="_ek7YkJJkEeSHBc7ryn1YcA">
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_qt_ms5JlEeSHBc7ryn1YcA" value="1"/>
+                        </target>
+                      </node>
+                    </entry>
+                  </subvertex>
+                  <subvertex xmi:type="uml:State" xmi:id="_PCWbgJJkEeSHBc7ryn1YcA" name="Close Complaint">
+                    <entry xmi:type="uml:Activity" xmi:id="_yXNa0JJlEeSHBc7ryn1YcA" name="" node="_zy5VsJJlEeSHBc7ryn1YcA">
+                      <node xmi:type="uml:CallOperationAction" xmi:id="_zy5VsJJlEeSHBc7ryn1YcA" name="CallOperationAction" operation="_JcOrEJJlEeSHBc7ryn1YcA">
+                        <result xmi:type="uml:OutputPin" xmi:id="_1R8GkJJlEeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1R8toJJlEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1R8toZJlEeSHBc7ryn1YcA" key="PinToParameterLink" value="_L9IhkJJlEeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <name xsi:nil="true"/>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_1R8GkZJlEeSHBc7ryn1YcA" value="1"/>
+                        </result>
+                        <target xmi:type="uml:InputPin" xmi:id="_1R9UsJJlEeSHBc7ryn1YcA" name="target" type="_ek7YkJJkEeSHBc7ryn1YcA">
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_1R9UsZJlEeSHBc7ryn1YcA" value="1"/>
+                        </target>
+                      </node>
+                    </entry>
+                  </subvertex>
+                </region>
+              </ownedBehavior>
+              <include xmi:type="uml:Include" xmi:id="_N85H8JJnEeSHBc7ryn1YcA" addition="_hTqPgIEoEeSBLcITk83AdQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_AKOUMJJlEeSHBc7ryn1YcA" name="" client="_ek7YkJJkEeSHBc7ryn1YcA" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_BQBeoJJlEeSHBc7ryn1YcA" name="" client="_ek7YkJJkEeSHBc7ryn1YcA" supplier="_jNtaAIErEeSBLcITk83AdQ"/>
+          </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_gouBQDKpEeS9f-U1NPhq8A" name="menu">
           <packagedElement xmi:type="uml:UseCase" xmi:id="_zTjPQDe4EeSN0LCe_KdGSQ" name="menuCSU" classifierBehavior="_1GcJMDe4EeSN0LCe_KdGSQ">
@@ -2945,6 +3056,16 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
         <ownedEnd xmi:type="uml:Property" xmi:id="_v0-qpI2vEeSiYqWRRFiEMg" name="answercomplaintcsu" type="_w-UjMI2tEeSiYqWRRFiEMg" association="_v0-qoI2vEeSiYqWRRFiEMg">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v0-qpY2vEeSiYqWRRFiEMg" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v0-qpo2vEeSiYqWRRFiEMg" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_L4wtAJJnEeSHBc7ryn1YcA" name="" memberEnd="_L4wtAZJnEeSHBc7ryn1YcA _L4wtBJJnEeSHBc7ryn1YcA">
+        <ownedEnd xmi:type="uml:Property" xmi:id="_L4wtAZJnEeSHBc7ryn1YcA" name="ombudsman" type="_56xFYCjGEeS908UQl6F1Rw" association="_L4wtAJJnEeSHBc7ryn1YcA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L4wtApJnEeSHBc7ryn1YcA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L4wtA5JnEeSHBc7ryn1YcA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_L4wtBJJnEeSHBc7ryn1YcA" name="closecomplaintcsu" type="_oDZJAJJiEeSHBc7ryn1YcA" association="_L4wtAJJnEeSHBc7ryn1YcA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L4wtBZJnEeSHBc7ryn1YcA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L4wtBpJnEeSHBc7ryn1YcA" value="1"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
@@ -3179,4 +3300,16 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
   <andromdapresentation:FrontEndController xmi:id="_z0m-YI2uEeSiYqWRRFiEMg" base_Class="_4r-LYI2tEeSiYqWRRFiEMg"/>
   <andromdapresentation:FrontEndUseCase xmi:id="_cEtlII2vEeSiYqWRRFiEMg" base_UseCase="_w-UjMI2tEeSiYqWRRFiEMg"/>
   <andromdapresentation:FrontEndField xmi:id="_DoYuQI2xEeSiYqWRRFiEMg" andromda_presentation_web_view_field_type="hidden" base_Parameter="_-q8j4I2wEeSiYqWRRFiEMg"/>
+  <andromdapresentation:FrontEndView xmi:id="_OK_yMJJjEeSHBc7ryn1YcA" base_State="_-a9n8JJiEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndController xmi:id="_s0CioJJkEeSHBc7ryn1YcA" base_Class="_ek7YkJJkEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndMessage xmi:id="_cPTIgJJlEeSHBc7ryn1YcA" base_Transition="_NDuLoJJkEeSHBc7ryn1YcA">
+    <andromda_presentation_action_warning_message>Invalid parameter</andromda_presentation_action_warning_message>
+  </andromdapresentation:FrontEndMessage>
+  <andromdapresentation:FrontEndAction xmi:id="_J6yZ4JJmEeSHBc7ryn1YcA" andromda_presentation_web_action_type="hyperlink" base_Transition="_7V6bMJJlEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndMessage xmi:id="_PZL8QJJmEeSHBc7ryn1YcA" base_Transition="_tA1zEJJlEeSHBc7ryn1YcA">
+    <andromda_presentation_action_success_message>Complaint was closed</andromda_presentation_action_success_message>
+  </andromdapresentation:FrontEndMessage>
+  <andromdapresentation:FrontEndUseCase xmi:id="_Kb3RMJJnEeSHBc7ryn1YcA" base_UseCase="_oDZJAJJiEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndAction xmi:id="_aChLEJJpEeSHBc7ryn1YcA" andromda_presentation_web_action_type="hyperlink" base_Transition="_Ww1-8JJpEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndAction xmi:id="_m2TmoJJpEeSHBc7ryn1YcA" andromda_presentation_web_action_type="hyperlink" base_Transition="_ggWxMJJpEeSHBc7ryn1YcA"/>
 </xmi:XMI>

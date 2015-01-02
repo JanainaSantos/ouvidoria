@@ -4,7 +4,7 @@ import java.util.Random;
 
 public final class PasswordGenerator {
 	private static final String LETTERS = "acdefghjkmpqrsuxyz";
-	private static final String ALGARISMS = "0123456789";
+	private static final String ALGARISMS = "123456789";
 	private static final int DEFAULT_LENGTH = 5;
 
 	public static String generatePassword(){
@@ -12,20 +12,19 @@ public final class PasswordGenerator {
 	}
 	
 	public static String generatePassword(int length){
-		String password = "";
+		StringBuilder sb = new StringBuilder();
 		if(length >= 0){
-			StringBuilder sb = new StringBuilder();
 			for(int i=0; i < length; i++){
 				sb.append(generateChar());
 			}
 		}
-		return password;
+		return sb.toString();
 	}
 	
 	private static char generateChar() {
 		char newChar = '.';
-		Random random = new Random(System.currentTimeMillis());
-
+		Random random = new Random();
+		
 		boolean isLetter = random.nextBoolean();
 		if (isLetter) {
 			int idx = random.nextInt(LETTERS.length());
@@ -39,8 +38,15 @@ public final class PasswordGenerator {
 			int idx = random.nextInt(ALGARISMS.length());
 			newChar = ALGARISMS.charAt(idx);
 		}
-
 		return newChar;
 	}
 
+	
+	public static void main(String[] args) {
+		System.out.println("generating ...");
+		for(int i=0; i < 50; i++){
+			System.out.println(PasswordGenerator.generatePassword());
+		}
+		System.out.println("done!");
+	}
 }
