@@ -210,4 +210,16 @@ public class ComplaintHelperImplMockTest extends
 		verifyMocks();
 	}
 
+	@Override
+	public void testGetComplaintStatus() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void testGetComplaintStatusValoresInvalidos() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

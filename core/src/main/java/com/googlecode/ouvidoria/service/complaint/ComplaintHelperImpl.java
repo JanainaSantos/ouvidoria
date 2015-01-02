@@ -9,10 +9,12 @@
 package com.googlecode.ouvidoria.service.complaint;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import com.googlecode.ouvidoria.model.complaint.ComplaintTypeDao;
 import com.googlecode.ouvidoria.model.complaint.SubjectDao;
+import com.googlecode.ouvidoria.model.complaint.enums.ComplaintStatus;
 import com.googlecode.ouvidoria.model.complaint.enums.Contact;
 import com.googlecode.ouvidoria.model.vo.SimpleVO;
 
@@ -44,11 +46,29 @@ public class ComplaintHelperImpl extends ComplaintHelperBase {
 	 */
 	@Override
 	protected List<SimpleVO> handleGetContacts() throws Exception {
-		List<SimpleVO> list = new ArrayList<>();
+		/*List<SimpleVO> list = new ArrayList<>();
 		for(Contact c: Contact.values()){
 			list.add(new SimpleVO(null, c.getValue(), c.getValue(), true));
 		}
-		return list;
+		return list;*/
+		return toSimpleVoList(Contact.class);
 	}
 
+	@Override
+	protected List<SimpleVO> handleGetComplaintStatus() throws Exception {
+		List<SimpleVO> list = new ArrayList<>();
+		/*for(ComplaintStatus c: ComplaintStatus.values()){
+			list.add(new SimpleVO(null, c.getValue(), c.getValue(), true));
+		}*/
+		//return list;
+		return toSimpleVoList(ComplaintStatus.class);
+	}
+
+	private <E extends Enum <E>> List<SimpleVO> toSimpleVoList(Class<E> elemType) {
+		List<SimpleVO> list = new ArrayList<>();
+        for (E e : java.util.EnumSet.allOf(elemType)) {
+        	list.add(new SimpleVO(null, e.toString(), e.toString(), true));
+        }
+        return list;
+    }
 }
