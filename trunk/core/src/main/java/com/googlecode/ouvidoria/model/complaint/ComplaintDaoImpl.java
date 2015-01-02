@@ -31,6 +31,7 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 				criteria.add(Restrictions.idEq(vo.getId()));
 			} else{
 				if(vo.getStatus() != null){
+					System.out.println("DAO .... "+ vo.getStatus());
 					criteria.add(Restrictions.eq("status", vo.getStatus()));
 				}
 				//TODO demandant
@@ -106,17 +107,30 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 		// TODO verify behavior of toComplaintVO
 		super.toComplaintVO(source, target);
 
-		// WARNING! No conversion for target.subject (can't convert
-		// source.getSubject():com.googlecode.ouvidoria.model.complaint.Subject
-		// to java.lang.String
+		if(source.getSubject() != null){
+			target.setSubject(source.getSubject().getName());
+			target.setSubjectId(source.getSubject().getId());
+		}else{
+			target.setSubject("");
+			target.setSubjectId(null);
+		}
+		
+		if(source.getType() != null){
+			target.setType(source.getType().getName());
+			target.setTypeId(source.getType().getId());
+		}else{
+			target.setType("");
+			target.setTypeId(null);
+		}
+		
+		if(source.getDemandant() != null){
+			target.setDemandant(getDemandantDao().toDemandantVO(source.getDemandant()));
+		}
+		
 		// WARNING! No conversion for target.date (can't convert
 		// source.getDate():java.util.Date to java.util.Date
-		// WARNING! No conversion for target.type (can't convert
-		// source.getType():com.googlecode.ouvidoria.model.complaint.ComplaintType
-		// to java.lang.String
-		// WARNING! No conversion for target.demandant (can't convert
-		// source.getDemandant():com.googlecode.ouvidoria.model.demandant.Demandant
-		// to com.googlecode.ouvidoria.model.demandant.vo.DemandantVO
+		
+		
 		//TODO answers
 	}
 

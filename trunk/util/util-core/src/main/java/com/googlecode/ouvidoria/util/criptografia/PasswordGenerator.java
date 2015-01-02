@@ -40,13 +40,23 @@ public final class PasswordGenerator {
 		}
 		return newChar;
 	}
-
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		System.out.println("generating ...");
 		for(int i=0; i < 50; i++){
 			System.out.println(PasswordGenerator.generatePassword());
 		}
 		System.out.println("done!");
-	}
+	}*/
+	
+	static <E extends Enum <E>> void foo(Class<E> elemType) {
+        for (E e : java.util.EnumSet.allOf(elemType)) {
+            System.out.println(e);
+        }
+    }
+
+    enum Color{RED,YELLOW,BLUE};
+    public static void main(String[] args) {
+        foo(Color.class);
+    } 
 }

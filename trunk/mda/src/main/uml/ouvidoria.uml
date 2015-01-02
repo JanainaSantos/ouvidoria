@@ -1115,6 +1115,12 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                 <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpGM4WUoEeSv_eYmcg47ow" value="*"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_gTt7AJJ3EeSHBc7ryn1YcA" name="getComplaintStatus">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_j2feMJJ3EeSHBc7ryn1YcA" type="_hCBTQFxEEeSI_r_DQzLvpg" isOrdered="true" direction="return">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ksyNAJJ3EeSHBc7ryn1YcA" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ksy0EJJ3EeSHBc7ryn1YcA" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_X99aQF-QEeSC0thIrubyJw" name="" client="_xWzHQF-PEeSC0thIrubyJw" supplier="_8NgHQCe5EeSTVslmbGto7Q"/>
           <packagedElement xmi:type="uml:Dependency" xmi:id="_L-Jj4F-REeSC0thIrubyJw" name="" client="_Bm4xUCe7EeSTVslmbGto7Q" supplier="_Bkl20CexEeSTVslmbGto7Q"/>
@@ -2115,6 +2121,12 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_EhQ5AIFmEeSBLcITk83AdQ" name="complaintId">
                       <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
                     </ownedParameter>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_WpXCoJKEEeSHBc7ryn1YcA" name="date">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                    </ownedParameter>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_YTuSsJKEEeSHBc7ryn1YcA" name="status">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                    </ownedParameter>
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_p3xfpYFqEeSBLcITk83AdQ" name="demandantType">
                       <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
                     </ownedParameter>
@@ -2202,6 +2214,12 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                     <effect xmi:type="uml:Activity" xmi:id="_F7hSUIErEeSBLcITk83AdQ" name="">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_IJ4AQIErEeSBLcITk83AdQ" name="complaintId">
                         <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EfFDgJKEEeSHBc7ryn1YcA" name="date">
+                        <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_FkvEAJKEEeSHBc7ryn1YcA" name="status">
+                        <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
                       </ownedParameter>
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_lr0SAIFpEeSBLcITk83AdQ" name="demandantType">
                         <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
@@ -2314,132 +2332,146 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                   <subvertex xmi:type="uml:State" xmi:id="_hjkB0IEqEeSBLcITk83AdQ" name="Recover complaint">
                     <entry xmi:type="uml:Activity" xmi:id="_LEkN8IFmEeSBLcITk83AdQ" name="" node="_QUblEIFmEeSBLcITk83AdQ">
                       <node xmi:type="uml:CallOperationAction" xmi:id="_QUblEIFmEeSBLcITk83AdQ" name="CallOperationAction" operation="_8OubEIFlEeSBLcITk83AdQ">
-                        <argument xmi:type="uml:InputPin" xmi:id="_xte3soFqEeSBLcITk83AdQ" name="complaintId">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtfesIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtfesYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_EhQ5AIFmEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFrdApKEEeSHBc7ryn1YcA" name="complaintId">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrdBJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrdBZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_EhQ5AIFmEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xte3s4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrdA5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xte3roFqEeSBLcITk83AdQ" name="CopyOf_demandantType_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xte3sIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xte3sYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfpYFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFrc_pKEEeSHBc7ryn1YcA" name="date">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrdAJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrdAZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_WpXCoJKEEeSHBc7ryn1YcA"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xte3r4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrc_5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xte3qoFqEeSBLcITk83AdQ" name="CopyOf_name_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xte3rIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xte3rYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfrIFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFrc-pKEEeSHBc7ryn1YcA" name="status">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrc_JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrc_ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_YTuSsJKEEeSHBc7ryn1YcA"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xte3q4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrc-5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xte3poFqEeSBLcITk83AdQ" name="CopyOf_sex_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xte3qIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xte3qYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3w4k4FqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFrc9pKEEeSHBc7ryn1YcA" name="demandantType">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrc-JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrc-ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfpYFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xte3p4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrc95KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xte3ooFqEeSBLcITk83AdQ" name="CopyOf_identification_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xte3pIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xte3pYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3w4loFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFrc8pKEEeSHBc7ryn1YcA" name="name">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrc9JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrc9ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfrIFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xte3o4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrc85KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xteQnoFqEeSBLcITk83AdQ" name="CopyOf_document_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xte3oIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xte3oYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3yGsIFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFq17pKEEeSHBc7ryn1YcA" name="sex">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFrc8JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFrc8ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3w4k4FqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xteQn4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFq175KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xteQmoFqEeSBLcITk83AdQ" name="CopyOf_businessPhone_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xteQnIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xteQnYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfpoFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFq16pKEEeSHBc7ryn1YcA" name="identification">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFq17JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFq17ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3w4loFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xteQm4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFq165KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xteQloFqEeSBLcITk83AdQ" name="CopyOf_celularPhone_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xteQmIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xteQmYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3yGt4FqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFq15pKEEeSHBc7ryn1YcA" name="document">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFq16JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFq16ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3yGsIFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xteQl4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFq155KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xteQkoFqEeSBLcITk83AdQ" name="CopyOf_email_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xteQlIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xteQlYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfooFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFq14pKEEeSHBc7ryn1YcA" name="businessPhone">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFq15JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFq15ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfpoFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xteQk4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFq145KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdpjoFqEeSBLcITk83AdQ" name="CopyOf_address_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xteQkIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xteQkYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3w4kIFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFqO3JKEEeSHBc7ryn1YcA" name="celularPhone">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFq14JKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFq14ZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3yGt4FqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdpj4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFqO3ZKEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdpioFqEeSBLcITk83AdQ" name="CopyOf_zipCode_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdpjIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdpjYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfqYFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFqO2JKEEeSHBc7ryn1YcA" name="email">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFqO2pKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFqO25KEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfooFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdpi4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFqO2ZKEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdphoFqEeSBLcITk83AdQ" name="CopyOf_state_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdpiIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdpiYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3wRgIFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFqO1JKEEeSHBc7ryn1YcA" name="address">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFqO1pKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFqO15KEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3w4kIFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdph4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFqO1ZKEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdpgoFqEeSBLcITk83AdQ" name="CopyOf_city_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdphIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdphYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3yGs4FqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFqO0JKEEeSHBc7ryn1YcA" name="zipCode">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFqO0pKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFqO05KEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfqYFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdpg4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFqO0ZKEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdCdoFqEeSBLcITk83AdQ" name="CopyOf_type_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdpgIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdpgYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfr4FqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpnypKEEeSHBc7ryn1YcA" name="state">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpnzJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpnzZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3wRgIFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdCd4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpny5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtdCcoFqEeSBLcITk83AdQ" name="CopyOf_subject_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdCdIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdCdYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfoYFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpnxpKEEeSHBc7ryn1YcA" name="city">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpnyJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpnyZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3yGs4FqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtdCc4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpnx5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtcbZIFqEeSBLcITk83AdQ" name="CopyOf_answerWay_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtdCcIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtdCcYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3xfoIFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpnwpKEEeSHBc7ryn1YcA" name="type">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpnxJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpnxZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfr4FqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtcbZYFqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpnw5KEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_xtcbYIFqEeSBLcITk83AdQ" name="CopyOf_text_1">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtcbYoFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtcbY4FqEeSBLcITk83AdQ" key="PinToParameterLink" value="_p3yGtoFqEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpAuJKEEeSHBc7ryn1YcA" name="subject">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpnwJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpnwZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfoYFqEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtcbYYFqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpAuZKEEeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <result xmi:type="uml:OutputPin" xmi:id="_xtfesoFqEeSBLcITk83AdQ">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xtfetIFqEeSBLcITk83AdQ" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xtfetYFqEeSBLcITk83AdQ" key="PinToParameterLink" value="_BCtHcIFmEeSBLcITk83AdQ"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpAtJKEEeSHBc7ryn1YcA" name="answerWay">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpAtpKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpAt5KEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3xfoIFqEeSBLcITk83AdQ"/>
+                          </eAnnotations>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpAtZKEEeSHBc7ryn1YcA" value="1"/>
+                        </argument>
+                        <argument xmi:type="uml:InputPin" xmi:id="_bFpAsJKEEeSHBc7ryn1YcA" name="text">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFpAspKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFpAs5KEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_p3yGtoFqEeSBLcITk83AdQ"/>
+                          </eAnnotations>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFpAsZKEEeSHBc7ryn1YcA" value="1"/>
+                        </argument>
+                        <result xmi:type="uml:OutputPin" xmi:id="_bFrdBpKEEeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bFsEAJKEEeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bFsEAZKEEeSHBc7ryn1YcA" key="PinToParameterLink" value="_BCtHcIFmEeSBLcITk83AdQ"/>
                           </eAnnotations>
                           <name xsi:nil="true"/>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_xtfes4FqEeSBLcITk83AdQ" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_bFrdB5KEEeSHBc7ryn1YcA" value="1"/>
                         </result>
                         <target xmi:type="uml:InputPin" xmi:id="_T0d9VoFmEeSBLcITk83AdQ" name="target" type="_b4PoUIErEeSBLcITk83AdQ">
                           <upperBound xmi:type="uml:LiteralInteger" xmi:id="_T0d9V4FmEeSBLcITk83AdQ" value="1"/>
@@ -2464,7 +2496,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
           <packagedElement xmi:type="uml:Package" xmi:id="_iCrHEIEnEeSBLcITk83AdQ" name="search">
             <packagedElement xmi:type="uml:UseCase" xmi:id="_Oa-1AIK3EeSzBMc5qatBNg" name="searchComplaintCSU" classifierBehavior="_a6iF8IK3EeSzBMc5qatBNg">
               <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_a6iF8IK3EeSzBMc5qatBNg" name="Search Complaints">
-                <nestedClassifier xmi:type="uml:Class" xmi:id="_3nJbYIK3EeSzBMc5qatBNg" clientDependency="_GqYxEIK4EeSzBMc5qatBNg _6u39IIK-EeSzBMc5qatBNg _ofUroISvEeSyvpbIZueOgw" name="ComplaintSearchCTL">
+                <nestedClassifier xmi:type="uml:Class" xmi:id="_3nJbYIK3EeSzBMc5qatBNg" clientDependency="_GqYxEIK4EeSzBMc5qatBNg _6u39IIK-EeSzBMc5qatBNg _ofUroISvEeSyvpbIZueOgw _FhYL0JJ1EeSHBc7ryn1YcA" name="ComplaintSearchCTL">
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_KjQgEIK4EeSzBMc5qatBNg" name="populateScreen">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_PdCScIK4EeSzBMc5qatBNg" direction="return">
                       <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
@@ -2506,9 +2538,14 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                       <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
                     </ownedParameter>
                   </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_6bj_4JJyEeSHBc7ryn1YcA" name="startSearch">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_CwTdQJJzEeSHBc7ryn1YcA" direction="return">
+                      <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                    </ownedParameter>
+                  </ownedOperation>
                 </nestedClassifier>
                 <region xmi:type="uml:Region" xmi:id="_beOo4IK3EeSzBMc5qatBNg" name="Region1">
-                  <transition xmi:type="uml:Transition" xmi:id="_fvo-QIK4EeSzBMc5qatBNg" name="" source="_ilHMAIK3EeSzBMc5qatBNg" target="_j_EBgIK3EeSzBMc5qatBNg"/>
+                  <transition xmi:type="uml:Transition" xmi:id="_fvo-QIK4EeSzBMc5qatBNg" name="" source="_ilHMAIK3EeSzBMc5qatBNg" target="_teo2cJJyEeSHBc7ryn1YcA"/>
                   <transition xmi:type="uml:Transition" xmi:id="_gtDBsIK4EeSzBMc5qatBNg" name="" source="_j_EBgIK3EeSzBMc5qatBNg" target="_oHw8QIK3EeSzBMc5qatBNg">
                     <effect xmi:type="uml:Activity" xmi:id="_htlKQIK7EeSzBMc5qatBNg" name="">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_kUgwQIK7EeSzBMc5qatBNg" name="complaints" type="_yDlk0IK6EeSzBMc5qatBNg" isOrdered="true" isUnique="false">
@@ -2575,79 +2612,87 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                       </ownedParameter>
                     </effect>
                   </transition>
+                  <transition xmi:type="uml:Transition" xmi:id="_2kmVYJJyEeSHBc7ryn1YcA" name="" source="_teo2cJJyEeSHBc7ryn1YcA" target="_j_EBgIK3EeSzBMc5qatBNg"/>
                   <subvertex xmi:type="uml:Pseudostate" xmi:id="_ilHMAIK3EeSzBMc5qatBNg" name=""/>
                   <subvertex xmi:type="uml:State" xmi:id="_j_EBgIK3EeSzBMc5qatBNg" name="Populate search screen">
                     <entry xmi:type="uml:Activity" xmi:id="_UKuwoIK4EeSzBMc5qatBNg" name="" node="_VqujwIK4EeSzBMc5qatBNg">
                       <node xmi:type="uml:CallOperationAction" xmi:id="_VqujwIK4EeSzBMc5qatBNg" name="CallOperationAction" operation="_KjQgEIK4EeSzBMc5qatBNg">
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK6HZYK8EeSzBMc5qatBNg" name="code">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK6HZ4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK6HaIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF564IK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKowZJ-EeSHBc7ryn1YcA" name="code">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKow5J-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKoxJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF564IK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK6HZoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKowpJ-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK6HYYK8EeSzBMc5qatBNg" name="complaintStatus">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK6HY4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK6HZIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF6h8IK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKovZJ-EeSHBc7ryn1YcA" name="complaintStatus">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKov5J-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKowJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF6h8IK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK6HYoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKovpJ-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK5gYYK8EeSzBMc5qatBNg" name="type">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK5gY4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK6HYIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF7JAYK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKouZJ-EeSHBc7ryn1YcA" name="type">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKou5J-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKovJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF7JAYK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK5gYoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKoupJ-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK5gXYK8EeSzBMc5qatBNg" name="subject">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK5gX4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK5gYIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF6h8oK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKotZJ-EeSHBc7ryn1YcA" name="subject">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKot5J-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKouJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF6h8oK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK5gXoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKotpJ-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK5gWYK8EeSzBMc5qatBNg" name="text">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK5gW4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK5gXIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF7JAIK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKosZJ-EeSHBc7ryn1YcA" name="text">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKos5J-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKotJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF7JAIK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK5gWoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKospJ-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK5gVYK8EeSzBMc5qatBNg" name="demandantType">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK5gV4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK5gWIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF7wEYK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKBrpJ-EeSHBc7ryn1YcA" name="demandantType">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKBsJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKosJJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF7wEYK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_227130_59"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK5gVoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKBr5J-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK5gUYK8EeSzBMc5qatBNg" name="demandantName">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK5gU4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK5gVIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF7wEIK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKBqpJ-EeSHBc7ryn1YcA" name="demandantName">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKBrJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKBrZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF7wEIK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK5gUoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKBq5J-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK45RIK8EeSzBMc5qatBNg" name="demandantDocument">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK45RoK8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK5gUIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_sF6h8YK5EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKBppJ-EeSHBc7ryn1YcA" name="demandantDocument">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKBqJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKBqZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_sF6h8YK5EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_364079_66"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK45RYK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKBp5J-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <argument xmi:type="uml:InputPin" xmi:id="_HK45QIK8EeSzBMc5qatBNg" name="complaints" type="_yDlk0IK6EeSzBMc5qatBNg">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK45QoK8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK45Q4K8EeSzBMc5qatBNg" key="PinToParameterLink" value="_HK3EEIK8EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TKBopJ-EeSHBc7ryn1YcA" name="complaints" type="_yDlk0IK6EeSzBMc5qatBNg">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKBpJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKBpZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_HK3EEIK8EeSzBMc5qatBNg"/>
                           </eAnnotations>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK45QYK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKBo5J-EeSHBc7ryn1YcA" value="1"/>
                         </argument>
-                        <result xmi:type="uml:OutputPin" xmi:id="_HK6HaYK8EeSzBMc5qatBNg">
-                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HK6Ha4K8EeSzBMc5qatBNg" source="PinToParameterLink">
-                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HK6HbIK8EeSzBMc5qatBNg" key="PinToParameterLink" value="_PdCScIK4EeSzBMc5qatBNg"/>
+                        <argument xmi:type="uml:InputPin" xmi:id="_9TJakJJ-EeSHBc7ryn1YcA" name="first">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TKBoJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TKBoZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_9TIMcJJ-EeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_736816_6"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TJakZJ-EeSHBc7ryn1YcA" value="1"/>
+                        </argument>
+                        <result xmi:type="uml:OutputPin" xmi:id="_9TKoxZJ-EeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9TLPwJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9TLPwZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_PdCScIK4EeSzBMc5qatBNg"/>
                           </eAnnotations>
                           <name xsi:nil="true"/>
                           <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
-                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_HK6HaoK8EeSzBMc5qatBNg" value="1"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_9TKoxpJ-EeSHBc7ryn1YcA" value="1"/>
                         </result>
                         <target xmi:type="uml:InputPin" xmi:id="_YW0WkIK4EeSzBMc5qatBNg" name="target" type="_3nJbYIK3EeSzBMc5qatBNg">
                           <upperBound xmi:type="uml:LiteralInteger" xmi:id="_YW0WkYK4EeSzBMc5qatBNg" value="1"/>
@@ -2688,6 +2733,30 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
                     </entry>
                   </subvertex>
                   <subvertex xmi:type="uml:FinalState" xmi:id="_2AZV4IStEeSyvpbIZueOgw" name="complaintDetailsCSU"/>
+                  <subvertex xmi:type="uml:State" xmi:id="_teo2cJJyEeSHBc7ryn1YcA" name="Start search screen">
+                    <entry xmi:type="uml:Activity" xmi:id="_HgOwEJJzEeSHBc7ryn1YcA" name="" node="_Jph-4JJzEeSHBc7ryn1YcA">
+                      <node xmi:type="uml:CallOperationAction" xmi:id="_Jph-4JJzEeSHBc7ryn1YcA" name="CallOperationAction" operation="_6bj_4JJyEeSHBc7ryn1YcA">
+                        <argument xmi:type="uml:InputPin" xmi:id="_6xogEJJ-EeSHBc7ryn1YcA" name="first">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6xogEpJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6xogE5J-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_6HxqwJJ-EeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_736816_6"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_6xogEZJ-EeSHBc7ryn1YcA" value="1"/>
+                        </argument>
+                        <result xmi:type="uml:OutputPin" xmi:id="_6xogFJJ-EeSHBc7ryn1YcA">
+                          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6xpHIJJ-EeSHBc7ryn1YcA" source="PinToParameterLink">
+                            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6xpHIZJ-EeSHBc7ryn1YcA" key="PinToParameterLink" value="_CwTdQJJzEeSHBc7ryn1YcA"/>
+                          </eAnnotations>
+                          <name xsi:nil="true"/>
+                          <type xmi:type="uml:DataType" href="andromda-datatype-3.5-SNAPSHOT.uml#_9_0_1fe00f9_1119336925531_324247_52"/>
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_6xogFZJ-EeSHBc7ryn1YcA" value="1"/>
+                        </result>
+                        <target xmi:type="uml:InputPin" xmi:id="_LzVkApJzEeSHBc7ryn1YcA" name="target" type="_3nJbYIK3EeSzBMc5qatBNg">
+                          <upperBound xmi:type="uml:LiteralInteger" xmi:id="_LzVkA5JzEeSHBc7ryn1YcA" value="1"/>
+                        </target>
+                      </node>
+                    </entry>
+                  </subvertex>
                 </region>
               </ownedBehavior>
               <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_V7WTsIL6EeSF35LKUCUBkg" name="point"/>
@@ -2695,6 +2764,7 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
             <packagedElement xmi:type="uml:Dependency" xmi:id="_GqYxEIK4EeSzBMc5qatBNg" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_Bm4xUCe7EeSTVslmbGto7Q"/>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_6u39IIK-EeSzBMc5qatBNg" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_xWzHQF-PEeSC0thIrubyJw"/>
             <packagedElement xmi:type="uml:Dependency" xmi:id="_ofUroISvEeSyvpbIZueOgw" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_jNtaAIErEeSBLcITk83AdQ"/>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_FhYL0JJ1EeSHBc7ryn1YcA" name="" client="_3nJbYIK3EeSzBMc5qatBNg" supplier="_KWSqwHJUEeS-8MiPDVC1lA"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_kD70MIEnEeSBLcITk83AdQ" name="answer">
             <packagedElement xmi:type="uml:UseCase" xmi:id="_w-UjMI2tEeSiYqWRRFiEMg" name="answerComplaintCSU" classifierBehavior="_0vdSgI2tEeSiYqWRRFiEMg">
@@ -3312,4 +3382,6 @@ body buscaPorUnidadeFederacao: allInstances() -> select ( municipio | municipio.
   <andromdapresentation:FrontEndUseCase xmi:id="_Kb3RMJJnEeSHBc7ryn1YcA" base_UseCase="_oDZJAJJiEeSHBc7ryn1YcA"/>
   <andromdapresentation:FrontEndAction xmi:id="_aChLEJJpEeSHBc7ryn1YcA" andromda_presentation_web_action_type="hyperlink" base_Transition="_Ww1-8JJpEeSHBc7ryn1YcA"/>
   <andromdapresentation:FrontEndAction xmi:id="_m2TmoJJpEeSHBc7ryn1YcA" andromda_presentation_web_action_type="hyperlink" base_Transition="_ggWxMJJpEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndField xmi:id="_PAa7UJKEEeSHBc7ryn1YcA" andromda_presentation_web_view_field_type="plaintext" base_Parameter="_EfFDgJKEEeSHBc7ryn1YcA"/>
+  <andromdapresentation:FrontEndField xmi:id="_QultUJKEEeSHBc7ryn1YcA" andromda_presentation_web_view_field_type="plaintext" base_Parameter="_FkvEAJKEEeSHBc7ryn1YcA"/>
 </xmi:XMI>
