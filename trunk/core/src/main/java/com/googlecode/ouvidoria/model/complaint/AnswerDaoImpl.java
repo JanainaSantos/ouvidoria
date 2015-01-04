@@ -11,84 +11,72 @@ import com.googlecode.ouvidoria.model.complaint.vo.AnswerVO;
 /**
  * @see Answer
  */
-public class AnswerDaoImpl
-    extends AnswerDaoBase
-{
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void toAnswerVO(
-        Answer source,
-        AnswerVO target)
-    {
-        // TODO verify behavior of toAnswerVO
-        super.toAnswerVO(source, target);
-        // WARNING! No conversion for target.date (can't convert source.getDate():java.util.Date to java.util.Date
-    }
+public class AnswerDaoImpl extends AnswerDaoBase {
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void toAnswerVO(Answer source, AnswerVO target) {
+		// TODO verify behavior of toAnswerVO
+		super.toAnswerVO(source, target);
+		
+		target.setDate(source.getDate());
+		target.setDateStr(source.getDate().toString());
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public AnswerVO toAnswerVO(final Answer entity)
-    {
-        // TODO verify behavior of toAnswerVO
-        return super.toAnswerVO(entity);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public AnswerVO toAnswerVO(final Answer entity) {
+		// TODO verify behavior of toAnswerVO
+		return super.toAnswerVO(entity);
+	}
 
-    /**
-     * Retrieves the entity object that is associated with the specified value object
-     * from the object store. If no such entity object exists in the object store,
-     * a new, blank entity is created
-     */
-        private Answer loadAnswerFromAnswerVO(AnswerVO vo)
-    {
-    	        Answer retorno = null;
-		if(vo.getId() == null){
+	/**
+	 * Retrieves the entity object that is associated with the specified value
+	 * object from the object store. If no such entity object exists in the
+	 * object store, a new, blank entity is created
+	 */
+	private Answer loadAnswerFromAnswerVO(AnswerVO vo) {
+		Answer retorno = null;
+		if (vo.getId() == null) {
 			retorno = Answer.Factory.newInstance();
-		}else{
+		} else {
 			retorno = load(vo.getId());
 		}
-		return retorno;	
-		
-        // TODO implement loadAnswerFromAnswerVO
-        //throw new UnsupportedOperationException("com.googlecode.ouvidoria.model.complaint.loadAnswerFromAnswerVO(AnswerVO) not yet implemented.");
+		return retorno;
 
-        /* A typical implementation looks like this:
-        if (answerVO.getId() == null)
-        {
-            return  Answer.Factory.newInstance();
-        }
-        else
-        {
-            return this.load(answerVO.getId());
-        }
-        */
-    }
+		// TODO implement loadAnswerFromAnswerVO
+		// throw new
+		// UnsupportedOperationException("com.googlecode.ouvidoria.model.complaint.loadAnswerFromAnswerVO(AnswerVO) not yet implemented.");
 
-    /**
-     * {@inheritDoc}
-     */
-    public Answer answerVOToEntity(AnswerVO answerVO)
-    {
-        // TODO verify behavior of answerVOToEntity
-        Answer entity = this.loadAnswerFromAnswerVO(answerVO);
-        this.answerVOToEntity(answerVO, entity, true);
-        return entity;
-    }
+		/*
+		 * A typical implementation looks like this: if (answerVO.getId() ==
+		 * null) { return Answer.Factory.newInstance(); } else { return
+		 * this.load(answerVO.getId()); }
+		 */
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void answerVOToEntity(
-        AnswerVO source,
-        Answer target,
-        boolean copyIfNull)
-    {
-        // TODO verify behavior of answerVOToEntity
-        super.answerVOToEntity(source, target, copyIfNull);
-        // No conversion for target.date (can't convert source.getDate():java.util.Date to java.util.Date
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public Answer answerVOToEntity(AnswerVO answerVO) {
+		// TODO verify behavior of answerVOToEntity
+		Answer entity = this.loadAnswerFromAnswerVO(answerVO);
+		this.answerVOToEntity(answerVO, entity, true);
+		return entity;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void answerVOToEntity(AnswerVO source, Answer target,
+			boolean copyIfNull) {
+		// TODO verify behavior of answerVOToEntity
+		super.answerVOToEntity(source, target, copyIfNull);
+		// No conversion for target.date (can't convert
+		// source.getDate():java.util.Date to java.util.Date
+	}
 }
