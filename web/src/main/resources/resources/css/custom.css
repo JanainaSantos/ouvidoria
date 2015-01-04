@@ -11,6 +11,9 @@ Style Class                                Applies
 * apenas para testar: background-color: gray !important
  * */
 
+.ui-layout{
+	max-width: 80%;
+}
 
 .ui-layout-container {
     overflow: auto !important;

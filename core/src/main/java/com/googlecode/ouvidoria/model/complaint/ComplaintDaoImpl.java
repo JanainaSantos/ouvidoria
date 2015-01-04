@@ -12,6 +12,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.googlecode.ouvidoria.model.complaint.vo.AnswerVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.ResumedComplaintVO;
 import com.googlecode.ouvidoria.model.complaint.vo.SimpleComplaintVO;
@@ -127,11 +128,9 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 			target.setDemandant(getDemandantDao().toDemandantVO(source.getDemandant()));
 		}
 		
-		// WARNING! No conversion for target.date (can't convert
-		// source.getDate():java.util.Date to java.util.Date
+		target.setDate(source.getDate());
 		
-		
-		//TODO answers
+		target.setAnswers((List<AnswerVO>) getAnswerDao().findByComplaintId(AnswerDao.TRANSFORM_ANSWERVO, source.getId()));
 	}
 
 	/**

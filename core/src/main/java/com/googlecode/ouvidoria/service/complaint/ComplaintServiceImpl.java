@@ -8,6 +8,7 @@
  */
 package com.googlecode.ouvidoria.service.complaint;
 
+import java.util.Date;
 import java.util.List;
 
 import com.googlecode.ouvidoria.model.complaint.Answer;
@@ -32,23 +33,15 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	 */
 	@Override
 	protected SimpleComplaintVO handleSave(ComplaintVO complaintVO) throws Exception {
-		//System.out.println("COMPLAINT.SAVE: "+complaintVO);
-		//Gson gson = new Gson();
-		//System.out.println("complaintVO="+gson.toJson(complaintVO));
-		
 		// salva demandante vo
 		Long demandantId = getDemandantService().save(complaintVO.getDemandant());
-		//System.out.println("_____ID="+demandantId);
 		// recupera demandante entity
 		Demandant demandant = getDemandantDao().load(demandantId);
-		//System.out.println("demandante="+demandant);
 		// converte complaintVO em entity
 		Complaint complaint = getComplaintDao().complaintVOToEntity(complaintVO);
 		// gera password
 		String password = PasswordGenerator.generatePassword();
-		//System.out.println("password gerado="+password);
 		String passwordHash = CriptografiaUtils.md5(password);
-		//System.out.println("password hash="+passwordHash);
 		complaint.setPassword(passwordHash);
 		// seta demandante entity
 		complaint.setDemandant(demandant);
@@ -57,9 +50,7 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 				ComplaintDao.TRANSFORM_SIMPLECOMPLAINTVO, complaint);
 		// "mostra" o password (para o usr poder checar o andamento)
 		vo.setPassword(password);
-		//System.out.println("password vo="+vo.getPassword());
 		// retorna vo
-		//System.out.println("***** VO="+gson.toJson(vo));
 		return vo;
 	}
 
@@ -109,9 +100,14 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	protected void handleAnswer(AnswerVO vo) throws Exception {
 		if(vo.getComplaintId() != null){
 			Complaint complaint = getComplaintDao().load(vo.getComplaintId());
+			
 			Answer answer = getAnswerDao().answerVOToEntity(vo);
 			answer.setComplaint(complaint);
+			answer.setDate(new Date());
 			getAnswerDao().create(answer);
+			
+			complaint.setStatus(ComplaintStatus.ANALYSING);
+			getComplaintDao().update(complaint);
 		}else{
 			throw new IllegalArgumentException("Complaint ID must not be null");
 		}

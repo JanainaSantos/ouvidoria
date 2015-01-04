@@ -25,6 +25,7 @@ public class ComplaintDetailsCTLImpl extends ComplaintDetailsCTL {
 		form.setSubject(complaint.getSubject());
 		form.setText(complaint.getText());
 		form.setType(complaint.getType());
+		form.setDate((complaint.getDate() == null)?"":complaint.getDate().toString());
 		
 		if(complaint.getDemandant() != null){
 			form.setAddress(complaint.getDemandant().getAddress());
