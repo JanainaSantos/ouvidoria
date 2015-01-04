@@ -59,7 +59,7 @@ public class ComplaintSearchCTLImpl extends ComplaintSearchCTL {
 		if(form.getCode() != null){
 			criteria.setId(form.getCode());
 		}
-		System.out.println("********    form.getComplaintStatus()="+form.getComplaintStatus());
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>> ********    form.getComplaintStatus()="+form.getComplaintStatus());
 		if(!StringUtils.isStringVazia(form.getComplaintStatus())){
 			criteria.setStatus(ComplaintStatus.fromString(form.getComplaintStatus()));
 			System.out.println("********    STATUS="+criteria.getStatus());

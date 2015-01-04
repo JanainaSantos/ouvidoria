@@ -26,6 +26,8 @@ public class ComplaintDetailsCTLImpl extends ComplaintDetailsCTL {
 		form.setText(complaint.getText());
 		form.setType(complaint.getType());
 		form.setDate((complaint.getDate() == null)?"":complaint.getDate().toString());
+		form.setAnswers(complaint.getAnswers());
+		form.setStatus(complaint.getStatus().toString());
 		
 		if(complaint.getDemandant() != null){
 			form.setAddress(complaint.getDemandant().getAddress());
@@ -45,8 +47,6 @@ public class ComplaintDetailsCTLImpl extends ComplaintDetailsCTL {
 		
 		Contact answerType = complaint.getAnswerType();
 		form.setAnswerWay((answerType == null)?"":answerType.toString());
-		
-		//TODO show answers
 	}
 
 	@Override

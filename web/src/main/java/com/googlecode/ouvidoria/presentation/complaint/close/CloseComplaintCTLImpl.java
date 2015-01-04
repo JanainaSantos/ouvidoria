@@ -36,6 +36,7 @@ public class CloseComplaintCTLImpl extends CloseComplaintCTL {
 		form.setId(vo.getId()+"");
 		form.setStatus(vo.getStatus().toString());
 		form.setText(vo.getText());
+		form.setAnswers(vo.getAnswers());
 	}
 
 	/**

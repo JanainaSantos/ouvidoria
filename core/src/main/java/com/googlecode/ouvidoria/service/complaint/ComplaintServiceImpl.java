@@ -11,6 +11,7 @@ package com.googlecode.ouvidoria.service.complaint;
 import java.util.Date;
 import java.util.List;
 
+import com.googlecode.ouvidoria.ValidationException;
 import com.googlecode.ouvidoria.model.complaint.Answer;
 import com.googlecode.ouvidoria.model.complaint.Complaint;
 import com.googlecode.ouvidoria.model.complaint.ComplaintDao;
@@ -32,13 +33,16 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	 * @see com.googlecode.ouvidoria.service.complaint.ComplaintService#save(ComplaintVO)
 	 */
 	@Override
-	protected SimpleComplaintVO handleSave(ComplaintVO complaintVO) throws Exception {
+	protected SimpleComplaintVO handleSave(ComplaintVO complaintVO)
+			throws Exception {
 		// salva demandante vo
-		Long demandantId = getDemandantService().save(complaintVO.getDemandant());
+		Long demandantId = getDemandantService().save(
+				complaintVO.getDemandant());
 		// recupera demandante entity
 		Demandant demandant = getDemandantDao().load(demandantId);
 		// converte complaintVO em entity
-		Complaint complaint = getComplaintDao().complaintVOToEntity(complaintVO);
+		Complaint complaint = getComplaintDao()
+				.complaintVOToEntity(complaintVO);
 		// gera password
 		String password = PasswordGenerator.generatePassword();
 		String passwordHash = CriptografiaUtils.md5(password);
@@ -59,11 +63,13 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	 *      String)
 	 */
 	@Override
-	protected ComplaintVO handleCheckStatus(Long id, String password) throws Exception {
-		ComplaintVO vo = (ComplaintVO) getComplaintDao().load(ComplaintDao.TRANSFORM_COMPLAINTVO, id);
-		if(vo != null){
+	protected ComplaintVO handleCheckStatus(Long id, String password)
+			throws Exception {
+		ComplaintVO vo = (ComplaintVO) getComplaintDao().load(
+				ComplaintDao.TRANSFORM_COMPLAINTVO, id);
+		if (vo != null) {
 			String passwordHash = CriptografiaUtils.md5(password);
-			if(vo.getPassword().equals(passwordHash)){
+			if (vo.getPassword().equals(passwordHash)) {
 				return vo;
 			}
 		}
@@ -75,8 +81,10 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	protected List<ResumedComplaintVO> handleSearch(ComplaintVO criteria) throws Exception {
-		return (List<ResumedComplaintVO>) getComplaintDao().searchByCriteria(ComplaintDao.TRANSFORM_RESUMEDCOMPLAINTVO, criteria);
+	protected List<ResumedComplaintVO> handleSearch(ComplaintVO criteria)
+			throws Exception {
+		return (List<ResumedComplaintVO>) getComplaintDao().searchByCriteria(
+				ComplaintDao.TRANSFORM_RESUMEDCOMPLAINTVO, criteria);
 	}
 
 	/**
@@ -93,28 +101,40 @@ public class ComplaintServiceImpl extends ComplaintServiceBase {
 	 */
 	@Override
 	protected ComplaintVO handleLoad(Long id) throws Exception {
-		return (ComplaintVO) getComplaintDao().load(ComplaintDao.TRANSFORM_COMPLAINTVO, id);
+		return (ComplaintVO) getComplaintDao().load(
+				ComplaintDao.TRANSFORM_COMPLAINTVO, id);
 	}
 
 	@Override
 	protected void handleAnswer(AnswerVO vo) throws Exception {
-		if(vo.getComplaintId() != null){
+		if (vo.getComplaintId() != null) {
 			Complaint complaint = getComplaintDao().load(vo.getComplaintId());
-			
+
+			if (ComplaintStatus.CLOSED == complaint.getStatus()
+					|| ComplaintStatus.DISCARDED == complaint.getStatus()) {
+				throw new ValidationException(
+						"The complaint can't be answered if it is closed or discarded");
+			}
+
 			Answer answer = getAnswerDao().answerVOToEntity(vo);
 			answer.setComplaint(complaint);
 			answer.setDate(new Date());
 			getAnswerDao().create(answer);
-			
+
 			complaint.setStatus(ComplaintStatus.ANALYSING);
 			getComplaintDao().update(complaint);
-		}else{
+		} else {
 			throw new IllegalArgumentException("Complaint ID must not be null");
 		}
 	}
 
 	@Override
 	protected void handleClose(Long complaintId) throws Exception {
+		List<Answer> answers = getAnswerDao().findByComplaintId(complaintId);
+		if (answers.isEmpty()) {
+			throw new ValidationException(
+					"The complaint must have at least one answer to be closed");
+		}
 		Complaint complaint = getComplaintDao().load(complaintId);
 		complaint.setStatus(ComplaintStatus.CLOSED);
 		getComplaintDao().update(complaint);

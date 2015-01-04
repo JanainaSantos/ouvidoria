@@ -6,6 +6,7 @@
  */
 package com.googlecode.ouvidoria.model.complaint;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -130,7 +131,11 @@ public class ComplaintDaoImpl extends ComplaintDaoBase {
 		
 		target.setDate(source.getDate());
 		
-		target.setAnswers((List<AnswerVO>) getAnswerDao().findByComplaintId(AnswerDao.TRANSFORM_ANSWERVO, source.getId()));
+		List<AnswerVO> answers = (List<AnswerVO>) getAnswerDao().findByComplaintId(AnswerDao.TRANSFORM_ANSWERVO, source.getId());
+		if(answers == null){
+			answers = new ArrayList<AnswerVO>();
+		}
+		target.setAnswers(answers);
 	}
 
 	/**
